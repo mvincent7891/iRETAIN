@@ -6,15 +6,33 @@ Heroku Link
 
 iRETAIN is a web application inspired by Brainscape built using Ruby on Rails and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, adequate seed data and sufficient CSS styling:
 
+## MVP Checklist Format
+
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
+- [ ] Production README
 - [ ] Subjects (for organizing decks)
+  - [ ] Adequate styling
+  - [ ] Smooth, bug-free navigation
+  - [ ] Adequate and appropriate seeds to demonstrate the feature
 - [ ] Decks (for organizing cards)
+  - [ ] Adequate styling
+  - [ ] Smooth, bug-free navigation
+  - [ ] Adequate and appropriate seeds to demonstrate the feature
 - [ ] Cards (flash cards for studying)
+  - [ ] Adequate styling
+  - [ ] Smooth, bug-free navigation
+  - [ ] Adequate and appropriate seeds to demonstrate the feature
 - [ ] Deck Tags for Searching
-- [ ] Quiz
-- [ ] Search for Decks and Subjects
+  - [ ] Adequate styling
+  - [ ] Smooth, addition and deletion of tags
+  - [ ] Adequate and appropriate seeds to demonstrate the feature
+- [ ] Quiz/Study Session
+  - [ ] Adequate styling
+  - [ ] Smooth, bug-free navigation through quiz
+  - [ ] Adequate and appropriate seeds to demonstrate the feature
 - [ ] Auto-lookup for New Cards
+  - [ ] Dictionary API connection
 - [ ] Production README
 
 ## Design Docs

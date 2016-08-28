@@ -1,5 +1,9 @@
 # iRETAIN
 
+[Proposal README][readme]
+[readme]: docs/README.md
+
+
 [iRETAIN live][heroku] **NB:** This will be a link to the iRETAIN production site
 
 [heroku]: http://www.herokuapp.com
