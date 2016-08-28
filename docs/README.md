@@ -43,12 +43,12 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 * [Redux Structure][redux-structure]
 * [Sample State][sample-state]
 
-[wireframes]: docs/Wireframes
-[components]: docs/component-hierarchy.md
-[redux-structure]: docs/redux-structure.md
-[sample-state]: docs/sample-state.md
-[api-endpoints]: docs/api-endpoints.md
-[schema]: docs/schema.md
+[wireframes]: ./Wireframes
+[components]: ./component-hierarchy.md
+[redux-structure]: ./redux-structure.md
+[sample-state]: ./sample-state.md
+[api-endpoints]: ./api-endpoints.md
+[schema]: ./schema.md
 
 ## Implementation Timeline
 
@@ -151,7 +151,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Seed tags with seed data
 
 
-### Semi-Bonus 1: - Quizzes /  (1 day)
+### Semi-Bonus 1: Quizzes /  (1 day)
 
 **objective:** Users can take short quizzes on a given subject
 
@@ -161,7 +161,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Access history of quizzes from quiz options page
 - [ ] Adequate seed data to take quizzes
 
-### Semi-Bonus 2: - Chrome Extension / (1 day)
+### Semi-Bonus 2: Chrome Extension / (1 day)
 
 **objective:** Users can create cards while browsing elsewhere using the Chrome extension
 
