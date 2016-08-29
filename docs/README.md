@@ -182,6 +182,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Settings Content and functionality
 - [ ] Search decks and subjects by card title/content
 - [ ] View all tags for all decks in a subject; Filter decks in index by selected tags
+- [ ] Drag and drop `move` for `Decks`
 - [ ] Facebook OmniAuth
 - [ ] Gmail OmniAuth
 - [ ] Contact Content

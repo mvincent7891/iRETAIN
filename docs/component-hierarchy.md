@@ -3,13 +3,13 @@
 **HomeContainer**
  - Home
    - NavBarContainer
-   - One Content Container (see below)
+   - One Content/Container (see below)
 
 **NavBarContainer**
- - UserNavBarContainer
- - GeneralNavBar
+ - NavBar
+  + AuthFormContainer
 
-**Content Containers:**
+**Content/Containers:**
  - LandingContent
  - AboutContent
  - HowItWorksContent
@@ -20,12 +20,15 @@
  - DownloadExtensionContainer
 
 **LibraryContainer**
- - SidebarContainer
- - One Central Container
+ - Library
+  + SidebarContainer
+  + One Central Container
 
 **SidebarContainer**
- - SidebarHeaderContainer
- - SubjectIndexContainer
+ - Sidebar
+  + SidebarRow
+    + SidebarHeader, or
+    + SubjectsIndexItem
 
 **Central Containers:**
  - SubjectContainer
@@ -34,49 +37,32 @@
  - One Quiz Container
  - SettingsContainer
  - SearchContainer
- - SearchResultsContainer
  - [Subject][Deck][Card]FormContainer
 
 **SearchContainer**
-- Search
-
-**SearchResultsContainer**
  - Search
- - DeckSeachResultsContainer
- - SubjectSearchResultsContainer
-
-**DeckSearchResultsContainer**
- - DeckSearchResultsIndex
-
-**SubjectSearchResultsContainer**
- - SubjectSearchResultsIndex
-
-**DeckSearchResultsIndex**
- - DeckSearchResultsItem
-
-**SubjectSearchResultsIndex**
- - SubjectSearchResultsItem
-
-**SidebarHeaderContainer**
- - SidebarHeader
-   + Search
-
-**SubjectIndexContainer**
- - SubjectIndex
-  + SubjectIndexItem
+ - SearchResults
+   + DeckResultsIndex
+     + DeckResultsIndexItem
+   + SubjectResultsIndex
+     + SubjectResultsIndexItem
 
 **SubjectContainer**
- - SubjectHeader
- - DeckIndexContainer
+ - Subject
+  + SubjectHeader
+  + DecksIndex
+    + DecksIndexItem
 
 **DeckContainer**
- - DeckHeader
- - TagIndexContainer
- - Search
- - CardIndexContainer
+ - Deck
+   + DeckHeader
+   + TagsIndexContainer
+   + CardsIndex
+     + CardsIndexItem
 
-**TagIndexContainer**
- - TagIndexItem
+**TagsIndexContainer**
+ - TagsIndex
+   + TagsIndexItem
 
 **CardContainer**
  - CardDetail
@@ -93,41 +79,19 @@
 **CardFormContainer**
  - CardForm
 
-**DecksIndexContainer**
- - DecksIndex
-  + DeckIndexItem
-
-**CardsIndexContainer**
- - CardsIndex
-  + CardsIndexItem
-
- **Quiz Containers:**
- - QuizOptionsContainer
- - NewQuizContainer
-
- **NewQuizContainer**
- - QuizHeader
- - QuizTimer
- - QuizQuestionContainer or QuizResultsContainer
-
-**QuizOptionsContainer**
+ **QuizContainer**
  - QuizOptionsForm
-
-**QuizQuestionContainer**
- - QuizQuestionForm
-
-**QuizResultsContainer**
- - NewQuizForm
- - QuizResults
-
- **UserNavBarContainer**
- - AuthFormContainer
- - UserNavBar
+   + NewQuiz
+     + QuizHeader
+     + QuizTimer
+     + QuizQuestion
+     + QuizResults
+       + NewQuizForm
 
  **AuthFormContainer**
  - AuthForm
- - GoogleSignUpForm
- - FacebookSignUpForm
+   + GoogleSignUpForm
+   + FacebookSignUpForm
 
  **GuestLoginContainer**
  - GuestLoginForm
@@ -136,7 +100,7 @@
  - ContactForm
 
  **DownloadExtensionContainer**
- - DownloadExtensionForm
+ - DownloadExtension
 
 
  ## Routes
@@ -145,7 +109,7 @@
  -------------------------------------------|--------------------------
   "/sign-up"                                | "AuthFormContainer"      
   "/sign-in"                                | "AuthFormContainer"      
-  "/home"                                   | "HomeContainer"          
+  "/home"                                   | "HomeContainer"
   "/home/subject/:subjectId"                | "SubjectContainer"         
   "/home/subject/:subjectId/deck/:deckId"   | "DeckContainer"      
   "/home/subject/:subjectId/deck/:deckId/card/cardId"   | "CardContainer"              

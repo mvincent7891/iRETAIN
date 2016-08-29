@@ -1,24 +1,14 @@
 # Redux Structure
 
-The application's state is organized by data type. Under each data type, there
-may be sub-states. Each action is listed with the sequence of events that
-results from its invocation, ending with the API or a reducer. Subscribed
-components, i.e. containers, are listed at the end.
-
-Using this document, you should be able to trace an **action** starting with
-where it was invoked, through the **API**/**reducer** involved, and finally to
-the **components** that update as a result. Once you start implementing your
-Redux structure, you'll need to do the same.
-
 ## Auth Cycles
 
 ### Session API Request Actions
 
-* `signUp`
+* `signup`
   0. invoked from `AuthForm` `onSubmit`
   0. `POST /api/users` is called.
   0. `receiveCurrentUser` is set as the success callback.
-* `logIn`
+* `login`
   0. invoked from `AuthForm` `onSubmit`
   0. `POST /api/session` is called.
   0. `receiveCurrentUser` is set as the callback.
@@ -59,7 +49,7 @@ Redux structure, you'll need to do the same.
 ### Cards API Request Actions
 
 * `fetchDeckCards`
-  0. invoked from `CardsIndex` `didMount`/`willReceiveProps`
+  0. invoked from `Deck` `didMount`/`willReceiveProps`
   0. `GET /api/deck/:id/cards` is called.
   0. `receiveDeckCards` is set as the success callback.
 
@@ -111,7 +101,7 @@ Redux structure, you'll need to do the same.
 ### Decks API Request Actions
 
 * `fetchSubjectDecks`
-  0. invoked from `DecksIndex` `didMount`/`willReceiveProps`
+  0. invoked from `Subject` `didMount`/`willReceiveProps`
   0. `GET /api/subjects/:id/decks` is called.
   0. `receiveSubjectDecks` is set as the success callback.
 
@@ -159,7 +149,7 @@ Redux structure, you'll need to do the same.
 ### Subjects API Request Actions
 
 * `fetchAllSubjects`
-  0. invoked from `SubjectsIndex` `didMount`/`willReceiveProps`
+  0. invoked from `Library` `didMount`/`willReceiveProps`
   0. `GET /api/subjects` is called.
   0. `receiveAllSubjects` is set as the success callback.
 

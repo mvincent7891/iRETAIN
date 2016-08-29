@@ -1,4 +1,4 @@
-# API Endpoints
+«»# API Endpoints
 
 ## HTML API
 
@@ -34,7 +34,7 @@
 ### Decks
 
 - `GET /api/decks`
-  - Decks index/search
+  - Decks index/Search
   - accepts `tag_name` query param to list decks by tag
   - accepts pagination params (if I get there)
 - `POST /api/decks`
