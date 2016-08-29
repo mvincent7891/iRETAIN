@@ -180,6 +180,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
   - [ ] Quiz question updates correct responses param for `concept`
   - [ ] Quiz questions are chosen based on mastery (reviews and correct responses)
 - [ ] Settings Content and functionality
+- [ ] Add images to cards, decks and subjects
 - [ ] Search decks and subjects by card title/content
 - [ ] View all tags for all decks in a subject; Filter decks in index by selected tags
 - [ ] Drag and drop `move` for `Decks`

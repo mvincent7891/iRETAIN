@@ -104,15 +104,16 @@
 
 
  ## Routes
+ Question: Do the routes below need to be nested? Why not just home/decks/:deckId instead of home/subjects/:subjectId/decks/:deckId
 
  Path                                       | Component                
  -------------------------------------------|--------------------------
   "/sign-up"                                | "AuthFormContainer"      
   "/sign-in"                                | "AuthFormContainer"      
   "/home"                                   | "HomeContainer"
-  "/home/subject/:subjectId"                | "SubjectContainer"         
-  "/home/subject/:subjectId/deck/:deckId"   | "DeckContainer"      
-  "/home/subject/:subjectId/deck/:deckId/card/cardId"   | "CardContainer"              
+  "/home/subjects/:subjectId"                | "SubjectContainer"         
+  "/home/subjects/:subjectId/decks/:deckId"   | "DeckContainer"      
+  "/home/subjects/:subjectId/decks/:deckId/:card/cardId"   | "CardContainer"              
   "/home/search-results"                    | "SearchResultsContainer"
   "/card-form"                              | "CardFormContainer"       
   "/search"                                 | "SearchContainer"                 
@@ -120,7 +121,7 @@
   "/subject-form"                           | "SubjectFormContainer"            
   "/new-quiz"                               | "Quiz Options"
   "/new-quiz/all"                           | "NewQuizContainer"
-  "/new-quiz/subject/subjectId"             | "NewQuizContainer"
+  "/new-quiz/subject/:subjectId"             | "NewQuizContainer"
   "/settings"                               | "SettingsContainer"
   "/guest"                                  | "GuestLoginContainer"
   "/about"                                  | "AboutContent"
