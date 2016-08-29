@@ -71,25 +71,28 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Deploy to Heroku
 - [ ] Review phase 1
 
-### Phase 2: Subjects Model, API, and components (2 days)
+### Phase 2: Cards (1 day)
 
-**Objective:** Subjects can be created, viewed, copied (from other users) edited and destroyed through the API.
+**Objective:** Decks have many Cards that can be created, viewed, edited, copied and destroyed through the API.
 
-- [ ] `Subject` model
+- [ ] `Card` model
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for subjects (`SubjectsController`)
-- [ ] JBuilder views for subjects
-- [ ] Subject components and respective Redux loops
-  - [ ] `SubjectIndexContainer`
-  - [ ] `SubjectsIndex`
-  - [ ] `SubjectIndexItem`
-  - [ ] `SubjectContainer`
-  - [ ] `SubjectHeader`
-  - [ ] `NewSubjectFormContainer`
-  - [ ] `NewSubjectForm`
-- [ ] Copy subject API
-- [ ] Style subject components
-- [ ] Seed subjects
+- [ ] CRUD API for cards (`CardsController`)
+- [ ] JBuilder views for cards
+- [ ] Adding cards requires a deck
+- [ ] Card components and respective Redux loops
+  - [ ] `CardIndexContainer`
+  - [ ] `CardsIndex`
+  - [ ] `CardIndexItem`
+  - [ ] `CardContainer`
+  - [ ] `CardDetail`
+  - [ ] `NewCardFormContainer`
+  - [ ] `NewCardForm`
+- [ ] Auto lookup body of card using dictionary API
+- [ ] Moving cards between decks
+- [ ] Viewing cards by deck
+- [ ] Style card components
+- [ ] Seed cards (faker and auto lookup)
 
 ### Phase 3: Decks (2 days)
 
@@ -114,28 +117,25 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Style deck components
 - [ ] Seed decks
 
-### Phase 4: Cards (1 day)
+### Phase 4: Subjects Model, API, and components (2 days)
 
-**Objective:** Decks have many Cards that can be created, viewed, edited, copied and destroyed through the API.
+**Objective:** Subjects can be created, viewed, copied (from other users) edited and destroyed through the API.
 
-- [ ] `Card` model
+- [ ] `Subject` model
 - [ ] Seed database with a small amount of test data
-- [ ] CRUD API for cards (`CardsController`)
-- [ ] JBuilder views for cards
-- [ ] Adding cards requires a deck
-- [ ] Card components and respective Redux loops
-  - [ ] `CardIndexContainer`
-  - [ ] `CardsIndex`
-  - [ ] `CardIndexItem`
-  - [ ] `CardContainer`
-  - [ ] `CardHeader`
-  - [ ] `NewCardFormContainer`
-  - [ ] `NewCardForm`
-- [ ] Auto lookup body of card using dictionary API
-- [ ] Moving cards between decks
-- [ ] Viewing cards by deck
-- [ ] Style card components
-- [ ] Seed cards (faker and auto lookup)
+- [ ] CRUD API for subjects (`SubjectsController`)
+- [ ] JBuilder views for subjects
+- [ ] Subject components and respective Redux loops
+  - [ ] `SubjectIndexContainer`
+  - [ ] `SubjectsIndex`
+  - [ ] `SubjectIndexItem`
+  - [ ] `SubjectContainer`
+  - [ ] `SubjectHeader`
+  - [ ] `NewSubjectFormContainer`
+  - [ ] `NewSubjectForm`
+- [ ] Copy subject API
+- [ ] Style subject components
+- [ ] Seed subjects
 
 ### Phase 5: Tags and Search (2 days)
 
@@ -151,29 +151,27 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Seed tags with seed data
 
 
-### Semi-Bonus 1: Quizzes /  (1 day)
+### Bonus Features (TBD)
+- [ ] quizzes
+  **objective:** Users can take short quizzes on a given subject
 
-**objective:** Users can take short quizzes on a given subject
+  + [ ] `Quiz` model
+  + [ ] Associated React components and redux cycle
+  + [ ] Quiz API (create quiz result)
+  + [ ] Access history of quizzes from quiz options page
+  + [ ] Adequate seed data to take quizzes
 
-- [ ] `Quiz` model
-- [ ] Associated React components and redux cycle
-- [ ] Quiz API (create quiz result)
-- [ ] Access history of quizzes from quiz options page
-- [ ] Adequate seed data to take quizzes
-
-### Semi-Bonus 2: Chrome Extension / (1 day)
-
+- [ ] Chrome Extension
 **objective:** Users can create cards while browsing elsewhere using the Chrome extension
 
-- [ ] Download Extension Content
-- [ ] Connect extension to app (request default deck, require login, redirect to login page,  save username)
-- [ ] Connect extension to dictionary API
-- [ ] Rails API for creating cards from extension
-- [ ] JS Chrome Extension looks up word, displays definition, and creates card in default deck
-- [ ] Rails API sends list of words to highlight on current page
-  - [ ] Rails API includes synonyms (need another model, `Synonyms`, and probably an additional thesaurus API)
+  + [ ] Download Extension Content
+  + [ ] Connect extension to app (request default deck, require login, redirect to login page,  save username)
+  + [ ] Connect extension to dictionary API
+  + [ ] Rails API for creating cards from extension
+  + [ ] JS Chrome Extension looks up word, displays definition, and creates card in default deck
+  + [ ] Rails API sends list of words to highlight on current page
+  + [ ] Rails API includes synonyms (need another model, `Synonyms`, and probably an additional thesaurus API)
 
-### Bonus Features (TBD)
 - [ ] Guest login
 - [ ] Progress tracking
   - [ ] Quiz question updates review for `concept` (review += 1)

@@ -52,6 +52,7 @@
   + SubjectHeader
   + DecksIndex
     + DecksIndexItem
+  + DeckContainer
 
 **DeckContainer**
  - Deck
@@ -59,6 +60,7 @@
    + TagsIndexContainer
    + CardsIndex
      + CardsIndexItem
+      + CardContainer
 
 **TagsIndexContainer**
  - TagsIndex

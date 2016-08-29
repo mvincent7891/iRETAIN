@@ -35,29 +35,15 @@
       }
     }
   },
-  decks: {
-    1: {
-      title: "Modes",
-      author_id: 1,
-      deck_id: 1
-      tags: {
-        1: {
-          id: 1
-          name: "music"
-        },
-        2: {
-          id: 1
-          name: "scale"
-        }
-      }
-    }
-  },
   subjects: {
     1: {
       title: "Music",
       author_id: 1,
     }
+  },
+  tagFilters: [1, 7, 14], // Used to track selected Tags for filtering of decks (if I get there)
+  searchParams: {
+    query: "music"
   }
-  tagFilters: [1, 7, 14] // Used to track selected Tags for filtering of decks (if I get there)
 }
 ```
