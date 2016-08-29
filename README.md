@@ -10,7 +10,7 @@
 
 iRETAIN is a full-stack web application inspired by Brainscape.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
 
-## Motivation: Not Your Grandma's Flash Card App
+### Motivation
 
 ### Structure and Usage
 
