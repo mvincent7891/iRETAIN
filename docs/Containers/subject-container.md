@@ -1,10 +1,11 @@
 ## SubjectContainer
 - MapStateToProps: `decks`
-- MapDispatchToProps: `removeDeck()`, `createDeck()`
+- MapDispatchToProps: `removeDeck()`, `createDeck()`, `fetchSubjectDecks()`
 
 ## Subject
-- State:
-- Props: `decks`, `removeDeck()`
+- State: `decks`
+- Props: `decks`, `removeDeck()`,  `fetchSubjectDecks()`
+- `didMount()` => `fetchSubjectDecks()`
 
 ## SubjectHeader
 - State:
@@ -12,10 +13,10 @@
 
 ## DecksIndex
 - Props: `removeDeck()`, `decks`
-- State: `selectedRow` (default null)
-- Methods: `changeSelectedRow()`
 
 ## DecksIndexItem
-- Props: selected, removeDeck(), changeSelectedRow(), title
-- If selected, show  `Edit`, `Remove`, `Study`, buttons.
+- State: `selected`, default: false
+- Props: `removeDeck()`, `title`
+- `onClick()` toggles `selected`
+- If selected, show  `Edit`, `Remove`, `Study` buttons
 - Title: `onClick()` will redirect to `DeckContainer`
