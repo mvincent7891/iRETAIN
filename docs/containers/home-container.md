@@ -2,14 +2,13 @@
  - MapStateToProps: `currentUser`
  - MapDispatchToProps: `fetchCurrentUser`
 
-
 ## Home
  - Props: `fetchCurrentUser`
  - State: `currentUser`
+ - `didMount()` => `fetchCurrentUser()`
  - Children: `NavBarContainer` and `LibraryContainer` (for instance)
 
-
-## LibraryContainer (why does this need to be a container?)
+## LibraryContainer (does this need to be a container?)
  - MapStateToProps:
  - MapDispatchToProps:
  - Children: `Library`

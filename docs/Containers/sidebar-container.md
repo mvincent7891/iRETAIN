@@ -4,8 +4,10 @@
 
 ## Sidebar
 - Sidebar will create all the necessary rows (one header and one for each subject; pass title down to subjects as prop)
+- State: `selectedRow`, default: 2nd row (first subject)
 - Props: `subjects`
 - Children: `SidebarRows`
+- Methods: `changeSelectedRow()`
 
 ## SidebarRow
 - SidebarRow `onClick()` triggers `changeSelectedRow()` in parent via prop of the same name.
