@@ -14,6 +14,10 @@
  *= require_self
  */
 
+
+
+
+
 body, p, section, div, input, ul, li, header {
    padding: 0px;
    margin: 0px;
@@ -30,6 +34,85 @@ body, p, section, div, input, ul, li, header {
    background-size: cover;
    background-repeat: no-repeat;
  }
+
+ /*CARD INDEX STYLING*/
+
+ button.add-card {
+   background-color: #5cb85c;
+   border: 2px solid #5cb85c;
+   color: white;
+   padding: 10px;
+   margin: 5px;
+   border-radius: 5px;
+   font-size: .9em;
+ }
+
+ button.add-card:focus {
+   outline: none;
+ }
+
+ button.add-card:hover {
+   cursor: pointer;
+ }
+
+ ul.card-index {
+   margin-left: 20px;
+ }
+
+ li.card-index-item {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 400px;
+   height: 40px;
+   padding-left: 10px;
+   background-color: #f9f9f9;
+   border-top: 2px solid #dddddd;
+   font-weight: normal;
+   box-sizing: border-box;
+   color: #676767;
+ }
+
+ li.add-card-index-item {
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   height: auto;
+   padding: 10px;
+   box-sizing: border-box;
+   color: black;
+ }
+
+ li.card-index-item-selected {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   width: 400px;
+   height: 64px;
+   padding-left: 10px;
+   background-color: #f9f9f9;
+   border-top: 2px solid #dddddd;
+   font-weight: normal;
+   box-sizing: border-box;
+   color: #676767;
+ }
+
+ li.card-body {
+   margin-top: 10px;
+   margin-bottom: 10px;
+   font-weight: lighter;
+   font-size: .8em;
+   color: #676767;
+ }
+
+ li.card-title {
+   color: #676767;
+   font-weight: normal;
+   margin-top: 10px;
+   margin-bottom: 10px;
+ }
+
+/*NAV HEADER STYLING*/
 
 header {
   z-index: 100;
@@ -85,6 +168,8 @@ ul.nav li.link:hover {
   cursor: pointer;
 }
 
+/*MODAL STYLING*/
+
 .ModalClass {
   position: absolute;
   top: 20%;
@@ -110,6 +195,8 @@ ul.nav li.link:hover {
   opacity: .85;
   transition: all .4s ease-in-out;
 }
+
+/*AUTH FORM STYLING*/
 
 .relative-container {
   position: relative;

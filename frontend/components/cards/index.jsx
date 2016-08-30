@@ -14,7 +14,14 @@ export class CardsIndex extends React.Component {
 
     return (
       <div>
+
         <ul className="card-index">
+          <li className="card-index-item add-card-index-item">
+            <span>Cards</span>
+            <button className="add-card">
+              <strong>+</strong>Add Card
+            </button>
+          </li>
           { cardList }
         </ul>
       </div>
