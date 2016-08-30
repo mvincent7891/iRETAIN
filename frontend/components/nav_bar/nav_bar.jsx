@@ -39,8 +39,6 @@ class NavBar extends React.Component {
         <li className="link">Guest</li>
       </ul>;
 
-    debugger
-    
     return (
       <div>
         <header>
