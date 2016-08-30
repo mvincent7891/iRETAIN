@@ -4,7 +4,6 @@ import { logout } from '../../actions/session_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   const user = state.session.currentUser ? state.session.currentUser.username : 'none';
   return ({
     loggedIn: Boolean(state.session.currentUser),

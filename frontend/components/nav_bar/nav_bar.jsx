@@ -18,7 +18,7 @@ class NavBar extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (newProps.loggedIn) {
-      this.closeModal()
+      this.closeModal();
     }
   }
 
@@ -37,9 +37,10 @@ class NavBar extends React.Component {
         <li className="link" onClick={this.openModal.bind(this, "Login")}>Login</li>
         <li className="link" onClick={this.openModal.bind(this, "Sign Up")}>Sign Up</li>
         <li className="link">Guest</li>
-      </ul>
+      </ul>;
 
-
+    debugger
+    
     return (
       <div>
         <header>
