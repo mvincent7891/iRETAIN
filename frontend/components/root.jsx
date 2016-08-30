@@ -1,10 +1,10 @@
-import React from 'react';
-import Body from './body';
-import NavBar from './nav_bar/nav_bar';
 
-export const Root = () => (
-  <div>
-    <NavBar />
-    <Body />
-  </div>
+import React from 'react';
+import { Provider } from 'react-redux';
+import { AppRouter } from './app_router.jsx';
+
+export const Root = ({store}) => (
+  <Provider store={store}>
+    <AppRouter/>
+  </Provider>
 );
