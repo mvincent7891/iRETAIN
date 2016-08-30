@@ -56,11 +56,11 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 
 **Objective:** Functioning rails project with front-end Authentication
 
-- [ ] New Rails project
-- [ ] `User` model/migration
+- [X] New Rails project
+- [X] `User` model/migration
 - [ ] Back end authentication (session/password)
 - [ ] `StaticPages` controller and root view
-- [ ] Webpack & react/redux modules
+- [X] Webpack & react/redux modules
 - [ ] `APIUtil` to interact with the API
 - [ ] Redux cycle for frontend authentication
 - [ ] User signup/sign-in components

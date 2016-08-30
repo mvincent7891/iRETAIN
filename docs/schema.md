@@ -12,7 +12,7 @@ password_digest    | string    | not null
 session_token      | string    | not null, indexed, unique
 num_quiz_questions | integer   | not null, default: 5
 quiz_question_time | integer   | not null, default: 5
-default_deck_id    | integer   | not null, default: 1 (PlugIn -> Default Deck)
+default_deck_id    | integer   | not null, default: (first deck created)
 
 ## decks
 column name | data type | details
