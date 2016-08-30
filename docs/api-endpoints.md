@@ -13,7 +13,7 @@
 - `POST /api/users`
 - `PATCH /api/users`
 - `GET /api/users`
-  - Gets settings for current user
+  + Gets settings for current user
 
 ### Session
 
@@ -24,8 +24,9 @@
 ## Cards
 
 - `GET /api/cards`
-  - Cards index
-  - accepts pagination params (if I get there)
+  + Cards index (all cards for quizzes)
+- ``
+  + accepts pagination params (if I get there)
 - `POST /api/cards`
 - `GET /api/cards/:id`
 - `PATCH /api/cards/:id`
@@ -34,37 +35,38 @@
 ### Decks
 
 - `GET /api/decks`
-  - Decks index/Search
-  - accepts `tag_name` query param to list decks by tag
-  - accepts pagination params (if I get there)
+  + Decks index/Search
+  + accepts `tag_name` query param to list decks by tag
+  + accepts pagination params (if I get there)
 - `POST /api/decks`
-  - ASK Winnie: best way to handle copying decks?
-  - For, now accept copyId and subjectId params
+  + ASK Winnie: best way to handle copying decks?
+  + For, now accept copyId and subjectId params
 - `GET /api/decks/:id`
 - `PATCH /api/decks/:id`
 - `DELETE /api/decks/:id`
- - Deletes all contained cards
+ + Deletes all contained cards
 - `GET /api/decks/:id/cards`
-  - index of all cards for a deck
-  - accepts pagination params (if I get there)
+  + index of all cards for a deck
+  + accepts pagination params (if I get there)
+- `GET /api/decks/:id/cards/:id`
 
 ### Subjects
 
 - `GET /api/subjects`
-  - Subjects index/search
-  - accepts `tag_name` query param to list subjects by tag (uses tags of all decks contained within the subject)
-  - accepts pagination params (if I get there)
+  + Subjects index/search
+  + accepts `tag_name` query param to list subjects by tag (uses tags of all decks contained within the subject)
+  + accepts pagination params (if I get there)
 - `POST /api/subjects`
-  - ASK Winnie: best way to handle copying subjects?
-  - For, now accept copyId param
+  + ASK Winnie: best way to handle copying subjects?
+  + For, now accept copyId param
 - `GET /api/subjects/:id`
 - `DELETE /api/subjects/:id`
-  - Deletes all contained decks
+  + Deletes all contained decks
 - `GET /api/subjects/:id/decks`
-  - index of all decks for a subject
-  - accepts pagination params (if I get there)
+  + index of all decks for a subject
+  + accepts pagination params (if I get there)
 - `GET /api/subjects/:id/cards`
-  - index of all cards for a subject (for quizzes)
+  + index of all cards for a subject (for quizzes)
 
 ### Tags
 
@@ -78,12 +80,12 @@
 ASK Winnie about this one.
 - Custom route for getting a quiz question?
 - `GET /api/quizzes`
-  - List all quizzes (subject and score) by date
+  + List all quizzes (subject and score) by date
 - `POST /api/quizzes`
-  - On creation of quiz, accept subjectId param
-  - Return number of questions, time
+  + On creation of quiz, accept subjectId param
+  + Return number of questions, time
 - `PATCH /api/quizzes`
-  - Accepts correctResponse param, avgTime on last questions
-  - Returns score params on last question
-  - PATCH will occur on each quiz question response (potential to save and come back)
-  - `GET /api/subjects/:id/cards` to get questions
+  + Accepts correctResponse param, avgTime on last questions
+  + Returns score params on last question
+  + PATCH will occur on each quiz question response (potential to save and come back)
+  + `GET /api/subjects/:id/cards` to get questions
