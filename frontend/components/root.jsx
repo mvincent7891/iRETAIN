@@ -1,6 +1,10 @@
 import React from 'react';
-
+import Body from './body';
+import NavBar from './nav_bar/nav_bar';
 
 export const Root = () => (
-  <div>iRETAIN React Root</div>
+  <div>
+    <NavBar />
+    <Body />
+  </div>
 );

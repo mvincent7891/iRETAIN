@@ -13,3 +13,62 @@
  *= require_tree .
  *= require_self
  */
+
+ body, p, section, div, input, ul, li, header {
+   padding: 0px;
+   margin: 0px;
+   border: 0px;
+   list-style: none;
+   font-family: 'Proxima Nova Thin', sans-serif;
+   font-weight: lighter;
+ }
+ body {
+   background-image: url('./coffee.png');
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
+
+header {
+  z-index: 100;
+  display: flex;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #272727;
+  border-bottom: 4px solid #29a5dc;
+  opacity: .95;
+  box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #29a5dc;
+  font-size: 1.4em;
+}
+
+ ul.nav {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   height: 100%;
+ }
+
+ul.nav:first-child {
+  margin-left: 30px;
+}
+
+
+ul.nav li.link {
+  font-size: .8em;
+  padding: 15px 20px;
+  color: #858585;
+  height: 100%;
+  transition: all .4s ease-in-out;
+}
+
+ul.nav li.link:hover {
+  color: #29a5dc;
+  cursor: pointer;
+}
