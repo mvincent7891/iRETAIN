@@ -20,9 +20,9 @@
     "url": "https://github.com/mvincent7891/iRETAIN/issues"
   },
   "engines": {
-  "node": "6.2.1",
-  "npm": "3.9.3"
-},
+    "node": "6.2.1",
+    "npm": "3.9.3"
+  },
   "homepage": "https://github.com/mvincent7891/iRETAIN#readme",
   "dependencies": {
     "babel-core": "^6.14.0",
@@ -31,6 +31,7 @@
     "babel-preset-react": "^6.11.1",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
     "redux": "^3.5.2",
