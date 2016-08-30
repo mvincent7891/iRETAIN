@@ -8,9 +8,9 @@ import ModalTest from './session/modal';
 export const AppRouter = () => (
   <Router history={ hashHistory } >
      <Route path="/" component={ App } >
-       <Route path="/(home)" component={ NavBarContainer } >
+       <IndexRoute component={ NavBarContainer } >
 
-      </Route>
+      </IndexRoute>
     </Route>
   </Router>
 );
