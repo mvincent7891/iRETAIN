@@ -22,7 +22,10 @@
    font-family: 'Proxima Nova Thin', sans-serif;
    font-weight: lighter;
  }
+
  body {
+   display: flex;
+   position: relative;
    background-image: url('./coffee.png');
    background-size: cover;
    background-repeat: no-repeat;
@@ -45,6 +48,7 @@ header {
 
 .logo {
   color: #29a5dc;
+  font-weight: normal;
   font-size: 1.4em;
 }
 
@@ -71,4 +75,20 @@ ul.nav li.link {
 ul.nav li.link:hover {
   color: #29a5dc;
   cursor: pointer;
+}
+
+form.auth-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  border: 3px solid #d6d6d6;
+  border-radius: 10px;
+  width: 30%;
+  height: 200px;
+  position: absolute;
+  margin: auto;
+  left: 35%;
+  top: 100px;
 }

@@ -1,4 +1,8 @@
-# TODO/NOTES
+# Notes
+
+## Issues - August 29
+- Can't change '.IO' font in logo for some reason
+- How to have a static nav bar?
 
 
 ## React Component Hierarchy: August 29th
