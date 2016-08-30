@@ -3,6 +3,7 @@
 ## Issues - August 29
 - Can't change '.IO' font in logo for some reason
 - Still haven't figured out the right nav ul not taking up its entire container (css issue)
+- Errors aren't displaying on login/signup forms
 
 
 ## React Component Hierarchy: August 29th

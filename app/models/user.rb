@@ -5,6 +5,11 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: { message: "Password can't be blank" }
   validates :password, length: { minimum: 6, allow_nil: true }
 
+  has_many :cards,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: Card
+
 def self.find_by_credentials(username, password)
   user = User.find_by_username(username)
   user && user.is_password?(password) ? user : nil

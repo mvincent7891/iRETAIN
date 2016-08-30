@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     resource :user, only: [:create]
+    resources :cards, only: [:index, :create, :update, :destroy, :show]
     resource :session, only: [:create, :destroy, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
