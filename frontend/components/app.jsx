@@ -1,8 +1,8 @@
 import React from 'react';
-import Body from './body';
 
-export const App = () => (
-  <div>
-    <Body />
+
+export const App = ({children, store}) => (
+  <div className="pageWrapper">
+    {children}
   </div>
 );

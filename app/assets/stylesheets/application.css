@@ -14,7 +14,7 @@
  *= require_self
  */
 
- body, p, section, div, input, ul, li, header {
+body, p, section, div, input, ul, li, header {
    padding: 0px;
    margin: 0px;
    border: 0px;
@@ -72,23 +72,78 @@ ul.nav li.link {
   transition: all .4s ease-in-out;
 }
 
+ul.nav li.greeting {
+  font-size: .8em;
+  padding: 15px 20px;
+  color: #858585;
+  height: 100%;
+  transition: all .4s ease-in-out;
+}
+
 ul.nav li.link:hover {
   color: #29a5dc;
   cursor: pointer;
 }
 
-form.auth-form {
+.ModalClass {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  right: 30%;
+  bottom: 40%;
+  min-height: 250px;
+  min-width: 500px;
+  background-color: #e7e7e7;
+  border: 3px solid #999;
+  border-radius: 10px;
+  transition: all .4s ease-in-out;
+  opacity: 1;
+}
+
+.OverlayClass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .85;
+  transition: all .4s ease-in-out;
+}
+
+.relative-container {
+  position: relative;
+}
+
+.login {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
-  border: 3px solid #d6d6d6;
-  border-radius: 10px;
-  width: 30%;
-  height: 200px;
-  position: absolute;
-  margin: auto;
-  left: 35%;
-  top: 100px;
+}
+
+/*input:focus {outline:none;}*/
+.ModalClass:focus {outline:none;}
+
+.login .login-item {
+  margin: 10px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.login h4 {
+  font-weight: lighter;
+  font-style: italic;
+  color: #aaa;
+  size: .5em;
+  margin: 20px;
+}
+
+.login button {
+  width: 60px;
 }
