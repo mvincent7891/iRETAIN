@@ -2,7 +2,7 @@
 
 ## Issues - August 29
 - Can't change '.IO' font in logo for some reason
-- How to have a static nav bar?
+- Still haven't figured out the right nav ul not taking up its entire container (css issue)
 
 
 ## React Component Hierarchy: August 29th

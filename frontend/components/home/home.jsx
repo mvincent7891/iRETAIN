@@ -1,13 +1,13 @@
 import React from 'react';
+import CardsIndexContainer from '../cards/index_container';
 
 export const Home = ({loggedIn}) => {
 
   const homeElement = loggedIn ?
   <section>
-    Logged In
+    <CardsIndexContainer />
   </section> :
   <section>
-    Not Logged In
   </section>;
 
   return (
