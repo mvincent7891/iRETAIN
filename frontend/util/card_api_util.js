@@ -18,3 +18,14 @@ export const createCard = (success, error, card) => {
     error
   });
 };
+
+export const removeSingleCard = (success, error, card) => {
+  $.ajax({
+    url: `api/cards/${card.id}`,
+    method: 'DELETE',
+    dataType: 'json',
+    data: {card},
+    success,
+    error
+  });
+};

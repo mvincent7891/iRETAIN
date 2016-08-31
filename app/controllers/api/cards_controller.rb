@@ -22,10 +22,17 @@ class Api::CardsController < ApplicationController
   end
 
   def destroy
+    @card = Card.find(card_params[:id])
+    if @card.destroy
+      @cards = Card.where(deck_id: card_params[:deck_id])
+      render :index
+    else
+      render json: @card.errors.full_messages, :status => 422
+    end
   end
 
   private
   def card_params
-    params.require(:card).permit(:title, :body)
+    params.require(:card).permit(:title, :body, :id, :deck_id)
   end
 end

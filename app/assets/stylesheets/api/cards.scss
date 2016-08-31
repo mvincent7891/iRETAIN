@@ -10,6 +10,8 @@ $tirtiary-grey: #f9f9f9;
 $button-padding: 6px;
 $primary-margin: 10px;
 $error-color: #ff1818;
+$edit-color: #f0ad4e;
+$remove-color: $secondary-color;
 
 li.errors {
   font-size: .8em;
@@ -48,12 +50,36 @@ form.add-card {
    border-radius: 5px;
    font-size: .9em;
  }
+ button.edit-card {
+   background-color: $edit-color;
+   border: 2px solid $edit-color;
+   color: white;
+   padding: $button-padding;
+   margin: 5px;
+   margin-bottom: 0px;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+   font-size: .9em;
+   width: 100px;
+ }
+ button.remove-card {
+   background-color: $remove-color;
+   border: 2px solid $remove-color;
+   color: white;
+   padding: $button-padding;
+   margin: 5px;
+   margin-top: 0px;
+   border-bottom-left-radius: 5px;
+   border-bottom-right-radius: 5px;
+   font-size: .9em;
+   width: 100px;
+ }
 
- button.add-card:focus {
+ button:focus {
    outline: none;
  }
 
- button.add-card:hover {
+ button:hover {
    cursor: pointer;
  }
 
@@ -65,14 +91,6 @@ form.add-card {
    margin: 5px;
    border-radius: 5px;
    font-size: .9em;
- }
-
- button.cancel-add:focus {
-   outline: none;
- }
-
- button.cancel-add:hover {
-   cursor: pointer;
  }
 
  ul.card-index {
@@ -105,10 +123,10 @@ form.add-card {
 
  li.card-index-item-selected {
    display: flex;
-   flex-direction: column;
-   justify-content: center;
+   justify-content: space-between;
+   align-items: flex-start;
    width: 400px;
-   height: 64px;
+   height: auto;
    padding-left: 10px;
    background-color: $tirtiary-grey;
    border-top: 3px solid $secondary-grey;

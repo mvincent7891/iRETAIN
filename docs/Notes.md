@@ -6,7 +6,7 @@
 - Errors aren't displaying on login/signup forms (fixed errors for cards)
 - Background image isn't scaling properly
 - Cards should be lit up for a moment after creation
-- Master seems to be behind on Github??
+- Only one card should be expanded at once (need to move select logic from index item up to index)
 
 
 ## React Component Hierarchy: August 29th
