@@ -1,0 +1,33 @@
+.relative-container {
+  position: relative;
+}
+
+.login {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login .login-item {
+  margin: 10px;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.login h4 {
+  font-weight: lighter;
+  font-style: italic;
+  color: #aaa;
+  size: .5em;
+  margin: 20px;
+}
+
+.login button {
+  width: 60px;
+}

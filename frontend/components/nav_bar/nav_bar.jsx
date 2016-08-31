@@ -41,7 +41,7 @@ class NavBar extends React.Component {
 
     return (
       <div>
-        <header>
+        <header className="nav-header">
           <ul className="nav">
             <li className="link"><strong className="logo">iRETAIN</strong>.IO</li>
             <li className="link">How It Works</li>

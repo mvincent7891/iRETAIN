@@ -1,0 +1,27 @@
+.ModalClass {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  right: 30%;
+  bottom: 40%;
+  min-height: 250px;
+  min-width: 500px;
+  background-color: #e7e7e7;
+  border: 3px solid #999;
+  border-radius: 10px;
+  transition: all .4s ease-in-out;
+  opacity: 1;
+}
+
+.OverlayClass {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  opacity: .85;
+  transition: all .4s ease-in-out;
+}
+
+.ModalClass:focus {outline:none;}
