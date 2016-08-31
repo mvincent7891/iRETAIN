@@ -60,6 +60,8 @@ class CardIndexItem extends React.Component {
           processCard={ this.props.processCard }
           cancelForm={ this.toggleEdit }
           errors={ this.props.errors }
+          lookupCard={ this.props.lookupCard }
+          lookup={ this.props.lookup }
           type={ "edit" } /> :
           this.props.card.title }
       </li>;

@@ -39,6 +39,8 @@ export class CardsIndex extends React.Component {
                                 processCard={ this.props.createCard }
                                 cancelForm={ this.toggleAdd }
                                 errors={ this.props.errors}
+                                lookupCard={ this.props.lookupCard }
+                                lookup={ this.props.lookup }
                                 type={ "create" } />
                     </li>;
 

@@ -9,6 +9,7 @@ class CardForm extends React.Component {
       id: this.props.id || null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLookup = this.handleLookup.bind(this);
   }
 
   update(field){
@@ -21,11 +22,22 @@ class CardForm extends React.Component {
     this.props.processCard({ card });
   }
 
+  handleLookup(event){
+    event.preventDefault();
+    const card = this.state;
+    this.props.lookupCard({ card });
+  }
+
   componentWillReceiveProps(newProps) {
     const updateErrors = newProps.errors.update;
     const createErrors = newProps.errors.create;
-    if (!updateErrors && !createErrors) {
+    if (!updateErrors && !createErrors && !newProps.lookup) {
       newProps.cancelForm();
+    }
+
+    if (newProps.lookup && newProps.lookup.length > 0) {
+      const lookup = newProps.lookup.join("\r\n");
+      this.setState({body: lookup});
     }
   }
 
@@ -67,26 +79,33 @@ class CardForm extends React.Component {
 
           { this.renderErrors() }
 
-          <label>
-            <input type="text"
-              className="card-form-field"
-              placeholder="Title"
-              value={this.state.title}
-              onChange={this.update("title")}
-              />
-          </label>
           <span>
             <label>
               <input type="text"
+                className="card-form-field"
+                placeholder="Title"
+                value={this.state.title}
+                onChange={this.update("title")}
+                />
+            </label>
+            <button className="lookup-card"
+                    onClick={ this.handleLookup }>
+                    Lookup</button>
+          </span>
+
+          <span>
+            <label>
+              <textarea type="text"
                 className="card-form-field-2"
                 placeholder="Body"
-                value={this.state.body}
                 onChange={this.update("body")}
-                />
+                value={ this.state.body }>
+              </textarea>
+
             </label>
             <ul>
               <button className="add-card"
-                      onClick={this.handleSubmit}>
+                      onClick={ this.handleSubmit }>
                       Save</button>
                     { this.renderCancel() }
             </ul>

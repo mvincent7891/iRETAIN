@@ -5,6 +5,7 @@
 $primary-color: #5cb85c;
 $secondary-color: #ff4e47;
 $primary-grey: #676767;
+$primary-blue: #29a5dc;
 $secondary-grey: #dddddd;
 $tirtiary-grey: #f9f9f9;
 $button-padding: 6px;
@@ -22,9 +23,10 @@ form.add-card .card-form-field {
    margin: $primary-margin;
    padding: 5px;
    font-size: 1em;
+   color: #676767;
  }
 
-form.add-card .card-form-field-2 {
+form.add-card textarea.card-form-field-2 {
    margin: $primary-margin;
    margin-right: 20px;
    padding-left: 5px;
@@ -34,11 +36,22 @@ form.add-card .card-form-field-2 {
    font-size: 1em;
    width: 240px;
    word-wrap: normal;
+   color: #676767;
  }
 
 form.add-card {
   display: flex;
   flex-direction: column;
+}
+
+button.lookup-card {
+  background-color: $primary-blue;
+  border: 2px solid $primary-blue;
+  color: white;
+  padding: $button-padding;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: .9em;
 }
 
  button.add-card {

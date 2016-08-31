@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.props.deleteErrors();
   }
 
   componentDidUpdate(){
@@ -29,7 +30,6 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = this.state;
     this.props.processForm({user});
-    this.props.deleteErrors();
   }
 
   renderErrors(){

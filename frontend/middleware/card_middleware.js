@@ -1,11 +1,13 @@
 import { CardConstants, requestCards,
         receiveCards, receiveSingleCard,
         createCard, removeSingleCard,
-        updateCard } from '../actions/card_actions.js';
+        updateCard, lookupCard,
+        receiveLookup } from '../actions/card_actions.js';
 import { receiveCreateCardErrors,
          receiveUpdateCardErrors,
          receiveDeleteCardErrors,
-         receiveCardsErrors } from '../actions/error_actions.js';
+         receiveCardsErrors,
+         receiveLookupErrors } from '../actions/error_actions.js';
 import * as UTILS from '../util/card_api_util.js';
 
 
@@ -15,20 +17,25 @@ const CardMiddleware = ({getState, dispatch}) => next => action => {
   const deleteError = errors => dispatch(receiveDeleteCardErrors(errors));
   const error = errors => dispatch(receiveCardsErrors(errors));
   const success = cards => dispatch(receiveCards(cards));
-  const success2 = card => dispatch(receiveSingleCard(card));
+  const successSingle = card => dispatch(receiveSingleCard(card));
+  const lookupSuccess = card => dispatch(receiveLookup(card));
+  const lookupError = errors => dispatch(receiveLookupErrors(errors));
 
   switch(action.type) {
     case CardConstants.REQUEST_CARDS:
       UTILS.fetchCards(success, error);
       return next(action);
     case CardConstants.CREATE_CARD:
-      UTILS.createCard(success2, createError, action.card);
+      UTILS.createCard(successSingle, createError, action.card);
       return next(action);
     case CardConstants.REMOVE_SINGLE_CARD:
       UTILS.removeSingleCard(success, deleteError, action.card);
       return next(action);
     case CardConstants.UPDATE_CARD:
-      UTILS.updateCard(success2, updateError, action.card);
+      UTILS.updateCard(successSingle, updateError, action.card);
+      return next(action);
+    case CardConstants.LOOKUP_CARD:
+      UTILS.lookupCard(lookupSuccess, lookupError, action.card);
       return next(action);
     default:
       return next(action);
