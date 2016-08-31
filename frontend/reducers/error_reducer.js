@@ -18,7 +18,6 @@ const SessionReducer = (state = defaultState, action) => {
     case ErrorConstants.RECEIVE_SESSION_ERRORS:
       return merge({}, state, { session: action.errors });
     case ErrorConstants.DELETE_SESSION_ERRORS:
-      debugger
       return merge({}, state, { session: [] });
 
     // CARD ERRORS

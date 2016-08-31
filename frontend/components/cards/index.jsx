@@ -26,13 +26,21 @@ export class CardsIndex extends React.Component {
   }
 
   render () {
-    const cardList = this.props.cards.map((card, idx) => (
-      <CardIndexItem key={`${card.title}-${idx}`} card={card}
-                     removeCard={ this.props.removeCard }
-                     errors={ this.props.errors }
-                     deleteErrors={ this.props.deleteErrors }
-                     processCard={ this.props.updateCard} />
-    ));
+    const cardList = [];
+    this.props.cards.forEach((card, idx) => {
+      // HACKED Solution for lookup -> fix after lookup redux cycle finished
+      if (card && card.id) {
+        cardList.push(
+          <CardIndexItem key={`${card.title}-${idx}`} card={card}
+            removeCard={ this.props.removeCard }
+            errors={ this.props.errors }
+            deleteErrors={ this.props.deleteErrors }
+            lookupCard={ this.props.lookupCard }
+            lookup={ this.props.lookup }
+            processCard={ this.props.updateCard} />
+        );
+      }
+    });
 
     const addCard = <li className="card-index-item card-form">
                       <CardForm body={""} title={""}
@@ -51,7 +59,7 @@ export class CardsIndex extends React.Component {
           <li className="card-index-item add-card-index-item">
             <span>Cards</span>
             <button className={ this.state.add ? "cancel-add" : "add-card" } onClick={ this.toggleAdd }>
-              <strong>{ this.state.add ? "-" : "+" }</strong> { this.state.add ? "Cancel" : "Add" }
+              <strong>{ this.state.add ? "" : "+" }</strong> { this.state.add ? "Cancel" : "Add" }
             </button>
           </li>
           { this.state.add ? addCard : ''}

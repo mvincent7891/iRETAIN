@@ -19,7 +19,7 @@ const CardReducer = (state = defaultState, action) => {
     // TODO: action.card may be in bad format - check
       const cardId = action.card.id;
       const card = action.card;
-      return merge({}, state, { [cardId]: card} );
+      return merge({}, state, { [cardId]: card, lookup: null } );
     default:
       return state;
   }

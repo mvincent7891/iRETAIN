@@ -36,9 +36,10 @@ class CardForm extends React.Component {
     }
 
     if (newProps.lookup && newProps.lookup.length > 0) {
-      const lookup = newProps.lookup.join("\r\n");
+      const lookup = newProps.lookup.join("\r\n\r\n");
       this.setState({body: lookup});
     }
+
   }
 
   renderErrors(){
@@ -72,10 +73,11 @@ class CardForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="add-card-container">
 
-        <form onSubmit={this.handleSubmit} className="add-card">
+        <form className="add-card">
 
           { this.renderErrors() }
 
