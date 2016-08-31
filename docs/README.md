@@ -81,7 +81,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [X] JBuilder views for cards
 - [ ] Adding cards requires a deck
 - [ ] Card components and respective Redux loops
-  - [ ] `CardIndexContainer`
+  - [X] `CardIndexContainer`
   - [X] `CardsIndex`
   - [X] `CardIndexItem`
   - [ ] `CardContainer`
@@ -91,7 +91,7 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 - [ ] Auto lookup body of card using dictionary API
 - [ ] Moving cards between decks
 - [ ] Viewing cards by deck
-- [ ] Style card components
+- [X] Style card components
 - [ ] Seed cards (faker and auto lookup)
 
 ### Phase 3: Decks (2 days)
