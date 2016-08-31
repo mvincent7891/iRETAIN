@@ -2,12 +2,12 @@ import { CardConstants, requestCards,
         receiveCards, receiveSingleCard,
         createCard, removeSingleCard,
         updateCard } from '../actions/card_actions.js';
-import { receiveErrors } from '../actions/session_actions.js';
+import { receiveCardErrors } from '../actions/error_actions.js';
 import * as UTILS from '../util/card_api_util.js';
 
 
 const CardMiddleware = ({getState, dispatch}) => next => action => {
-  const error = errors => dispatch(receiveErrors(errors));
+  const error = errors => dispatch(receiveCardErrors(errors));
   const success = cards => dispatch(receiveCards(cards));
   const success2 = card => dispatch(receiveSingleCard(card));
 

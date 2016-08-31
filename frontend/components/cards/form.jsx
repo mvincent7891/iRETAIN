@@ -23,6 +23,7 @@ class CardForm extends React.Component {
 
   componentWillReceiveProps(newProps) {
     if (!newProps.errors.responseJSON) {
+      this.props.handleParent();
       newProps.cancelForm();
     }
   }

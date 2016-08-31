@@ -29,8 +29,12 @@ body, p, section, div, input, ul, li, header {
 
  body {
    display: flex;
-   position: absolute;
+   background-position: center;
    background-image: url('coffee.png');
    background-size: cover;
    background-repeat: no-repeat;
+   width: 100%;
+   display: -webkit-flex;
+   height: 90vh;
+   overflow: hidden;
  }

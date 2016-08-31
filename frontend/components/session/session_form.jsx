@@ -29,13 +29,14 @@ class SessionForm extends React.Component {
     event.preventDefault();
     const user = this.state;
     this.props.processForm({user});
+    this.props.deleteErrors();
   }
 
   renderErrors(){
     return(
       <ul>
-        {this.props.errors && this.props.errors.map( (error, i) => (
-          <li key={`error-${i}`}>
+        {this.props.errors.responseJSON && this.props.errors.responseJSON.map( (error, i) => (
+          <li key={`error-${i}`} className="errors">
             {error}
           </li>
         ))}
@@ -51,7 +52,7 @@ class SessionForm extends React.Component {
 
           <h2 className="login-item">{this.props.type}</h2>
           { this.renderErrors() }
-          
+
           <label>
             <input type="text"
               className="login-item"
