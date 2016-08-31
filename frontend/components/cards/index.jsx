@@ -14,6 +14,12 @@ export class CardsIndex extends React.Component {
     this.props.fetchCards();
   }
 
+  componentWillReceiveProps (newProps) {
+    if (newProps.errors.responseJSON) {
+      this.setState({ add: true });
+    }
+  }
+
   toggleAdd () {
     this.setState({ add: !this.state.add });
   }
@@ -25,7 +31,7 @@ export class CardsIndex extends React.Component {
 
     const addCard = <li className="card-index-item card-form">
           <CardForm body={""} title={""} createCard={ this.props.createCard }
-            closeAdd={ this.toggleAdd } />
+            closeAdd={ this.toggleAdd } errors={ this.props.errors } />
     </li>;
 
     return (

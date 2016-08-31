@@ -9,6 +9,12 @@ $secondary-grey: #dddddd;
 $tirtiary-grey: #f9f9f9;
 $button-padding: 6px;
 $primary-margin: 10px;
+$error-color: #ff1818;
+
+li.errors {
+  font-size: .8em;
+  color: $error-color;
+}
 
 form.add-card .card-form-field {
    margin: $primary-margin;

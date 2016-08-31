@@ -18,14 +18,19 @@ class CardForm extends React.Component {
     event.preventDefault();
     const card = this.state;
     this.props.createCard({ card });
-    this.props.closeAdd();
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (!newProps.errors.responseJSON) {
+      newProps.closeAdd();
+    }
   }
 
   renderErrors(){
     return(
       <ul>
-        {this.props.errors && this.props.errors.map( (error, i) => (
-          <li key={`error-${i}`}>
+        { this.props.errors.responseJSON && this.props.errors.responseJSON.map( (error, i) => (
+          <li key={`error-${i}`} className="errors">
             {error}
           </li>
         ))}

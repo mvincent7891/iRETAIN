@@ -29,7 +29,7 @@ body, p, section, div, input, ul, li, header {
 
  body {
    display: flex;
-   position: relative;
+   position: absolute;
    background-image: url('coffee.png');
    background-size: cover;
    background-repeat: no-repeat;

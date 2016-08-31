@@ -6,7 +6,8 @@ import { cardSelector } from '../../util/card_selector';
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
-  cards: cardSelector(state.cards)
+  cards: cardSelector(state.cards),
+  errors: state.session.errors
 });
 
 const mapDispatchToProps = dispatch => ({
