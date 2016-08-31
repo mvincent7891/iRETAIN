@@ -24,7 +24,8 @@ export class CardsIndex extends React.Component {
     ));
 
     const addCard = <li className="card-index-item card-form">
-          <CardForm body={""} title={""} />
+          <CardForm body={""} title={""} createCard={ this.props.createCard }
+            closeAdd={ this.toggleAdd } />
     </li>;
 
     return (

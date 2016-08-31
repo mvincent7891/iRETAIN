@@ -1,10 +1,23 @@
 export const CardConstants = {
   RECEIVE_CARDS: "RECEIVE_CARDS",
-  REQUEST_CARDS: "REQUEST_BENCHES"
+  REQUEST_CARDS: "REQUEST_BENCHES",
+  RECEIVE_SINGLE_CARD: "RECEIVE_SINGLE_CARD",
+  CREATE_CARD: "CREATE_CARD",
 };
 
+export const receiveSingleCard = card => ({
+  type: CardConstants.RECEIVE_SINGLE_CARD,
+  card
+});
+
+export const createCard = card => ({
+  type: CardConstants.CREATE_CARD,
+  card
+});
+
+
 export const requestCards = () => ({
-  type: CardConstants.REQUEST_CARDS,
+  type: CardConstants.REQUEST_CARDS
 });
 
 export const receiveCards = cards => ({

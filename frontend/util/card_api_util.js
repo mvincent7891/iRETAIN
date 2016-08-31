@@ -7,3 +7,14 @@ export const fetchCards = (success, error) => {
     error
   });
 };
+
+export const createCard = (success, error, card) => {
+  $.ajax({
+    url: `api/cards`,
+    method: 'POST',
+    dataType: 'json',
+    data: card,
+    success,
+    error
+  });
+};

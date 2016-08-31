@@ -58,36 +58,36 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 
 - [X] New Rails project
 - [X] `User` model/migration
-- [ ] Back end authentication (session/password)
-- [ ] `StaticPages` controller and root view
+- [X] Back end authentication (session/password)
+- [X] `StaticPages` controller and root view
 - [X] Webpack & react/redux modules
-- [ ] `APIUtil` to interact with the API
-- [ ] Redux cycle for frontend authentication
-- [ ] User signup/sign-in components
-- [ ] Blank landing component after signup/sign-in
-- [ ] Navigation components
-- [ ] Style signup/sign-in and navigation components
-- [ ] Seed users
-- [ ] Deploy to Heroku
-- [ ] Review phase 1
+- [X] `APIUtil` to interact with the API
+- [X] Redux cycle for frontend authentication
+- [X] User signup/sign-in components
+- [X] Blank landing component after signup/sign-in
+- [X] Navigation components
+- [X] Style signup/sign-in and navigation components
+- [X] Seed users
+- [X] Deploy to Heroku
+- [X] Review phase 1
 
 ### Phase 2: Cards (1 day)
 
 **Objective:** Decks have many Cards that can be created, viewed, edited, copied and destroyed through the API.
 
-- [ ] `Card` model
-- [ ] Seed database with a small amount of test data
+- [X] `Card` model
+- [X] Seed database with a small amount of test data
 - [ ] CRUD API for cards (`CardsController`)
-- [ ] JBuilder views for cards
+- [X] JBuilder views for cards
 - [ ] Adding cards requires a deck
 - [ ] Card components and respective Redux loops
   - [ ] `CardIndexContainer`
-  - [ ] `CardsIndex`
-  - [ ] `CardIndexItem`
+  - [X] `CardsIndex`
+  - [X] `CardIndexItem`
   - [ ] `CardContainer`
   - [ ] `CardDetail`
   - [ ] `NewCardFormContainer`
-  - [ ] `NewCardForm`
+  - [X] `CardForm`
 - [ ] Auto lookup body of card using dictionary API
 - [ ] Moving cards between decks
 - [ ] Viewing cards by deck

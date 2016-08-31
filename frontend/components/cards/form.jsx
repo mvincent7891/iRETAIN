@@ -17,7 +17,8 @@ class CardForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     const card = this.state;
-    // update card or create card
+    this.props.createCard({ card });
+    this.props.closeAdd();
   }
 
   renderErrors(){

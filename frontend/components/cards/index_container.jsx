@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { CardsIndex } from './index';
-import { requestCards } from '../../actions/card_actions';
+import { requestCards,
+         createCard } from '../../actions/card_actions';
 import { cardSelector } from '../../util/card_selector';
 
 const mapStateToProps = state => ({
@@ -9,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchCards: () => dispatch(requestCards())
+  fetchCards: () => dispatch(requestCards()),
+  createCard: (card) => dispatch(createCard(card))
 });
 
 export default connect(
