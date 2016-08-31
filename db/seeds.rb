@@ -6,12 +6,14 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create!(username: "guest", password: "password")
+guest = User.create!(username: "guest", password: "password")
 
-Card.create!(author_id: 1, deck_id: 1, title: 'ionian', body: 'first mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'dorian', body: '2nd mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'phrygian', body: '3rd mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'lydian', body: '4th mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'mixolydian', body: '5th mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'aolian', body: '6th mode of the major scale')
-Card.create!(author_id: 1, deck_id: 1, title: 'locrian', body: '7th mode of the major scale')
+deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: 1)
+
+Card.create!(author_id: 1, deck_id: deck.id, title: 'ionian', body: 'first mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'dorian', body: '2nd mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'phrygian', body: '3rd mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'lydian', body: '4th mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'mixolydian', body: '5th mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'aolian', body: '6th mode of the major scale')
+Card.create!(author_id: 1, deck_id: deck.id, title: 'locrian', body: '7th mode of the major scale')

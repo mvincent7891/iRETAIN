@@ -1,4 +1,4 @@
 class Card < ActiveRecord::Base
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :title, :body, :deck_id, presence: true
+
 end
