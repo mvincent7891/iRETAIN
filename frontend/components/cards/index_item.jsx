@@ -8,7 +8,6 @@ class CardIndexItem extends React.Component {
     this.state = { selected: false, editing: false };
     this.toggleSelect = this.toggleSelect.bind(this);
     this.toggleEdit = this.toggleEdit.bind(this);
-    this.handleParent = this.handleParent.bind(this);
   }
 
   toggleSelect (event) {
@@ -24,15 +23,10 @@ class CardIndexItem extends React.Component {
     if (event) {
       event.preventDefault();
     }
-    this.setState({ editing: !this.state.editing });
-  }
-
-  handleParent () {
-    if (this.state.selected) {
-      this.props.disableAdd();
-    } else {
-      this.props.enableAdd();
+    if (this.state.editing) {
+      this.props.deleteErrors();
     }
+    this.setState({ editing: !this.state.editing });
   }
 
   render () {
@@ -66,7 +60,6 @@ class CardIndexItem extends React.Component {
           processCard={ this.props.processCard }
           cancelForm={ this.toggleEdit }
           errors={ this.props.errors }
-          handleParent={ this.handleParent }
           type={ "edit" } /> :
           this.props.card.title }
       </li>;

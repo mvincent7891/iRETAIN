@@ -22,16 +22,23 @@ class CardForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    if (!newProps.errors.responseJSON) {
-      this.props.handleParent();
+    const updateErrors = newProps.errors.update;
+    const createErrors = newProps.errors.create;
+    if (!updateErrors && !createErrors) {
       newProps.cancelForm();
     }
   }
 
   renderErrors(){
+    let errors;
+    if (this.props.type === 'edit') {
+      errors = this.props.errors.update;
+    } else {
+      errors = this.props.errors.create;
+    }
     return(
       <ul>
-        { this.props.errors.responseJSON && this.props.errors.responseJSON.map( (error, i) => (
+        { errors && errors.responseJSON && errors.responseJSON.map( (error, i) => (
           <li key={`error-${i}`} className="errors">
             {error}
           </li>

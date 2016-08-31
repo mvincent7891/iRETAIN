@@ -5,7 +5,7 @@ import merge from 'lodash/merge';
 
 const defaultState = {
   session: [],
-  card: []
+  card: {}
 };
 
 const SessionReducer = (state = defaultState, action) => {
@@ -20,16 +20,18 @@ const SessionReducer = (state = defaultState, action) => {
     case ErrorConstants.DELETE_SESSION_ERRORS:
       return merge({}, state, { session: [] });
 
-    // CARD ERRORS --> Delete the first two and dispatch a delete_card_errors instead?
-    case CardConstants.RECEIVE_CARDS:
-      return merge({}, state, {card: [] });
-    case CardConstants.RECEIVE_SINGLE_CARD:
-      return merge({}, state, {card: [] });
-    case ErrorConstants.RECEIVE_CARD_ERRORS:
-      return merge({}, state, {card: action.errors });
+    // CARD ERRORS
+
+    case ErrorConstants.RECEIVE_CREATE_CARD_ERRORS:
+      return merge({}, state, {card: {create: action.errors} });
+    case ErrorConstants.RECEIVE_DELETE_CARD_ERRORS:
+      return merge({}, state, {card: {delete: action.errors} });
+    case ErrorConstants.RECEIVE_UPDATE_CARD_ERRORS:
+      return merge({}, state, {card: {update: action.errors} });
     case ErrorConstants.DELETE_CARD_ERRORS:
       return merge({}, state, { card: [] });
-
+    case ErrorConstants.RECEIVE_CARDS_ERRORS:
+      return merge({}, state, { card: action.errors });
     default:
       return state;
   }

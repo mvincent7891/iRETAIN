@@ -8,7 +8,6 @@ export class CardsIndex extends React.Component {
     super();
     this.state = { add: false, editing: false };
     this.toggleAdd = this.toggleAdd.bind(this);
-    this.toggleEditing = this.toggleEditing.bind(this);
   }
 
   componentDidMount () {
@@ -16,13 +15,10 @@ export class CardsIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    if (newProps.errors.responseJSON && !this.state.editing) {
+    const errors = newProps.errors.create;
+    if (errors && errors.responseJSON) {
       this.setState({ add: true });
     }
-  }
-
-  toggleEditing () {
-    this.setState({ editing: !this.state.editing });
   }
 
   toggleAdd () {
@@ -34,9 +30,8 @@ export class CardsIndex extends React.Component {
       <CardIndexItem key={`${card.title}-${idx}`} card={card}
                      removeCard={ this.props.removeCard }
                      errors={ this.props.errors }
-                     processCard={ this.props.updateCard}
-                     disableAdd={ this.toggleEditing }
-                     enableAdd={ this.toggleEditing } />
+                     deleteErrors={ this.props.deleteErrors }
+                     processCard={ this.props.updateCard} />
     ));
 
     const addCard = <li className="card-index-item card-form">
