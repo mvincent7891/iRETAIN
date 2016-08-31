@@ -14,7 +14,6 @@ class CardIndexItem extends React.Component {
   }
 
   render () {
-    console.log(this.state.selected);
 
     const item = this.state.selected ?
       <li onClick={ this.toggleSelect } className="card-index-item-selected" >
