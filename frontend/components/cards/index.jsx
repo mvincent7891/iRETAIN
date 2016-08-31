@@ -6,7 +6,7 @@ export class CardsIndex extends React.Component {
 
   constructor () {
     super();
-    this.state = { add: false };
+    this.state = { add: false, editing: false };
     this.toggleAdd = this.toggleAdd.bind(this);
   }
 
@@ -15,7 +15,8 @@ export class CardsIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    if (newProps.errors.responseJSON) {
+    const errors = newProps.errors.create;
+    if (errors && errors.responseJSON) {
       this.setState({ add: true });
     }
   }
@@ -25,18 +26,29 @@ export class CardsIndex extends React.Component {
   }
 
   render () {
-    const cardList = this.props.cards.map((card, idx) => (
-      <CardIndexItem key={`${card.title}-${idx}`} card={card}
-                     removeCard={ this.props.removeCard }
-                     errors={ this.props.errors }
-                     processCard={ this.props.updateCard }/>
-    ));
+    const cardList = [];
+    this.props.cards.forEach((card, idx) => {
+      // HACKED Solution for lookup -> fix after lookup redux cycle finished
+      if (card && card.id) {
+        cardList.push(
+          <CardIndexItem key={`${card.title}-${idx}`} card={card}
+            removeCard={ this.props.removeCard }
+            errors={ this.props.errors }
+            deleteErrors={ this.props.deleteErrors }
+            lookupCard={ this.props.lookupCard }
+            lookup={ this.props.lookup }
+            processCard={ this.props.updateCard} />
+        );
+      }
+    });
 
     const addCard = <li className="card-index-item card-form">
                       <CardForm body={""} title={""}
                                 processCard={ this.props.createCard }
                                 cancelForm={ this.toggleAdd }
                                 errors={ this.props.errors}
+                                lookupCard={ this.props.lookupCard }
+                                lookup={ this.props.lookup }
                                 type={ "create" } />
                     </li>;
 
@@ -47,7 +59,7 @@ export class CardsIndex extends React.Component {
           <li className="card-index-item add-card-index-item">
             <span>Cards</span>
             <button className={ this.state.add ? "cancel-add" : "add-card" } onClick={ this.toggleAdd }>
-              <strong>{ this.state.add ? "-" : "+" }</strong> { this.state.add ? "Cancel" : "Add" }
+              <strong>{ this.state.add ? "" : "+" }</strong> { this.state.add ? "Cancel" : "Add" }
             </button>
           </li>
           { this.state.add ? addCard : ''}

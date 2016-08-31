@@ -11,20 +11,25 @@ class CardIndexItem extends React.Component {
   }
 
   toggleSelect (event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
     if ( !this.state.editing ) {
       this.setState({ selected: !this.state.selected });
     }
   }
 
   toggleEdit (event) {
-    event.preventDefault();
+    if (event) {
+      event.preventDefault();
+    }
+    if (this.state.editing) {
+      this.props.deleteErrors();
+    }
     this.setState({ editing: !this.state.editing });
   }
 
   render () {
-    console.log(this.state.editing);
-
     const item = this.state.selected ?
       <li onClick={ this.toggleSelect } className="card-index-item-selected" >
 
@@ -55,6 +60,8 @@ class CardIndexItem extends React.Component {
           processCard={ this.props.processCard }
           cancelForm={ this.toggleEdit }
           errors={ this.props.errors }
+          lookupCard={ this.props.lookupCard }
+          lookup={ this.props.lookup }
           type={ "edit" } /> :
           this.props.card.title }
       </li>;

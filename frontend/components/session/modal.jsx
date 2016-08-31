@@ -14,8 +14,6 @@ class ModalTest extends React.Component {
 
     componentWillMount() {
       var appElement = document.getElementById('page-wrapper');
-      console.log("Element:");
-      console.log(appElement);
       Modal.setAppElement(appElement);
     }
 
