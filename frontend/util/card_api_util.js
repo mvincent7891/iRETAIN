@@ -19,6 +19,18 @@ export const createCard = (success, error, card) => {
   });
 };
 
+export const updateCard = (success, error, card) => {
+  $.ajax({
+    url: `api/cards/${card.id}`,
+    method: 'PATCH',
+    dataType: 'json',
+    data: card,
+    success,
+    error
+  });
+};
+
+
 export const removeSingleCard = (success, error, card) => {
   $.ajax({
     url: `api/cards/${card.id}`,

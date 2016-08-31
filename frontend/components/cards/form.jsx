@@ -5,7 +5,8 @@ class CardForm extends React.Component {
     super(props);
     this.state = {
       title: this.props.title,
-      body: this.props.body
+      body: this.props.body,
+      id: this.props.id || null
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -17,12 +18,12 @@ class CardForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     const card = this.state;
-    this.props.createCard({ card });
+    this.props.processCard({ card });
   }
 
   componentWillReceiveProps(newProps) {
     if (!newProps.errors.responseJSON) {
-      newProps.closeAdd();
+      newProps.cancelForm();
     }
   }
 
@@ -36,6 +37,18 @@ class CardForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  renderCancel(){
+    if (this.props.type === 'edit' ) {
+      return (
+        <button className="cancel-form"
+          onClick={ this.props.cancelForm }>
+          Cancel</button>
+      );
+    } else {
+      return;
+    }
   }
 
   render() {
@@ -63,8 +76,13 @@ class CardForm extends React.Component {
                 onChange={this.update("body")}
                 />
             </label>
+            <ul>
+              <button className="add-card"
+                      onClick={this.handleSubmit}>
+                      Save</button>
+                    { this.renderCancel() }
+            </ul>
 
-            <button className="add-card">Save</button>
           </span>
 
         </form>

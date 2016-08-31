@@ -19,6 +19,13 @@ class Api::CardsController < ApplicationController
   end
 
   def update
+    @card = Card.find(card_params[:id])
+    if @card.update(title: card_params[:title],
+            body: card_params[:body])
+      render :show
+     else
+      render json: @card.errors.full_messages, :status => 422
+     end
   end
 
   def destroy

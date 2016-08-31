@@ -1,19 +1,29 @@
 import React from 'react';
+import CardForm from './form';
 
 class CardIndexItem extends React.Component {
 
   constructor (props) {
     super(props);
-    this.state = { selected: false };
+    this.state = { selected: false, editing: false };
     this.toggleSelect = this.toggleSelect.bind(this);
+    this.toggleEdit = this.toggleEdit.bind(this);
   }
 
   toggleSelect (event) {
     event.preventDefault();
-    this.setState({ selected: !this.state.selected });
+    if ( !this.state.editing ) {
+      this.setState({ selected: !this.state.selected });
+    }
+  }
+
+  toggleEdit (event) {
+    event.preventDefault();
+    this.setState({ editing: !this.state.editing });
   }
 
   render () {
+    console.log(this.state.editing);
 
     const item = this.state.selected ?
       <li onClick={ this.toggleSelect } className="card-index-item-selected" >
@@ -25,17 +35,29 @@ class CardIndexItem extends React.Component {
 
         <ul className="card-options">
           <li className="card-option-edit">
-            <button className="edit-card">Edit</button>
+            <button className="edit-card"
+                    onClick={ this.toggleEdit }
+                    >Edit</button>
           </li>
           <li className="card-option-delete">
             <button className="remove-card"
-                    onClick= { this.props.removeCard.bind(null, this.props.card) }
+                    onClick={ this.props.removeCard.bind(null, this.props.card) }
                     >Remove</button>
           </li>
         </ul>
 
       </li> :
-      <li onClick={ this.toggleSelect } className="card-index-item" >{ this.props.card.title }</li>;
+      <li onClick={ this.toggleSelect } className="card-index-item" >
+        { this.state.editing ?
+        <CardForm body={ this.props.card.body }
+          title={ this.props.card.title }
+          id={ this.props.card.id }
+          processCard={ this.props.processCard }
+          cancelForm={ this.toggleEdit }
+          errors={ this.props.errors }
+          type={ "edit" } /> :
+          this.props.card.title }
+      </li>;
 
     return (
       <div>

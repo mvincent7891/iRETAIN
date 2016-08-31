@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { CardsIndex } from './index';
 import { requestCards,
          createCard,
-         removeSingleCard } from '../../actions/card_actions';
+         removeSingleCard,
+         updateCard } from '../../actions/card_actions';
 import { cardSelector } from '../../util/card_selector';
 
 const mapStateToProps = state => ({
@@ -14,7 +15,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   fetchCards: () => dispatch(requestCards()),
   createCard: card => dispatch(createCard(card)),
-  removeCard: card => dispatch(removeSingleCard(card))
+  removeCard: card => dispatch(removeSingleCard(card)),
+  updateCard: card => dispatch(updateCard(card))
 });
 
 export default connect(

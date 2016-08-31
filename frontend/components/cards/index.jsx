@@ -27,13 +27,18 @@ export class CardsIndex extends React.Component {
   render () {
     const cardList = this.props.cards.map((card, idx) => (
       <CardIndexItem key={`${card.title}-${idx}`} card={card}
-                     removeCard={ this.props.removeCard }/>
+                     removeCard={ this.props.removeCard }
+                     errors={ this.props.errors }
+                     processCard={ this.props.updateCard }/>
     ));
 
     const addCard = <li className="card-index-item card-form">
-          <CardForm body={""} title={""} createCard={ this.props.createCard }
-            closeAdd={ this.toggleAdd } errors={ this.props.errors}/>
-    </li>;
+                      <CardForm body={""} title={""}
+                                processCard={ this.props.createCard }
+                                cancelForm={ this.toggleAdd }
+                                errors={ this.props.errors}
+                                type={ "create" } />
+                    </li>;
 
     return (
       <div>
