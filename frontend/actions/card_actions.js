@@ -24,12 +24,12 @@ export const lookupCard = card => ({
   card
 });
 
-export const updateCard = card => ({
+export const updateCard = (card) => ({
   type: CardConstants.UPDATE_CARD,
   card
 });
 
-export const removeSingleCard = card => ({
+export const removeSingleCard = (card) => ({
   type: CardConstants.REMOVE_SINGLE_CARD,
   card
 });
@@ -39,9 +39,10 @@ export const receiveSingleCard = card => ({
   card
 });
 
-export const createCard = card => ({
+export const createCard = (card, deckId) => ({
   type: CardConstants.CREATE_CARD,
-  card
+  card,
+  deckId
 });
 
 

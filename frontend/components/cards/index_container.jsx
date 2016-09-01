@@ -18,11 +18,11 @@ const mapStateToProps = (state, ownProps) => ({
   cardSaved: state.cards.cardSaved
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchCards: (deckId) => dispatch(requestCards(deckId)),
-  createCard: card => dispatch(createCard(card)),
+  createCard: (card, deckId = ownProps.deckId) => dispatch(createCard(card, deckId)),
   removeCard: card => dispatch(removeSingleCard(card)),
-  updateCard: card => dispatch(updateCard(card)),
+  updateCard: (card, deckId = ownProps.deckId) => dispatch(updateCard(card, deckId)),
   deleteErrors: () => dispatch(deleteCardErrors()),
   deleteLookup: () => dispatch(deleteLookup()),
   lookupCard: card => dispatch(lookupCard(card))

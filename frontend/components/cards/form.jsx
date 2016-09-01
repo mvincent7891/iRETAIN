@@ -6,7 +6,8 @@ class CardForm extends React.Component {
     this.state = {
       title: this.props.title,
       body: this.props.body,
-      id: this.props.id || null
+      id: this.props.id || null,
+      deck_id: this.props.deckId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLookup = this.handleLookup.bind(this);

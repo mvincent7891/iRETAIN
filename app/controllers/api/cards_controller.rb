@@ -8,9 +8,10 @@ class Api::CardsController < ApplicationController
   end
 
   def create
+    author_id = current_user.id
     @card = Card.new(title: card_params[:title],
                      body: card_params[:body],
-                    author_id: 1, deck_id: 1)
+                    author_id: author_id, deck_id: params[:deck_id])
     if @card.save
       render :show
     else
@@ -21,7 +22,8 @@ class Api::CardsController < ApplicationController
   def update
     @card = Card.find(card_params[:id])
     if @card.update(title: card_params[:title],
-            body: card_params[:body])
+            body: card_params[:body],
+            deck_id: card_params[:deck_id])
       render :show
      else
       render json: @card.errors.full_messages, :status => 422

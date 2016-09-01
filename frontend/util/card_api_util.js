@@ -1,4 +1,3 @@
-var tempDeckId = 1;
 
 export const fetchCards = (success, error, deckId) => {
   $.ajax({
@@ -10,9 +9,10 @@ export const fetchCards = (success, error, deckId) => {
   });
 };
 
-export const createCard = (success, error, card) => {
+export const createCard = (success, error, card, deckId) => {
+
   $.ajax({
-    url: `api/decks/${tempDeckId}/cards`,
+    url: `api/decks/${deckId}/cards`,
     method: 'POST',
     dataType: 'json',
     data: card,
@@ -23,7 +23,7 @@ export const createCard = (success, error, card) => {
 
 export const updateCard = (success, error, card) => {
   $.ajax({
-    url: `api/decks/${tempDeckId}/cards/${card.id}`,
+    url: `api/decks/${card.deck_id}/cards/${card.id}`,
     method: 'PATCH',
     dataType: 'json',
     data: card,
@@ -35,7 +35,7 @@ export const updateCard = (success, error, card) => {
 
 export const removeSingleCard = (success, error, card) => {
   $.ajax({
-    url: `api/decks/${tempDeckId}/cards/${card.id}`,
+    url: `api/decks/${card.deckId}/cards/${card.id}`,
     method: 'DELETE',
     dataType: 'json',
     data: {card},

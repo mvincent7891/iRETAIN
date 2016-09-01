@@ -26,7 +26,7 @@ const CardMiddleware = ({getState, dispatch}) => next => action => {
       UTILS.fetchCards(success, error, action.deckId);
       return next(action);
     case CardConstants.CREATE_CARD:
-      UTILS.createCard(successSingle, createError, action.card);
+      UTILS.createCard(successSingle, createError, action.card, action.deckId);
       return next(action);
     case CardConstants.REMOVE_SINGLE_CARD:
       UTILS.removeSingleCard(success, deleteError, action.card);
