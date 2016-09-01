@@ -9,8 +9,8 @@ export const ErrorConstants = {
   RECEIVE_LOOKUP_ERRORS: "RECEIVE_LOOKUP_ERRORS",
 
   RECEIVE_DECKS_ERRORS: "RECEIVE_DECKS_ERRORS",
-  RECEIVE_SINGLE_DECK_ERRORS: "RECEIVE_SINGLE_DECK_ERRORS"
-
+  RECEIVE_SINGLE_DECK_ERRORS: "RECEIVE_SINGLE_DECK_ERRORS",
+  CREATE_DECK_ERRORS: "CREATE_DECK_ERRORS"
 };
 
 // DECKS
@@ -22,6 +22,11 @@ export const receiveDecksErrors = errors => ({
 
 export const receiveSingleDeckErrors = errors => ({
   type: ErrorConstants.RECEIVE_SINGLE_DECK_ERRORS,
+  errors
+});
+
+export const createDeckErrors = errors => ({
+  type: ErrorConstants.CREATE_DECK_ERRORS,
   errors
 });
 

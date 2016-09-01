@@ -5,13 +5,22 @@ class DeckForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.title
+      title: this.props.title,
+      subject_id: 1
     };
     this.cancelForm = this.cancelForm.bind(this);
+    this.submitForm = this.submitForm.bind(this);
   }
 
   cancelForm () {
+    event.preventDefault();
     hashHistory.push('/dashboard');
+  }
+
+  submitForm () {
+    event.preventDefault();
+    const deck = this.state;
+    this.props.createDeck({ deck });
   }
 
   componentDidMount () {
@@ -34,7 +43,7 @@ class DeckForm extends React.Component {
         <div className="deck-form-container">
           <h3 className="decks">New Deck</h3>
           <form>
-            <ul className="deck-form">          
+            <ul className="deck-form">
               <li className="deck-form-item">
                 <input type="text"
                   className="deck-form-field"
@@ -54,10 +63,11 @@ class DeckForm extends React.Component {
 
               <li className="deck-form-item">
                 <div>
-                  <button className="add-card">
+                  <button className="add-card"
+                          onClick={ this.submitForm } >
                     Save</button>
                   <button className="cancel-form"
-                    onClick={ this.cancelForm }>
+                          onClick={ this.cancelForm } >
                     Cancel</button>
                 </div>
               </li>

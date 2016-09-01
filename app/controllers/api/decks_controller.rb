@@ -13,10 +13,11 @@ class Api::DecksController < ApplicationController
   def create
     author_id = current_user.id
     @deck = Deck.new(title: deck_params[:title],
-                     subject_id: card_params[:subject_id],
+                     subject_id: deck_params[:subject_id],
                      author_id: author_id)
     if @deck.save
-      render :show
+      @decks = Deck.where(author_id: author_id)
+      render :index
     else
       render json: @deck.errors.full_messages, :status => 422
     end
