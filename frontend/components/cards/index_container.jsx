@@ -8,12 +8,13 @@ import { requestCards,
 import { cardSelector } from '../../util/card_selector';
 import { deleteCardErrors } from '../../actions/error_actions';
 
-const mapStateToProps = (state,ownProps) => ({
+const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   cards: cardSelector(state.cards),
   errors: state.errors.card,
   deckId: ownProps.deckId,
-  lookup: state.cards.lookup
+  lookup: state.cards.lookup,
+  cardSaved: state.cards.cardSaved
 });
 
 const mapDispatchToProps = dispatch => ({

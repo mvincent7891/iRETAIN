@@ -46,7 +46,7 @@ export class DeckIndex extends React.Component {
           { this.renderDecks() }
           <li className="deck-index-item">Fake Deck</li>
           <li className="deck-index-item">Test Deck</li>
-          <li className="deck-index-item"><strong>{ " + "}</strong></li>
+          <li className="deck-index-item plus"><strong>{ " + "}</strong></li>
         </ul>
         { this.renderCards() }
       </div>

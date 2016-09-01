@@ -16,9 +16,17 @@ li.deck-index-item {
   color: white;
   font-weight: lighter;
   font-size: 12px;
-  min-width: 30px;
+  width: 90px;
+  margin-right: 1px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
   transition: all $button-transition ease-in-out;
+}
+
+li.plus {
+  width: 30px;
 }
 
 li#selected {

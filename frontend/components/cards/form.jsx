@@ -17,6 +17,7 @@ class CardForm extends React.Component {
 	}
 
   handleSubmit(event){
+
     event.preventDefault();
     const card = this.state;
     this.props.processCard({ card });
@@ -29,9 +30,10 @@ class CardForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    const updateErrors = newProps.errors.update;
-    const createErrors = newProps.errors.create;
-    if (!updateErrors && !createErrors && !newProps.lookup) {
+    if (newProps.cardSaved) {
+      // TODO: Code is reaching this point after looking up due to new
+      // props update with deck. Need to refactor lookup to take care of
+      // this issue.
       newProps.cancelForm();
     }
 
