@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { DeckIndex } from './index';
 import { requestDecks } from '../../actions/deck_actions';
+import { deckSelector } from '../../util/deck_selector';
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
-  decks: state.decks,
+  decks: deckSelector(state.decks),
   errors: state.errors.deck
 });
 

@@ -7,10 +7,23 @@ export class DeckIndex extends React.Component {
     this.props.fetchDecks();
   }
 
+  renderDecks () {
+    return this.props.decks.map((deck, idx) => {
+      return (<li key={`${deck.title}-${idx}`}>
+        {deck.title}
+      </li>);
+    });
+  }
+
   render () {
+    console.log(this.props.decks);
+
+
     return (
       <div>
-          Deck Index
+        <ul>
+          { this.renderDecks() }
+        </ul>
       </div>
     );
   }
