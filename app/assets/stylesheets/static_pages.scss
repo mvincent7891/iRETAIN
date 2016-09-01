@@ -1,3 +1,30 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$dashboard-width: 500px;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+
+ul.dashboard {
+  margin-left: 20px;
+}
+
+li.dashboard-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: $dashboard-width;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: $tirtiary-grey;
+  border-top: 3px solid $primary-blue;
+  font-weight: normal;
+  box-sizing: border-box;
+  color: $primary-grey;
+}

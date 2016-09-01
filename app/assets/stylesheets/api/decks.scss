@@ -2,10 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$primary-grey: #676767;
+$secondary-grey: #dddddd;
 $primary-blue: #29a5dc;
 $flash-blue: #90CAF9;
 $tirtiary-grey: #f3f3f3;
 $button-transition: .2s;
+$deck-header-width: 500px;
+
+ul.deck-header {
+  margin-left: 20px;
+}
+
+li.deck-header-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: $deck-header-width;
+  height: auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: $tirtiary-grey;
+  border-top: 3px solid $primary-blue;
+  font-weight: normal;
+  box-sizing: border-box;
+  color: $primary-grey;
+}
+
 
 li.deck-index-item {
   padding: 10px;
