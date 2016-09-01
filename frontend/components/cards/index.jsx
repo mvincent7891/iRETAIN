@@ -4,9 +4,11 @@ import CardForm from './form';
 
 export class CardsIndex extends React.Component {
 
-  constructor () {
-    super();
-    this.state = { add: false, editing: false };
+  constructor (props) {
+    super(props);
+    this.state = { add: false,
+                   editing: false,
+                   deckId: this.props.deckId };
     this.toggleAdd = this.toggleAdd.bind(this);
   }
 
@@ -19,10 +21,14 @@ export class CardsIndex extends React.Component {
     if (errors && errors.responseJSON) {
       this.setState({ add: true });
     }
-    this.props.fetchCards(this.props.deckId);
+
+    if (newProps.deckId !== this.props.deckId) {
+      this.props.fetchCards(newProps.deckId);
+    }
   }
 
   toggleAdd () {
+    this.props.deleteErrors();
     this.setState({ add: !this.state.add });
   }
 

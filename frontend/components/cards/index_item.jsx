@@ -46,8 +46,9 @@ class CardIndexItem extends React.Component {
           </li>
           <li className="card-option-delete">
             <button className="remove-card"
-                    onClick={ this.props.removeCard.bind(null, this.props.card) }
-                    >Remove</button>
+                    onClick={ this.props.removeCard.bind(null, this.props.card) }>
+              Remove
+            </button>
           </li>
         </ul>
 
