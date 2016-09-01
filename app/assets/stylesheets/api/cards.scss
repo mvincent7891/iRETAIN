@@ -17,6 +17,7 @@ $edit-color: #f0ad4e;
 $flash-orange: #FFCC80;
 $remove-color: $secondary-color;
 $error-color: #ff1818;
+$button-transition: .2s;
 
 li.errors {
   font-size: .8em;
@@ -51,6 +52,7 @@ form.add-card {
 }
 
 button.lookup-card {
+  transition: all $button-transition ease-in-out;
   background-color: $primary-blue;
   border: 2px solid $primary-blue;
   color: white;
@@ -66,6 +68,7 @@ button.lookup-card:hover {
 }
 
  button.add-card {
+   transition: all $button-transition ease-in-out;
    background-color: $primary-color;
    border: 2px solid $primary-color;
    color: white;
@@ -81,6 +84,7 @@ button.lookup-card:hover {
  }
 
  button.edit-card {
+   transition: all $button-transition ease-in-out;
    background-color: $edit-color;
    border: 2px solid $edit-color;
    color: white;
@@ -99,6 +103,7 @@ button.lookup-card:hover {
  }
 
  button.remove-card {
+   transition: all $button-transition ease-in-out;
    background-color: $remove-color;
    border: 2px solid $remove-color;
    color: white;
@@ -125,6 +130,7 @@ button.lookup-card:hover {
  }
 
  button.cancel-add {
+   transition: all $button-transition ease-in-out;
    background-color: $secondary-color;
    border: 2px solid $secondary-color;
    color: white;
@@ -140,6 +146,7 @@ button.lookup-card:hover {
  }
 
  button.cancel-form {
+   transition: all $button-transition ease-in-out;
    background-color: $secondary-color;
    border: 2px solid $secondary-color;
    color: white;
