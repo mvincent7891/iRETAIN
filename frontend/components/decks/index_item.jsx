@@ -7,7 +7,6 @@ class DeckIndexItem extends React.Component {
   }
 
   render () {
-    console.log(this.props.selected);
     return (
       <li className="deck-index-item"
           id={ this.props.selected ? "selected" : ""}
