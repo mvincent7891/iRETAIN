@@ -8,8 +8,11 @@ export class DeckIndex extends React.Component {
 
   constructor (props) {
     super(props);
-    this.state = { selectedTab: null };
+    this.state = { selectedTab: null, firstDeck: 0, lastDeck: 3 };
     this.selectDashboard = this.selectDashboard.bind(this);
+    this.moreDecks = this.moreDecks.bind(this);
+    this.moreDecks = this.moreDecks.bind(this);
+    this.lessDecks = this.lessDecks.bind(this);
   }
 
   selectDashboard () {
@@ -24,8 +27,54 @@ export class DeckIndex extends React.Component {
     this.props.fetchDecks();
   }
 
+  moreDecks () {
+    const indexLength = this.props.decks.length;
+    let lastDeck = this.state.lastDeck + 3;
+    let firstDeck = this.state.firstDeck + 3;
+    if (lastDeck > indexLength) {
+      lastDeck = indexLength;
+      firstDeck = indexLength - 3;
+    }
+    this.setState({ lastDeck, firstDeck });
+  }
+
+  lessDecks () {
+    let firstDeck = this.state.firstDeck - 3;
+    let lastDeck = this.state.lastDeck - 3;
+    if (firstDeck <= 0) {
+      firstDeck = 0;
+      lastDeck = 3;
+    }
+    this.setState({ firstDeck, lastDeck });
+  }
+
+  renderLeft() {
+    if ( this.state.firstDeck <= 0 ) {
+      return;
+    } else {
+      return (<li className="deck-index-item request"
+                  onClick={ this.lessDecks }>
+                <strong>{ " < "}</strong>
+              </li>);
+    }
+  }
+
+  renderRight() {
+    if ( this.state.lastDeck >= this.props.decks.length ) {
+      return;
+    } else {
+      return (<li className="deck-index-item request"
+                  onClick={ this.moreDecks }>
+                <strong>{ " > "}</strong>
+              </li>);
+    }
+  }
+
   renderDecks () {
-    return this.props.decks.map((deck, idx) => {
+    const start = this.state.firstDeck;
+    const finish = this.state.lastDeck;
+
+    return this.props.decks.slice(start, finish).map((deck, idx) => {
       const id = deck.id;
       return (<DeckIndexItem
                 key={`${id}-${idx}`}
@@ -59,7 +108,9 @@ export class DeckIndex extends React.Component {
               id={ this.state.selectedTab ? "" : "selected" }>
               Dashboard
           </li>
+          { this.renderLeft() }
           { this.renderDecks() }
+          { this.renderRight() }
           <li className="deck-index-item plus"><strong>{ " + "}</strong></li>
         </ul>
         { this.renderCards() }

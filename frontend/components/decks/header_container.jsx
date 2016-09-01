@@ -5,7 +5,8 @@ import { requestSingleDeck } from '../../actions/deck_actions';
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   user: state.session.currentUser.username,
-  deckId: ownProps.deckId
+  deckId: ownProps.deckId,
+  deck: state.activeDeck
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -9,12 +9,18 @@ class Header extends React.Component {
     this.props.requestSingleDeck(this.props.deckId);
   }
 
+  componentWillReceiveProps (newProps) {
+    if ( newProps.deckId !== this.props.deckId ) {
+      newProps.requestSingleDeck(newProps.deckId);
+    }
+  }
+
   render () {
     return (
       <div className="deck-header">
         <ul className="deck-header">
           <li className="deck-header-item">
-              Deck Header
+              { this.props.deck.title }
           </li>
         </ul>
       </div>
