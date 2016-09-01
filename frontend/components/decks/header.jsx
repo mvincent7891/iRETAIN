@@ -1,14 +1,25 @@
 import React from 'react';
 
-export const Header = ({loggedIn, user}) => {
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-  <div className="deck-header">
-    <ul className="deck-header">
-      <li className="deck-header-item">
-          Deck Header
-      </li>
-    </ul>
-  </div>
-);
-};
+  componentDidMount () {
+    this.props.requestSingleDeck(this.props.deckId);
+  }
+
+  render () {
+    return (
+      <div className="deck-header">
+        <ul className="deck-header">
+          <li className="deck-header-item">
+              Deck Header
+          </li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+export default Header;

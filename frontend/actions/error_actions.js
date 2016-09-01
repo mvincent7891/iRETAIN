@@ -8,14 +8,24 @@ export const ErrorConstants = {
   RECEIVE_CARDS_ERRORS: "RECEIVE_CARDS_ERRORS",
   RECEIVE_LOOKUP_ERRORS: "RECEIVE_LOOKUP_ERRORS",
 
-  RECEIVE_DECKS_ERRORS: "RECEIVE_DECKS_ERRORS"
-  
+  RECEIVE_DECKS_ERRORS: "RECEIVE_DECKS_ERRORS",
+  RECEIVE_SINGLE_DECK_ERRORS: "RECEIVE_SINGLE_DECK_ERRORS"
+
 };
+
+// DECKS
 
 export const receiveDecksErrors = errors => ({
   type: ErrorConstants.DELETE_SESSION_ERRORS,
   errors
 });
+
+export const receiveSingleDeckErrors = errors => ({
+  type: ErrorConstants.RECEIVE_SINGLE_DECK_ERRORS,
+  errors
+});
+
+// SESSION
 
 export const deleteSessionErrors = () => ({
   type: ErrorConstants.DELETE_SESSION_ERRORS
@@ -25,6 +35,8 @@ export const receiveSessionErrors = errors => ({
   type: ErrorConstants.RECEIVE_SESSION_ERRORS,
   errors
 });
+
+// CARDS
 
 export const deleteCardErrors = () => ({
   type: ErrorConstants.DELETE_CARD_ERRORS

@@ -56,11 +56,12 @@ export class DeckIndex extends React.Component {
         <ul className="deck-index">
           <li className="deck-index-item"
               onClick={ this.selectDashboard }
+              key={'dash'}
               id={ this.state.selectedTab ? "" : "selected" }>
               Dashboard
           </li>
           { this.renderDecks() }
-          <li className="deck-index-item plus"><strong>{ " + "}</strong></li>
+          <li key={'plus'} className="deck-index-item plus"><strong>{ " + "}</strong></li>
         </ul>
         { this.renderCards() }
       </div>
