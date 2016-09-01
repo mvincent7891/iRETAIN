@@ -3,12 +3,14 @@ import SessionReducer from './session_reducer';
 import CardReducer from './card_reducer';
 import ErrorReducer from './error_reducer';
 import DeckReducer from './deck_reducer';
+import ActiveDeckReducer from './active_deck_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
   cards: CardReducer,
   errors: ErrorReducer,
-  decks: DeckReducer
+  decks: DeckReducer,
+  activeDeck: ActiveDeckReducer
 });
 
 export default RootReducer;

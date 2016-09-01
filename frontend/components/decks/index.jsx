@@ -25,10 +25,10 @@ export class DeckIndex extends React.Component {
   }
 
   renderDecks () {
-    return this.props.decks.map((deck) => {
+    return this.props.decks.map((deck, idx) => {
       const id = deck.id;
       return (<DeckIndexItem
-                key={`${id}`}
+                key={`${id}-${idx}`}
                 deck={deck}
                 selected={ id === this.state.selectedTab ? true : false }
                 selectThis={ this.selectTab.bind(this, id) }
@@ -56,12 +56,11 @@ export class DeckIndex extends React.Component {
         <ul className="deck-index">
           <li className="deck-index-item"
               onClick={ this.selectDashboard }
-              key={'dash'}
               id={ this.state.selectedTab ? "" : "selected" }>
               Dashboard
           </li>
           { this.renderDecks() }
-          <li key={'plus'} className="deck-index-item plus"><strong>{ " + "}</strong></li>
+          <li className="deck-index-item plus"><strong>{ " + "}</strong></li>
         </ul>
         { this.renderCards() }
       </div>

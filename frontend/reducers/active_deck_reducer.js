@@ -5,15 +5,15 @@ const defaultState = {
 
 };
 
-const DeckReducer = (state = defaultState, action) => {
+const ActiveDeckReducer = (state = defaultState, action) => {
 
   switch(action.type) {
-    case DeckConstants.RECEIVE_DECKS:
-      return action.decks;
+    case DeckConstants.RECEIVE_SINGLE_DECK:
+      return action.deck;
     default:
       return state;
   }
 
 };
 
-export default DeckReducer;
+export default ActiveDeckReducer;
