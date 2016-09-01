@@ -64,6 +64,7 @@ class CardIndexItem extends React.Component {
           lookupCard={ this.props.lookupCard }
           lookup={ this.props.lookup }
           cardSaved={ this.props.cardSaved }
+          deleteLookup={ this.props.deleteLookup }
           type={ "edit" } /> :
           this.props.card.title }
       </li>;

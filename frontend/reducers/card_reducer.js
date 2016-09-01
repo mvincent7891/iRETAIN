@@ -12,6 +12,8 @@ const CardReducer = (state = defaultState, action) => {
     case CardConstants.RECEIVE_LOOKUP:
       const lookupArray = lookupSelector(action.card);
       return merge({}, state, { lookup: lookupArray });
+    case CardConstants.DELETE_LOOKUP:
+      return merge({}, state, { lookup: null });
     case CardConstants.RECEIVE_CARDS:
     // TODO: make cards come in as an array; construct a hash for state here
       return action.cards;

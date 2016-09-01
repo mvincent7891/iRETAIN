@@ -10,17 +10,19 @@ class CardForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLookup = this.handleLookup.bind(this);
+    this.update = this.update.bind(this);
   }
 
   update(field){
-		return event => { this.setState({[field]: event.currentTarget.value }); };
+		return event => { event.preventDefault();
+                      this.setState({[field]: event.currentTarget.value }); };
 	}
 
   handleSubmit(event){
-
     event.preventDefault();
     const card = this.state;
     this.props.processCard({ card });
+    this.props.deleteLookup();
   }
 
   handleLookup(event){
@@ -30,15 +32,15 @@ class CardForm extends React.Component {
   }
 
   componentWillReceiveProps(newProps) {
-    
+
     if (newProps.cardSaved) {
       // TODO: Code is reaching this point after looking up due to new
       // props update with deck. Need to refactor lookup to take care of
       // this issue.
       newProps.cancelForm();
     }
-
-    if (newProps.lookup && newProps.lookup.length > 0) {
+    if (newProps.lookup &&
+        newProps.lookup.length > 0) {
       const lookup = newProps.lookup.join("\r\n\r\n");
       this.setState({body: lookup});
     }
@@ -76,7 +78,6 @@ class CardForm extends React.Component {
   }
 
   render() {
-
     return (
       <div className="add-card-container">
 

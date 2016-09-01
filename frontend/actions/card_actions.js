@@ -6,8 +6,13 @@ export const CardConstants = {
   REMOVE_SINGLE_CARD: "REMOVE_SINGLE_CARD",
   UPDATE_CARD: "UPDATE_CARD",
   LOOKUP_CARD: "LOOKUP_CARD",
-  RECEIVE_LOOKUP: "RECEIVE_LOOKUP"
+  RECEIVE_LOOKUP: "RECEIVE_LOOKUP",
+  DELETE_LOOKUP: "DELETE_LOOKUP"
 };
+
+export const deleteLookup = () => ({
+  type: CardConstants.DELETE_LOOKUP
+});
 
 export const receiveLookup = card => ({
   type: CardConstants.RECEIVE_LOOKUP,

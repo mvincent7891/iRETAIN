@@ -45,6 +45,7 @@ export class CardsIndex extends React.Component {
             lookupCard={ this.props.lookupCard }
             lookup={ this.props.lookup }
             cardSaved={ this.props.cardSaved }
+            deleteLookup={ this.props.deleteLookup }
             processCard={ this.props.updateCard} />
         );
       }
@@ -58,6 +59,7 @@ export class CardsIndex extends React.Component {
                                 lookupCard={ this.props.lookupCard }
                                 lookup={ this.props.lookup }
                                 cardSaved={ this.props.cardSaved }
+                                deleteLookup={ this.props.deleteLookup }
                                 type={ "create" } />
                     </li>;
 

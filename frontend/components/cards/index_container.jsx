@@ -4,6 +4,7 @@ import { requestCards,
          createCard,
          lookupCard,
          removeSingleCard,
+         deleteLookup,
          updateCard } from '../../actions/card_actions';
 import { cardSelector } from '../../util/card_selector';
 import { deleteCardErrors } from '../../actions/error_actions';
@@ -23,6 +24,7 @@ const mapDispatchToProps = dispatch => ({
   removeCard: card => dispatch(removeSingleCard(card)),
   updateCard: card => dispatch(updateCard(card)),
   deleteErrors: () => dispatch(deleteCardErrors()),
+  deleteLookup: () => dispatch(deleteLookup()),
   lookupCard: card => dispatch(lookupCard(card))
 });
 
