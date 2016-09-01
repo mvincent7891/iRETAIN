@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
-  user: state.session.currentUser.username
+  user: state.session.currentUser ? state.session.currentUser.username : ""
 });
 
 const mapDispatchToProps = dispatch => ({

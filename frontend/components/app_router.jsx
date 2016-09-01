@@ -5,12 +5,15 @@ import NavBarContainer from './nav_bar/nav_bar_container';
 import SessionFormContainer from './session/session_form_container';
 import ModalTest from './session/modal';
 import HomeContainer from './home/home_container';
+import DecksIndexContainer from './decks/index_container';
 
 export const AppRouter = () => (
   <Router history={ hashHistory } >
      <Route path="/(home)" component={ App } >
        <Route component={ NavBarContainer } >
-        <IndexRoute component={ HomeContainer } />
+         <Route component={ HomeContainer } >
+           <IndexRoute component={ DecksIndexContainer } />
+         </Route>
        </Route>
     </Route>
   </Router>

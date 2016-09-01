@@ -1,9 +1,9 @@
-import { Home } from './home.jsx';
+import { DeckForm } from './form.jsx';
 import { connect } from 'react-redux';
 
 
 const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser),
+
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(DeckForm);
