@@ -3,11 +3,15 @@ import { SessionConstants,
          receiveCurrentUser } from '../actions/session_actions.js';
 import * as UTILS from '../util/session_api_util.js';
 import { receiveSessionErrors } from '../actions/error_actions.js';
+import { hashHistory } from 'react-router';
 
 const SessionMiddleware = ({dispatch}) => next => action => {
 
   const error = errors => dispatch(receiveSessionErrors(errors));
-  const success = user => dispatch(receiveCurrentUser(user));
+  const success = user => {
+    dispatch(receiveCurrentUser(user));
+    hashHistory.push('dashboard');
+  };
 
   switch(action.type) {
     case SessionConstants.LOGIN:
@@ -17,7 +21,10 @@ const SessionMiddleware = ({dispatch}) => next => action => {
       UTILS.signup(success, error, action.user);
       return next(action);
     case SessionConstants.LOGOUT:
-      const successLogout = () => next(action);
+      const successLogout = () => {
+        next(action);
+        hashHistory.push('/');
+      };
       UTILS.logout(successLogout, error);
       break;
     default:

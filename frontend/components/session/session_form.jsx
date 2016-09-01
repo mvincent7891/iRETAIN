@@ -12,16 +12,6 @@ class SessionForm extends React.Component {
     this.props.deleteErrors();
   }
 
-  componentDidUpdate(){
-    this.redirectIfLoggedIn.bind(this)();
-  }
-
-  redirectIfLoggedIn(){
-    if (this.props.loggedIn){
-      hashHistory.push("/home");
-    }
-  }
-
   update(field){
 		return event => { this.setState({[field]: event.currentTarget.value }); };
 	}

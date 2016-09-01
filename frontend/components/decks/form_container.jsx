@@ -1,4 +1,4 @@
-import { DeckForm } from './form.jsx';
+import DeckForm from './form.jsx';
 import { connect } from 'react-redux';
 
 

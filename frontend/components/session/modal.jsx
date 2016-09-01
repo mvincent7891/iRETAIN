@@ -24,11 +24,7 @@ class ModalTest extends React.Component {
     render () {
       return (
         <div>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+
           <button onClick={this.openModal}>Open Modal</button>
           <Modal
             overlayClassName="OverlayClass"

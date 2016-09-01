@@ -66,6 +66,7 @@ div.deck-index-container {
   display: flex;
   flex-direction: column;
   margin: 20px;
+  margin-top: 80px;
   padding: 10px;
   background-color: $tirtiary-grey;
 }
@@ -88,6 +89,7 @@ ul.deck-index {
 li.request {
   // background-color: white;
   // color: $flash-blue;
+  font-size: 8px;
   width: 30px;
 }
 // li.request:hover {

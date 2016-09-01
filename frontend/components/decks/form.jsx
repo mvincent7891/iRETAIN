@@ -15,9 +15,15 @@ class DeckForm extends React.Component {
 
   render () {
     return (
-      <div className="deck-form">
-        <ul className="deck-form">
-          <li>Deck Form</li>
+      <div className="deck-index-container">
+        <h3 className="decks">New Deck</h3>
+        <ul className="deck-index">
+          <li className="deck-form-item">
+              Item 1
+          </li>
+          <li className="deck-form-item">
+            Item 2
+          </li>
         </ul>
       </div>
     );

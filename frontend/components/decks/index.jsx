@@ -3,6 +3,7 @@ import DeckIndexItem from './index_item';
 import DeckHeaderContainer from './header_container';
 import CardsIndexContainer from '../cards/index_container';
 import DashboardContainer from '../dashboard/dashboard_container';
+import { Link, browserHistory } from 'react-router';
 
 export class DeckIndex extends React.Component {
 
@@ -54,7 +55,7 @@ export class DeckIndex extends React.Component {
     } else {
       return (<li className="deck-index-item request"
                   onClick={ this.lessDecks }>
-                <strong>{ " < "}</strong>
+                { " ◀ "}
               </li>);
     }
   }
@@ -65,7 +66,7 @@ export class DeckIndex extends React.Component {
     } else {
       return (<li className="deck-index-item request"
                   onClick={ this.moreDecks }>
-                <strong>{ " > "}</strong>
+                { " ▶ "}
               </li>);
     }
   }
@@ -100,7 +101,9 @@ export class DeckIndex extends React.Component {
 
   render () {
     return (
+
       <div className="deck-index-container">
+        { this.props.children }
         <h3 className="decks">Decks</h3>
         <ul className="deck-index">
           <li className="deck-index-item"
@@ -111,7 +114,12 @@ export class DeckIndex extends React.Component {
           { this.renderLeft() }
           { this.renderDecks() }
           { this.renderRight() }
-          <li className="deck-index-item plus"><strong>{ " + "}</strong></li>
+
+            <li className="deck-index-item plus"
+                onClick={ this.newDeck } >
+              <strong>{ " + "}</strong>
+            </li>
+
         </ul>
         { this.renderCards() }
       </div>
