@@ -17,3 +17,11 @@ Card.create!(author_id: 1, deck_id: deck.id, title: 'lydian', body: '4th mode of
 Card.create!(author_id: 1, deck_id: deck.id, title: 'mixolydian', body: '5th mode of the major scale')
 Card.create!(author_id: 1, deck_id: deck.id, title: 'aolian', body: '6th mode of the major scale')
 Card.create!(author_id: 1, deck_id: deck.id, title: 'locrian', body: '7th mode of the major scale')
+
+
+deck_2 = Deck.create!(title: "Must Know", author_id: guest.id, subject_id: 2)
+
+Card.create!(author_id: 1, deck_id: deck_2.id, title: 'tree-sonous', body: 'It is illegal to climb trees in Oshawa, a town in Ontario, Canada.')
+Card.create!(author_id: 1, deck_id: deck_2.id, title: 'eye wish', body: 'Brown eyes are blue underneath, and you can actually get a surgery to turn brown eyes blue.')
+Card.create!(author_id: 1, deck_id: deck_2.id, title: 'gut-shy', body: 'When you blush, the lining of your stomach also turns red.')
+Card.create!(author_id: 1, deck_id: deck_2.id, title: 'seed data', body: 'Coffee beans aren’t beans; they are seeds of coffee berries.')

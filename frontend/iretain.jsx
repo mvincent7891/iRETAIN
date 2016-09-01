@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import { Root } from './components/root.jsx';
-import { requestCards } from './actions/card_actions';
+import { requestDecks } from './actions/deck_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -14,6 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
    }
   const root = document.getElementById('root');
   window.Store = store;
-  window.requestCards = requestCards;
+  window.requestDecks = requestDecks;
   ReactDOM.render(<Root store={store} />, root);
 });

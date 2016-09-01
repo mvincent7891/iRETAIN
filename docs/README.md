@@ -77,20 +77,17 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 
 - [X] `Card` model
 - [X] Seed database with a small amount of test data
-- [ ] CRUD API for cards (`CardsController`)
+- [X] CRUD API for cards (`CardsController`)
 - [X] JBuilder views for cards
-- [ ] Adding cards requires a deck
-- [ ] Card components and respective Redux loops
+- [X] Adding cards requires a deck
+- [X] Card components and respective Redux loops
   - [X] `CardIndexContainer`
   - [X] `CardsIndex`
   - [X] `CardIndexItem`
-  - [ ] `CardContainer`
-  - [ ] `CardDetail`
-  - [ ] `NewCardFormContainer`
   - [X] `CardForm`
-- [ ] Auto lookup body of card using dictionary API
+- [X] Auto lookup body of card using dictionary API
 - [ ] Moving cards between decks
-- [ ] Viewing cards by deck
+- [X] Viewing cards by deck
 - [X] Style card components
 - [ ] Seed cards (faker and auto lookup)
 
@@ -98,11 +95,11 @@ iRETAIN is a web application inspired by Brainscape built using Ruby on Rails an
 
 **Objective:** Subjects have many Decks that can be created, viewed, edited, copied, and destroyed through the API.
 
-- [ ] `Deck` model
-- [ ] Seed database with a small amount of test data
+- [X] `Deck` model
+- [X] Seed database with a small amount of test data
 - [ ] CRUD API for decks (`DecksController`)
-- [ ] JBuilder views for decks
-- [ ] Adding decks requires a subject
+- [X] JBuilder views for decks
+- [X] Adding decks requires a subject
 - [ ] Copy deck API
 - [ ] Deck components and respective Redux loops
   - [ ] `DeckIndexContainer`

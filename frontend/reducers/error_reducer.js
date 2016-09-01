@@ -1,15 +1,22 @@
 import { ErrorConstants } from '../actions/error_actions.js';
 import { CardConstants } from '../actions/card_actions.js';
 import { SessionConstants } from '../actions/session_actions.js';
+import { DeckConstants } from '../actions/deck_actions.js';
 import merge from 'lodash/merge';
 
 const defaultState = {
   session: [],
-  card: {}
+  card: {},
+
 };
 
 const SessionReducer = (state = defaultState, action) => {
   switch(action.type) {
+
+    // DECKS ERRORS
+    case ErrorConstants.RECEIVE_DECKS_ERRORS:
+      return merge({}, state, {deck: action.errors} );
+
     // SESSION ERRORS --> Delete the first two and dispatch a delete_session_errors instead?
     case SessionConstants.RECEIVE_CURRENT_USER:
       return merge({}, state, { session: [] });
