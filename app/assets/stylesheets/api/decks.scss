@@ -1,3 +1,53 @@
 // Place all the styles related to the api/decks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$tirtiary-grey: #f3f3f3;
+$button-transition: .2s;
+
+li.deck-index-item {
+  padding: 10px;
+  padding-bottom: 6px;
+  border-top-left-radius: 30%;
+  border-top-right-radius: 30%;
+  background-color: $flash-blue;
+  color: white;
+  font-weight: lighter;
+  font-size: 12px;
+  min-width: 30px;
+  text-align: center;
+  transition: all $button-transition ease-in-out;
+}
+
+li#selected {
+  background-color: $primary-blue;
+}
+
+li.deck-index-item:hover {
+  background-color: $primary-blue;
+  cursor: pointer;
+}
+
+div.deck-index-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  background-color: $tirtiary-grey;
+}
+
+h3.decks {
+  font-weight: normal;
+}
+
+ul.deck-index {
+  display: flex;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  background-color: $tirtiary-grey;
+}

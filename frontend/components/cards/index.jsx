@@ -11,7 +11,7 @@ export class CardsIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.fetchCards();
+    this.props.fetchCards(this.props.deckId);
   }
 
   componentWillReceiveProps (newProps) {
@@ -19,6 +19,7 @@ export class CardsIndex extends React.Component {
     if (errors && errors.responseJSON) {
       this.setState({ add: true });
     }
+    this.props.fetchCards(this.props.deckId);
   }
 
   toggleAdd () {

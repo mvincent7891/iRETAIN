@@ -18,6 +18,7 @@ $flash-orange: #FFCC80;
 $remove-color: $secondary-color;
 $error-color: #ff1818;
 $button-transition: .2s;
+$card-index-width: 500px;
 
 li.errors {
   font-size: .8em;
@@ -169,7 +170,7 @@ button.lookup-card:hover {
    display: flex;
    flex-direction: column;
    justify-content: center;
-   width: 400px;
+   width: $card-index-width;
    height: auto;
    padding-top: 10px;
    padding-bottom: 10px;
@@ -203,7 +204,7 @@ button.lookup-card:hover {
    display: flex;
    justify-content: space-between;
    align-items: flex-start;
-   width: 400px;
+   width: $card-index-width;
    height: auto;
    padding-left: 10px;
    background-color: $tirtiary-grey;

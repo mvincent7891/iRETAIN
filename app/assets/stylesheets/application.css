@@ -15,7 +15,7 @@
  */
 
 
-body, p, section, div, input, ul, li, header, textarea {
+body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea {
    padding: 0px;
    margin: 0px;
    border: 0px;

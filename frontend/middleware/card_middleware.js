@@ -23,7 +23,7 @@ const CardMiddleware = ({getState, dispatch}) => next => action => {
 
   switch(action.type) {
     case CardConstants.REQUEST_CARDS:
-      UTILS.fetchCards(success, error);
+      UTILS.fetchCards(success, error, action.deckId);
       return next(action);
     case CardConstants.CREATE_CARD:
       UTILS.createCard(successSingle, createError, action.card);

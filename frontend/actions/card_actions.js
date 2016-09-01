@@ -40,8 +40,9 @@ export const createCard = card => ({
 });
 
 
-export const requestCards = () => ({
-  type: CardConstants.REQUEST_CARDS
+export const requestCards = (deckId) => ({
+  type: CardConstants.REQUEST_CARDS,
+  deckId
 });
 
 export const receiveCards = cards => ({
