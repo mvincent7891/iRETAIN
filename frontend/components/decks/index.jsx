@@ -3,7 +3,7 @@ import DeckIndexItem from './index_item';
 import DeckHeaderContainer from './header_container';
 import CardsIndexContainer from '../cards/index_container';
 import DashboardContainer from '../dashboard/dashboard_container';
-import { Link, browserHistory } from 'react-router';
+import { hashHistory } from 'react-router';
 
 export class DeckIndex extends React.Component {
 
@@ -14,10 +14,15 @@ export class DeckIndex extends React.Component {
     this.moreDecks = this.moreDecks.bind(this);
     this.moreDecks = this.moreDecks.bind(this);
     this.lessDecks = this.lessDecks.bind(this);
+    this.newDeck = this.newDeck.bind(this);
   }
 
   selectDashboard () {
     this.setState({ selectedTab: null });
+  }
+
+  newDeck () {
+    hashHistory.push('/new-deck');
   }
 
   selectTab (deckId) {
@@ -114,12 +119,10 @@ export class DeckIndex extends React.Component {
           { this.renderLeft() }
           { this.renderDecks() }
           { this.renderRight() }
-
-            <li className="deck-index-item plus"
-                onClick={ this.newDeck } >
-              <strong>{ " + "}</strong>
-            </li>
-
+          <li className="deck-index-item plus"
+            onClick={ this.newDeck } >
+            <strong>{ " + "}</strong>
+          </li>
         </ul>
         { this.renderCards() }
       </div>

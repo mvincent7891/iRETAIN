@@ -9,10 +9,17 @@ $flash-blue: #90CAF9;
 $tirtiary-grey: #f3f3f3;
 $button-transition: .2s;
 $deck-header-width: 500px;
+$primary-margin: 10px;
 
 ul.deck-header {
   margin-left: 20px;
 }
+
+.deck-form-field {
+   padding: 5px;
+   font-size: 1em;
+   color: #676767;
+ }
 
 li.deck-header-item {
   display: flex;
@@ -71,9 +78,24 @@ div.deck-index-container {
   background-color: $tirtiary-grey;
 }
 
+div.deck-form-container {
+  color: #272727;
+  font-weigth: normal;
+}
+
+div.deck-form-container {
+  display: flex;
+  z-index: 100;
+  position: relative;
+  flex-direction: column;
+  margin: 20px;
+  padding: 10px;
+  background-color: $tirtiary-grey;
+}
+
 h3.decks {
   font-weight: normal;
-  color: #272727;
+  color: #676767;
 }
 
 ul.deck-index {
@@ -84,6 +106,23 @@ ul.deck-index {
   padding-top: 10px;
   padding-bottom: 0px;
   background-color: $tirtiary-grey;
+}
+
+ul.deck-form {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: auto;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 0px;
+  background-color: $tirtiary-grey;
+}
+
+ul.deck-form .deck-form-item {
+  margin-bottom: 15px;
+  color: $primary-grey;
+  font-size: normal;
 }
 
 li.request {
