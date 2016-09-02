@@ -10,14 +10,15 @@ class DeckResults extends React.Component {
 
   renderResults () {
     return (
-      this.props.decks.map((deck) => (
-        <DeckResultItem deck={deck} />
+      this.props.decks.map((deck, idx) => (
+        <DeckResultItem deck={deck}
+                        key={`${deck.title}-${idx}`}
+                        user={ this.props.user }/>
       ))
     );
   }
 
   render () {
-    console.log(this.props.decks);
     return (
       <div>
         <div className="search-header-item">
