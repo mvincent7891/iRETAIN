@@ -39,7 +39,7 @@ class DeckForm extends React.Component {
   render () {
     return (
       <div>
-        <div className="OverlayClass"></div>
+        <div className="OverlayClass InAppOverlay"></div>
         <div className="deck-form-container">
           <h3 className="decks">New Deck</h3>
           <form>

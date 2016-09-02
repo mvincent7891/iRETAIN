@@ -5,7 +5,7 @@ import { requestSingleDeck,
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  user: state.session.currentUser.username,
+  user: state.session.currentUser,
   deckId: ownProps.deckId,
   deck: state.activeDeck
 });
