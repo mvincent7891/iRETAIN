@@ -9,9 +9,7 @@ export class DeckIndex extends React.Component {
 
   constructor (props) {
     super(props);
-    const selectedTab = this.props.params.deck_id ?
-      (this.props.params.deck_i) : (null);
-    this.state = { selectedTab, firstDeck: 0, lastDeck: 3 };
+    this.state = { selectedTab: null, firstDeck: 0, lastDeck: 3 };
     this.selectDashboard = this.selectDashboard.bind(this);
     this.moreDecks = this.moreDecks.bind(this);
     this.moreDecks = this.moreDecks.bind(this);
@@ -20,10 +18,9 @@ export class DeckIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    const id = newProps.params.deck_id;
-    if ( id && id !== this.state.selectedTab ) {
-      this.setState({ selectedTab: id });
-
+    const id = newProps.showDeck.id;
+    if (id) {
+      this.setState({ selectedTab: parseInt(id) });
     }
   }
 
@@ -121,6 +118,7 @@ export class DeckIndex extends React.Component {
   }
 
   render () {
+    console.log(this.state);
     return (
 
       <div className="deck-index-container">

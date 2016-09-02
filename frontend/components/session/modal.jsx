@@ -29,8 +29,7 @@ class ModalTest extends React.Component {
           <Modal
             overlayClassName="OverlayClass"
             className="ModalClass"
-            isOpen={this.state.open}
-            >
+            isOpen={this.state.open}>
               <div className="login">
                 <h1>Login</h1>
                 <input placeholder="Username"/>

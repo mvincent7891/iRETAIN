@@ -5,7 +5,7 @@ const defaultState = {
 
 };
 
-const DeckReducer = (state = defaultState, action) => {
+export const DeckReducer = (state = defaultState, action) => {
 
   switch(action.type) {
     case DeckConstants.RECEIVE_DECKS:
@@ -19,4 +19,14 @@ const DeckReducer = (state = defaultState, action) => {
 
 };
 
-export default DeckReducer;
+export const ShowDeckReducer = (state = defaultState, action) => {
+  switch(action.type) {
+    case DeckConstants.REMOVED_DECK:
+      const deckIds = Object.keys(action.decks);
+      const numDecks = deckIds.length;
+      const showDeck = deckIds[numDecks - 1];  
+      return {id: showDeck};
+    default:
+      return state;
+    }
+};

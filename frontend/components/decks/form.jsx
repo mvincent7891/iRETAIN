@@ -20,12 +20,12 @@ class DeckForm extends React.Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
-  cancelForm () {
+  cancelForm (event) {
     event.preventDefault();
     hashHistory.push('/dashboard');
   }
 
-  submitForm () {
+  submitForm (event) {
     event.preventDefault();
     const deck = this.state;
     if (this.state.type === 'Edit') {
@@ -33,6 +33,7 @@ class DeckForm extends React.Component {
     } else {
       this.props.createDeck({ deck });
     }
+    hashHistory.push('/dashboard');
   }
 
   componentDidMount () {
@@ -78,9 +79,9 @@ class DeckForm extends React.Component {
                   <button className="add-card"
                           onClick={ this.submitForm } >
                     Save</button>
-                  <button className="cancel-form"
-                          onClick={ this.cancelForm } >
-                    Cancel</button>
+                    <button className="cancel-form"
+                            onClick={ this.cancelForm } >
+                      Cancel</button>
                 </div>
               </li>
             </ul>

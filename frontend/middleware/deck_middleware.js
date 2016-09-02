@@ -1,7 +1,8 @@
 import { DeckConstants,
          receiveDecks,
          requestSingleDeck,
-         receiveSingleDeck
+         receiveSingleDeck,
+         removedDeck
         } from '../actions/deck_actions.js';
 import { receiveDecksErrors,
          receiveSingleDeckErrors,
@@ -37,7 +38,11 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case DeckConstants.REMOVE_DECK:
       const removeDeckError = errors => dispatch(receiveRemoveDeckErrors(errors));
-      UTILS.removeDeck(success, removeDeckError, action.deckId);
+      const removeSuccess = decks => {
+        dispatch(receiveDecks(decks));
+        dispatch(removedDeck(decks));
+      };
+      UTILS.removeDeck(removeSuccess, removeDeckError, action.deckId);
       return next(action);
     default:
       return next(action);

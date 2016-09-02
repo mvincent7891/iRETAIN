@@ -6,7 +6,8 @@ import { deckSelector } from '../../util/deck_selector';
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
   decks: deckSelector(state.decks),
-  errors: state.errors.deck
+  errors: state.errors.deck,
+  showDeck: state.showDeck
 });
 
 const mapDispatchToProps = dispatch => ({
