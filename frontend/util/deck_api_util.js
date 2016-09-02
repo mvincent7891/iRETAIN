@@ -29,18 +29,6 @@ export const createDeck = (success, error, deck) => {
     error
   });
 };
-
-//
-// export const createDeck = (success, error, deck) => {
-//   $.ajax({
-//     url: ,
-//     method: ,
-//     dataType: ,
-//     data: ,
-//     success,
-//     error
-//   });
-// };
 //
 // export const updateDeck = (success, error, deck) => {
 //   $.ajax({
@@ -53,14 +41,13 @@ export const createDeck = (success, error, deck) => {
 //   });
 // };
 //
-//
-// export const removeSingleDeck = (success, error, deck) => {
-//   $.ajax({
-//     url: ,
-//     method: ,
-//     dataType: ,
-//     data: ,
-//     success,
-//     error
-//   });
-// };
+
+export const removeDeck = (success, error, deckId) => {
+  $.ajax({
+    url: `api/decks/${deckId}`,
+    method: `DELETE`,
+    dataType: `json`,
+    success,
+    error
+  });
+};

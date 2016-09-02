@@ -4,7 +4,7 @@ export const DeckConstants = {
   RECEIVE_SINGLE_DECK: "RECEIVE_SINGLE_DECK",
   REQUEST_SINGLE_DECK: "REQUEST_SINGLE_DECK",
   CREATE_DECK: "CREATE_DECK",
-  REMOVE_SINGLE_DECK: "REMOVE_SINGLE_DECK",
+  REMOVE_DECK: "REMOVE_DECK",
   UPDATE_DECK: "UPDATE_DECK"
 };
 
@@ -13,9 +13,9 @@ export const updateDeck = deck => ({
   deck
 });
 
-export const removeSingleDeck = deck => ({
-  type: DeckConstants.REMOVE_SINGLE_DECK,
-  deck
+export const removeDeck = deckId => ({
+  type: DeckConstants.REMOVE_DECK,
+  deckId
 });
 
 export const receiveSingleDeck = deck => ({

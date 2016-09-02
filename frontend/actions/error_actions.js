@@ -10,7 +10,8 @@ export const ErrorConstants = {
 
   RECEIVE_DECKS_ERRORS: "RECEIVE_DECKS_ERRORS",
   RECEIVE_SINGLE_DECK_ERRORS: "RECEIVE_SINGLE_DECK_ERRORS",
-  CREATE_DECK_ERRORS: "CREATE_DECK_ERRORS"
+  CREATE_DECK_ERRORS: "CREATE_DECK_ERRORS",
+  RECEIVE_REMOVE_DECK_ERRORS: "RECEIVE_REMOVE_DECK_ERRORS"
 };
 
 // DECKS
@@ -27,6 +28,11 @@ export const receiveSingleDeckErrors = errors => ({
 
 export const createDeckErrors = errors => ({
   type: ErrorConstants.CREATE_DECK_ERRORS,
+  errors
+});
+
+export const receiveRemoveDeckErrors = errors => ({
+  type: ErrorConstants.RECEIVE_REMOVE_DECK_ERRORS,
   errors
 });
 

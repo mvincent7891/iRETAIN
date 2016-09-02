@@ -2,17 +2,73 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+$deck-header-width: 500px;
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
 $primary-grey: #676767;
-$secondary-grey: #dddddd;
 $primary-blue: #29a5dc;
 $flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
 $tirtiary-grey: #f3f3f3;
-$button-transition: .2s;
-$deck-header-width: 500px;
+$button-padding: 6px;
 $primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+$button-transition: .2s;
+$card-index-width: 500px;
+
+button.edit-deck {
+  transition: all $button-transition ease-in-out;
+  background-color: $edit-color;
+  border: 2px solid $edit-color;
+  color: white;
+  padding: $button-padding;
+  margin: 5px;
+  margin-bottom: 0px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: .8em;
+  width: 120px;
+}
+
+button.edit-deck:hover {
+  background-color: $flash-orange;
+  border: 2px solid $flash-orange;
+}
+
+button.remove-deck {
+  transition: all $button-transition ease-in-out;
+  background-color: $remove-color;
+  border: 2px solid $remove-color;
+  color: white;
+  padding: $button-padding;
+  margin: 5px;
+  margin-top: 0px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  font-size: .8em;
+  width: 120px;
+}
+
+button.remove-deck:hover {
+  background-color: $flash-red;
+  border: 2px solid $flash-red;
+}
 
 ul.deck-header {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  border-top: 3px solid $primary-blue;
+  padding: 10px;
+  padding-right: 0px;
   margin-left: 20px;
+  box-sizing: border-box;
 }
 
 .deck-form-field {
@@ -25,13 +81,11 @@ li.deck-header-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: $deck-header-width;
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
   background-color: $tirtiary-grey;
-  border-top: 3px solid $primary-blue;
   font-weight: normal;
   box-sizing: border-box;
   color: $primary-grey;

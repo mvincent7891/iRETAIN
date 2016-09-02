@@ -5,7 +5,8 @@ import { DeckConstants,
         } from '../actions/deck_actions.js';
 import { receiveDecksErrors,
          receiveSingleDeckErrors,
-         createDeckErrors } from '../actions/error_actions.js';
+         createDeckErrors,
+         receiveRemoveDeckErrors } from '../actions/error_actions.js';
 import * as UTILS from '../util/deck_api_util.js';
 import { hashHistory } from 'react-router';
 
@@ -26,10 +27,15 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       const createDeckSuccess = decks => {
         const id = Object.keys(decks)[Object.keys(decks).length - 1];
         dispatch(receiveDecks(decks));
-        hashHistory.push(`/dashboard${id}`);
+        hashHistory.push(`/dashboard/${id}`);
       };
       const createDeckError = errors => dispatch(createDeckErrors(errors));
       UTILS.createDeck(createDeckSuccess, createDeckError, action.deck);
+      return next(action);
+    case DeckConstants.REMOVE_DECK:
+      const removeDeckSuccess = decks => dispatch(receiveDecks(decks));
+      const removeDeckError = errors => dispatch(receiveRemoveDeckErrors(errors));
+      UTILS.removeDeck(removeDeckSuccess, removeDeckError, action.deckId);
       return next(action);
     default:
       return next(action);

@@ -42,12 +42,12 @@ class CardIndexItem extends React.Component {
           <li className="card-option-edit">
             <button className="edit-card"
                     onClick={ this.toggleEdit }
-                    >Edit</button>
+                    >Edit Card</button>
           </li>
           <li className="card-option-delete">
             <button className="remove-card"
                     onClick={ this.props.removeCard.bind(null, this.props.card) }>
-              Remove
+              Remove Card
             </button>
           </li>
         </ul>

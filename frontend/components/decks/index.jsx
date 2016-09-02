@@ -9,12 +9,22 @@ export class DeckIndex extends React.Component {
 
   constructor (props) {
     super(props);
-    this.state = { selectedTab: null, firstDeck: 0, lastDeck: 3 };
+    const selectedTab = this.props.params.deck_id ?
+      (this.props.params.deck_i) : (null);
+    this.state = { selectedTab, firstDeck: 0, lastDeck: 3 };
     this.selectDashboard = this.selectDashboard.bind(this);
     this.moreDecks = this.moreDecks.bind(this);
     this.moreDecks = this.moreDecks.bind(this);
     this.lessDecks = this.lessDecks.bind(this);
     this.newDeck = this.newDeck.bind(this);
+  }
+
+  componentWillReceiveProps (newProps) {
+    const id = newProps.params.deck_id;
+    if ( id && id !== this.state.selectedTab ) {
+      this.setState({ selectedTab: id });
+
+    }
   }
 
   selectDashboard () {
@@ -41,7 +51,8 @@ export class DeckIndex extends React.Component {
       lastDeck = indexLength;
       firstDeck = indexLength - 3;
     }
-    this.setState({ lastDeck, firstDeck });
+    this.setState({ lastDeck, firstDeck,
+                    selectedTab: this.props.decks[firstDeck].id });
   }
 
   lessDecks () {
@@ -51,7 +62,8 @@ export class DeckIndex extends React.Component {
       firstDeck = 0;
       lastDeck = 3;
     }
-    this.setState({ firstDeck, lastDeck });
+    this.setState({ firstDeck, lastDeck,
+                    selectedTab: this.props.decks[lastDeck - 1].id });
   }
 
   renderLeft() {
