@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { createDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = state => ({
-  title: ""
+  title: "",
+  decks: state.decks
 });
 
 const mapDispatchToProps = dispatch => ({

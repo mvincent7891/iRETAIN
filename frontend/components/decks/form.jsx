@@ -5,11 +5,16 @@ class DeckForm extends React.Component {
   constructor(props) {
     super(props);
     const path = this.props.location.pathname;
-    this.state = {
-      title: this.props.title,
-      subject_id: 1,
-      type: path.includes('edit') ? 'Edit' : 'New'
-    };
+    let type, title;
+    debugger
+    if (path.includes('edit')) {
+      type = 'Edit';
+      title = this.props.decks[this.props.params.deckId].title;
+    } else {
+      type = 'New';
+      title = this.props.title;
+    }
+    this.state = { title, subject_id: 1, type };
     this.cancelForm = this.cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
   }

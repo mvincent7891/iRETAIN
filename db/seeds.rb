@@ -31,3 +31,8 @@ deck_4 = Deck.create!(title: "Big Words", author_id: guest.id, subject_id: 2)
 deck_5 = Deck.create!(title: "Computer Science", author_id: guest.id, subject_id: 2)
 deck_6 = Deck.create!(title: "Politics", author_id: guest.id, subject_id: 2)
 deck_7 = Deck.create!(title: "Science", author_id: guest.id, subject_id: 2)
+
+Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Production', body: 'Seeds are produced when pollen is released from the male (stamen) part of a plant')
+Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Seed plants', body: 'There are two types of plants that produce seeds: gymnosperms (like the conifer family), whose seeds are exposed, and angiosperms, or flowering plants, whose seeds are protected by fruits')
+Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'The Holy See(d)', body: 'The oldest viable seed to have grown into a plant was a date palm seed estimated to be 2,000 years old (making it the only surviving contemporary of Jesus)')
+Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Big ol\' seed', body: 'The biggest seed belongs to the coco de mer palm (Lodoicea maldivica). Their fruit usually contain just one seed, which can weigh almost three stone, but no one knows what a stone is.')
