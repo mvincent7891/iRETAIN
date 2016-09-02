@@ -11,11 +11,16 @@ class NavBar extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.goHome = this.goHome.bind(this);
+    this.searchCards = this.searchCards.bind(this);
   }
 
   componentWillMount() {
     var appElement = document.getElementById('page-wrapper');
     Modal.setAppElement(appElement);
+  }
+
+  searchCards () {
+    hashHistory.push('/search');    
   }
 
   goHome () {
@@ -54,7 +59,7 @@ class NavBar extends React.Component {
               <strong className="logo">iRETAIN</strong>.IO
             </li>
             <li className="link">How It Works</li>
-            <li className="link">Flashcards</li>
+            <li className="link" onClick={ this.searchCards }>Flashcards</li>
             <li className="link">Educators</li>
             <li className="link">more...</li>
           </ul>
