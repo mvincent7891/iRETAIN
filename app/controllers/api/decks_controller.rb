@@ -19,7 +19,7 @@ class Api::DecksController < ApplicationController
       @decks = Deck.where(author_id: author_id)
       render :index
     else
-      render json: @deck.errors.full_messages, :status => 422
+      render json: [@deck, @deck.errors.full_messages], :status => 422
     end
   end
 
@@ -32,7 +32,7 @@ class Api::DecksController < ApplicationController
       @decks = Deck.where(author_id: author_id)
       render :index
      else
-      render json: @deck.errors.full_messages, :status => 422
+      render json: [@deck, @deck.errors.full_messages], :status => 422
     end
   end
 

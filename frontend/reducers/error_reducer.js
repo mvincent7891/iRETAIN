@@ -7,15 +7,21 @@ import merge from 'lodash/merge';
 const defaultState = {
   session: [],
   card: {},
-
+  deck: {}
 };
 
-const SessionReducer = (state = defaultState, action) => {
+const ErrorReducer = (state = defaultState, action) => {
   switch(action.type) {
 
     // DECKS ERRORS
     case ErrorConstants.RECEIVE_DECKS_ERRORS:
       return merge({}, state, {deck: action.errors} );
+    case ErrorConstants.CREATE_DECK_ERRORS:
+      return merge({}, state, {deck: {create: action.errors} });
+    case ErrorConstants.RECEIVE_UPDATE_DECK_ERRORS:
+      return merge({}, state, {deck: {update: action.errors} });
+    case ErrorConstants.RECEIVE_SINGLE_DECK:
+      return defaultState;
 
     // SESSION ERRORS --> Delete the first two and dispatch a delete_session_errors instead?
     case SessionConstants.RECEIVE_CURRENT_USER:
@@ -41,10 +47,11 @@ const SessionReducer = (state = defaultState, action) => {
       return merge({}, state, { card: action.errors });
     case ErrorConstants.RECEIVE_LOOKUP_ERRORS:
       return merge({}, state, { card: {lookup: action.errors} });
+
     default:
-      return state;
+      return defaultState;
   }
 
 };
 
-export default SessionReducer;
+export default ErrorReducer;

@@ -17,8 +17,9 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
   const success = decks => dispatch(receiveDecks(decks));
   switch(action.type) {
     case DeckConstants.UPDATE_DECK:
-      const updateError = errors => dispatch(receiveUpdateDeckErrors(errors));
-      UTILS.updateDeck(success, updateError, action.deck);
+      const updateError = errors => dispatch(receiveUpdateDeckErrors(errors.responseJSON));
+      const updateDeckSuccess = decks => hashHistory.push(`/dashboard`);
+      UTILS.updateDeck(updateDeckSuccess, updateError, action.deck);
       return next(action);
     case DeckConstants.REQUEST_DECKS:
       const error = decks => dispatch(receiveDecksErrors);
@@ -35,7 +36,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
         dispatch(receiveDecks(decks));
         dispatch(createdDeck(decks));
         hashHistory.push(`/dashboard/${id}`); };
-      const createDeckError = errors => dispatch(createDeckErrors(errors));
+      const createDeckError = errors =>   dispatch(createDeckErrors(errors.responseJSON));
       UTILS.createDeck(createDeckSuccess, createDeckError, action.deck);
       return next(action);
     case DeckConstants.REMOVE_DECK:

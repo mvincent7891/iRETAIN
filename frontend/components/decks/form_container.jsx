@@ -6,7 +6,8 @@ import { createDeck,
 
 const mapStateToProps = state => ({
   title: "",
-  decks: state.decks
+  decks: state.decks,
+  errors: state.errors.deck
 });
 
 const mapDispatchToProps = dispatch => ({

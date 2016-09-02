@@ -15,9 +15,10 @@ class DeckForm extends React.Component {
       title = this.props.title;
       id = null;
     }
-    this.state = { title, subject_id: 1, type, id };
-    this.cancelForm = this.cancelForm.bind(this);
+    this.state = { title, subject_id: 1, id, type, errors: [] };
+    this.cancelForm = this .cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   cancelForm (event) {
@@ -33,7 +34,6 @@ class DeckForm extends React.Component {
     } else {
       this.props.createDeck({ deck });
     }
-    hashHistory.push('/dashboard');
   }
 
   componentDidMount () {
@@ -41,7 +41,30 @@ class DeckForm extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
+    const createErrors = newProps.errors.create;
+    if (createErrors) {
+      const title = createErrors[0].title;
+      const errors = createErrors[1];
+      this.setState({title, errors});
+    }
+    const updateErrors = newProps.errors.update;
+    if (updateErrors) {
+      const title = updateErrors[0].title;
+      const errors = updateErrors[1];
+      this.setState({title, errors});
+    }
+  }
 
+  renderErrors() {
+    return (
+      <div>
+        { this.state.errors.map( (error, i) => (
+          <li key={`error-${i}`} className="errors">
+            { error }
+          </li> )
+        )}
+      </div>
+    );
   }
 
   update(field){
@@ -54,7 +77,8 @@ class DeckForm extends React.Component {
       <div>
         <div className="OverlayClass InAppOverlay"></div>
         <div className="deck-form-container">
-          <h3 className="decks">{ this.state.type } Deck</h3>
+          <h3 className="decks">{ this.state.type } Deck</h3><br/>
+          { this.renderErrors() }
           <form>
             <ul className="deck-form">
               <li className="deck-form-item">
