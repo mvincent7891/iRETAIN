@@ -7,9 +7,11 @@ class DeckResults extends React.Component {
   }
 
   render () {
-    
+
     return (
-      <div>Deck Results Component</div>
+      <div className="search-header-item">
+        Results
+      </div>
     );
   }
 

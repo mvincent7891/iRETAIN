@@ -77,6 +77,7 @@ ul.deck-header {
   justify-content: space-between;
   width: 500px;
   border-top: 3px solid $primary-blue;
+  border-bottom: 3px solid $secondary-grey;
   padding: 10px;
   padding-right: 0px;
   margin-left: 20px;
@@ -139,7 +140,6 @@ div.deck-index-container {
   display: flex;
   flex-direction: column;
   margin: 20px;
-  margin-top: 80px;
   padding: 10px;
   background-color: $tirtiary-grey;
   height: auto;

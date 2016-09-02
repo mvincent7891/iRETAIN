@@ -1,6 +1,6 @@
 import Search from './search.jsx';
 import { connect } from 'react-redux';
-// import { } from '../../actions/search_actions';
+import { searchDecks } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     loggedIn: Boolean(state.session.currentUser),
@@ -8,10 +8,10 @@ const mapStateToProps = (state, ownProps) => ({
   });
 
 const mapDispatchToProps = (dispatch) => ({
-
+  search: (query) => dispatch(searchDecks(query))
 });
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Search);

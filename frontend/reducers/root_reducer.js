@@ -4,6 +4,7 @@ import CardReducer from './card_reducer';
 import ErrorReducer from './error_reducer';
 import { DeckReducer, ShowDeckReducer } from './deck_reducer';
 import ActiveDeckReducer from './active_deck_reducer';
+import SearchReducer from './search_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -11,7 +12,8 @@ const RootReducer = combineReducers({
   errors: ErrorReducer,
   decks: DeckReducer,
   showDeck: ShowDeckReducer,
-  activeDeck: ActiveDeckReducer
+  activeDeck: ActiveDeckReducer,
+  search: SearchReducer
 });
 
 export default RootReducer;

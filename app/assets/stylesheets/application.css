@@ -37,6 +37,10 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea {
    overflow: hidden;
  }
 
+.content-container {
+  margin-top: 80px;
+}
+
  button.edit-card {
    background-image: url('pencil.png');
  }

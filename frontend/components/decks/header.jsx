@@ -6,7 +6,7 @@ class Header extends React.Component {
     super(props);
     this.state = { displayOptions: true };
     this.renderButtons = this.renderButtons.bind(this);
-    this.renderOptions = this.renderOptions.bind(this);
+
   }
 
   componentDidMount () {
@@ -44,13 +44,6 @@ class Header extends React.Component {
     );
   }
 
-  renderOptions () {
-    if (this.state.displayOptions) {
-      return (this.renderButtons());
-    } else {
-      return <button className="tool-button">Tools</button>
-    }
-  }
 
   display () {
     return (
@@ -62,7 +55,7 @@ class Header extends React.Component {
               { this.props.deck.title }
           </li>
           <li>
-              { this.renderOptions() }
+              { this.renderButtons() }
           </li>
         </ul>
 

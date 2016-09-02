@@ -36,3 +36,15 @@ Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Production', body:
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Seed plants', body: 'There are two types of plants that produce seeds: gymnosperms (like the conifer family), whose seeds are exposed, and angiosperms, or flowering plants, whose seeds are protected by fruits')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'The Holy See(d)', body: 'The oldest viable seed to have grown into a plant was a date palm seed estimated to be 2,000 years old (making it the only surviving contemporary of Jesus)')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Big ol\' seed', body: 'The biggest seed belongs to the coco de mer palm (Lodoicea maldivica). Their fruit usually contain just one seed, which can weigh almost three stone, but no one knows what a stone is.')
+
+
+t1 = Tag.create!(name: music)
+t2 = Tag.create!(name: plants)
+t3 = Tag.create!(name: general)
+
+tag1 = Tagging.create!(tag_id: t1.id, deck_id: deck.id)
+tag2 = Tagging.create!(tag_id: t2.id, deck_id: deck_3.id)
+tag3 = Tagging.create!(tag_id: t3.id, deck_id: deck.id)
+tag3 = Tagging.create!(tag_id: t3.id, deck_id: deck_3.id)
+tag3 = Tagging.create!(tag_id: t3.id, deck_id: deck_4.id)
+tag3 = Tagging.create!(tag_id: t3.id, deck_id: deck_5.id)

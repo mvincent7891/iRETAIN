@@ -5,7 +5,9 @@ export const App = ({children}) => {
   return (
   <div className="pageWrapper">
     <NavBarContainer />
-    { children }
+    <div className="content-container">
+      { children }
+    </div>
   </div>
 );
 };

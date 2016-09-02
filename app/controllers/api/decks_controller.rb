@@ -1,8 +1,14 @@
 class Api::DecksController < ApplicationController
   def index
-    author_id = current_user.id
-    @decks = Deck.where(author_id: author_id)
-    render :index
+    if params[:query]
+      queyr = params[:query].downcase
+      @decks = Deck.where("title LIKE ?", "%#{params[:query]}%")
+      render :index
+    else
+      author_id = current_user.id
+      @decks = Deck.where(author_id: author_id)
+      render :index
+    end
   end
 
   def show
