@@ -15,12 +15,29 @@ export class DeckIndex extends React.Component {
     this.moreDecks = this.moreDecks.bind(this);
     this.lessDecks = this.lessDecks.bind(this);
     this.newDeck = this.newDeck.bind(this);
+    this.setBoundaries = this.setBoundaries.bind(this);
+  }
+
+  setBoundaries(tabIndex) {
+    let lastDeck = tabIndex + 2;
+    let firstDeck = tabIndex - 1;
+    if (firstDeck <= 0) {
+      firstDeck = 0;
+      lastDeck = 3;
+    }
+    const indexLength = this.props.decks.length;
+    if (lastDeck > indexLength) {
+      lastDeck = indexLength;
+      firstDeck = indexLength - 3;
+    }
+    this.setState({ firstDeck, lastDeck });
   }
 
   componentWillReceiveProps (newProps) {
     const id = newProps.showDeck.id;
     if (id) {
       this.setState({ selectedTab: parseInt(id) });
+      this.setBoundaries(newProps.showDeck.tabPos);
     }
   }
 
@@ -88,7 +105,6 @@ export class DeckIndex extends React.Component {
   renderDecks () {
     const start = this.state.firstDeck;
     const finish = this.state.lastDeck;
-
     return this.props.decks.slice(start, finish).map((deck, idx) => {
       const id = deck.id;
       return (<DeckIndexItem

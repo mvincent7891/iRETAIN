@@ -6,11 +6,16 @@ export const DeckConstants = {
   CREATE_DECK: "CREATE_DECK",
   REMOVE_DECK: "REMOVE_DECK",
   UPDATE_DECK: "UPDATE_DECK",
-  REMOVED_DECK: "REMOVED_DECK"
+  REMOVED_DECK: "REMOVED_DECK",
+  CREATED_DECK: "CREATED_DECK"
 };
 
 export const removedDeck = decks => ({
   type: DeckConstants.REMOVED_DECK,
+  decks
+});
+export const createdDeck = decks => ({
+  type: DeckConstants.CREATED_DECK,
   decks
 });
 

@@ -2,7 +2,8 @@ import { DeckConstants,
          receiveDecks,
          requestSingleDeck,
          receiveSingleDeck,
-         removedDeck
+         removedDeck,
+         createdDeck
         } from '../actions/deck_actions.js';
 import { receiveDecksErrors,
          receiveSingleDeckErrors,
@@ -32,6 +33,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       const createDeckSuccess = decks => {
         const id = Object.keys(decks)[Object.keys(decks).length - 1];
         dispatch(receiveDecks(decks));
+        dispatch(createdDeck(decks));
         hashHistory.push(`/dashboard/${id}`); };
       const createDeckError = errors => dispatch(createDeckErrors(errors));
       UTILS.createDeck(createDeckSuccess, createDeckError, action.deck);
