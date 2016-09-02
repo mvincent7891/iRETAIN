@@ -22,6 +22,10 @@ $error-color: #ff1818;
 $button-transition: .2s;
 $card-index-width: 500px;
 
+ul.deck-header-options {
+  display: flex;
+}
+
 button.edit-deck {
   transition: all $button-transition ease-in-out;
   background-color: $edit-color;
@@ -29,11 +33,15 @@ button.edit-deck {
   color: white;
   padding: $button-padding;
   margin: 5px;
-  margin-bottom: 0px;
+  margin-right: 0px;
   border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   font-size: .8em;
-  width: 120px;
+  height: 30px;
+  width: 50px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 button.edit-deck:hover {
@@ -48,11 +56,15 @@ button.remove-deck {
   color: white;
   padding: $button-padding;
   margin: 5px;
-  margin-top: 0px;
-  border-bottom-left-radius: 5px;
+  margin-left: 0px;
+  border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   font-size: .8em;
-  width: 120px;
+  height: 30px;
+  width: 50px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 button.remove-deck:hover {

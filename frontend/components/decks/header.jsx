@@ -4,6 +4,9 @@ import { hashHistory } from 'react-router';
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { displayOptions: true };
+    this.renderButtons = this.renderButtons.bind(this);
+    this.renderOptions = this.renderOptions.bind(this);
   }
 
   componentDidMount () {
@@ -20,6 +23,35 @@ class Header extends React.Component {
     hashHistory.push(`/edit-deck/${deckId}`);
   }
 
+  renderButtons () {
+    return (
+      <div>
+        <ul className="deck-header-options">
+          <li className="deck-option-edit">
+            <button className="edit-deck"
+              onClick={ this.editDeck.bind(null, this.props.deckId) }>
+
+            </button>
+          </li>
+          <li className="deck-option-delete">
+            <button className="remove-deck"
+              onClick={ this.props.removeDeck.bind(null, this.props.deckId) }>
+              
+            </button>
+          </li>
+        </ul>
+      </div>
+    );
+  }
+
+  renderOptions () {
+    if (this.state.displayOptions) {
+      return (this.renderButtons());
+    } else {
+      return <button className="tool-button">Tools</button>
+    }
+  }
+
   display () {
     return (
       this.props.children ?
@@ -30,20 +62,7 @@ class Header extends React.Component {
               { this.props.deck.title }
           </li>
           <li>
-            <ul className="deck-header-options">
-              <li className="deck-option-edit">
-                <button className="edit-deck"
-                        onClick={ this.editDeck.bind(null, this.props.deckId) }>
-                  Edit Deck
-                </button>
-              </li>
-              <li className="deck-option-delete">
-                <button className="remove-deck"
-                  onClick={ this.props.removeDeck.bind(null, this.props.deckId) }>
-                  Remove Deck
-                </button>
-              </li>
-            </ul>
+              { this.renderOptions() }
           </li>
         </ul>
 

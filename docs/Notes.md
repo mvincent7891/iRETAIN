@@ -1,13 +1,7 @@
 # Notes
 
 # TODO (Sep 2):
-- SOLVED: Fix Edit/Create router bug after cancel form
-  - The issue was that I didn't pass the event whose default should have been
-  prevented.
 - Add gear button to edit/remove (hover over?)
-- Add show container for decks and associated routes?
-  - Or figure out how to set selectedTab based on params
-- After adding a deck and navigating to it, deck id's become FUBAR
 
 ## Issues - August 29
 - Can't change '.IO' font in logo for some reason

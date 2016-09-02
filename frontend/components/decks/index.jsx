@@ -134,7 +134,6 @@ export class DeckIndex extends React.Component {
   }
 
   render () {
-    console.log(this.state);
     return (
 
       <div className="deck-index-container">

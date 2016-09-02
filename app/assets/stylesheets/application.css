@@ -36,3 +36,17 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea {
    height: 90vh;
    overflow: hidden;
  }
+
+ button.edit-card {
+   background-image: url('pencil.png');
+ }
+ button.remove-card {
+   background-image: url('trash.png');
+ }
+
+ button.edit-deck {
+   background-image: url('pencil.png');
+ }
+ button.remove-deck {
+   background-image: url('trash.png');
+ }
