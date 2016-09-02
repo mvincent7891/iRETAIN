@@ -4,9 +4,11 @@ import { hashHistory } from 'react-router';
 class DeckForm extends React.Component {
   constructor(props) {
     super(props);
+    const path = this.props.location.pathname;
     this.state = {
       title: this.props.title,
-      subject_id: 1
+      subject_id: 1,
+      type: path.includes('edit') ? 'Edit' : 'New'
     };
     this.cancelForm = this.cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -41,7 +43,7 @@ class DeckForm extends React.Component {
       <div>
         <div className="OverlayClass InAppOverlay"></div>
         <div className="deck-form-container">
-          <h3 className="decks">New Deck</h3>
+          <h3 className="decks">{ this.state.type } Deck</h3>
           <form>
             <ul className="deck-form">
               <li className="deck-form-item">

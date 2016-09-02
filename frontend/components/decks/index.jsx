@@ -104,11 +104,15 @@ export class DeckIndex extends React.Component {
   }
 
   renderCards () {
+    const children = this.props.location.pathname.includes('new') ?
+              ("") : (this.props.children);
+
     if ( this.state.selectedTab ) {
       return (
         <div>
-          <DeckHeaderContainer deckId={ this.state.selectedTab }/>
-          <CardsIndexContainer deckId={ this.state.selectedTab }/>
+          <DeckHeaderContainer deckId={ this.state.selectedTab }
+                               children={ children } />
+          <CardsIndexContainer deckId={ this.state.selectedTab } />
         </div>
       );
     } else {
@@ -120,7 +124,10 @@ export class DeckIndex extends React.Component {
     return (
 
       <div className="deck-index-container">
-        { this.props.children }
+
+        { this.props.location.pathname.includes('edit') ?
+          "" : this.props.children }
+
         <h3 className="decks">Decks</h3>
         <ul className="deck-index">
           <li className="deck-index-item"
@@ -137,6 +144,7 @@ export class DeckIndex extends React.Component {
           </li>
         </ul>
         { this.renderCards() }
+
       </div>
     );
   }

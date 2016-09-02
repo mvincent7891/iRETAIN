@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
   user: state.session.currentUser,
   deckId: ownProps.deckId,
-  deck: state.activeDeck
+  deck: state.activeDeck,
+  children: ownProps.children
 });
 
 const mapDispatchToProps = dispatch => ({
