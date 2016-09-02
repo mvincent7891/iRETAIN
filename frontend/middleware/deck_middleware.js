@@ -18,7 +18,11 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
   switch(action.type) {
     case DeckConstants.UPDATE_DECK:
       const updateError = errors => dispatch(receiveUpdateDeckErrors(errors.responseJSON));
-      const updateDeckSuccess = decks => hashHistory.push(`/dashboard`);
+      const updateDeckSuccess = decks => {
+        dispatch(receiveDecks(decks));
+        dispatch(requestSingleDeck(action.deck.deck.id));
+        hashHistory.push(`/dashboard`);
+      };
       UTILS.updateDeck(updateDeckSuccess, updateError, action.deck);
       return next(action);
     case DeckConstants.REQUEST_DECKS:

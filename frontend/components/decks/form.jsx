@@ -31,6 +31,7 @@ class DeckForm extends React.Component {
     const deck = this.state;
     if (this.state.type === 'Edit') {
       this.props.updateDeck({ deck });
+      this.props.fetchDecks();
     } else {
       this.props.createDeck({ deck });
     }

@@ -36,7 +36,7 @@ class Header extends React.Component {
           <li className="deck-option-delete">
             <button className="remove-deck"
               onClick={ this.props.removeDeck.bind(null, this.props.deckId) }>
-              
+
             </button>
           </li>
         </ul>

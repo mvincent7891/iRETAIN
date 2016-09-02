@@ -42,7 +42,7 @@ class CardForm extends React.Component {
     }
     if (newProps.lookup &&
         newProps.lookup.length > 0) {
-      const lookup = newProps.lookup.join("\r\n\r\n");
+      const lookup = newProps.lookup.join("\n\n");
       this.setState({body: lookup});
     }
 

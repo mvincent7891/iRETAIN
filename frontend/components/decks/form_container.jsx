@@ -1,7 +1,8 @@
 import DeckForm from './form.jsx';
 import { connect } from 'react-redux';
 import { createDeck,
-         updateDeck
+         updateDeck,
+         requestDecks
        } from '../../actions/deck_actions';
 
 const mapStateToProps = state => ({
@@ -12,7 +13,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   createDeck: deck => dispatch(createDeck(deck)),
-  updateDeck: deck => dispatch(updateDeck(deck))
+  updateDeck: deck => dispatch(updateDeck(deck)),
+  fetchDecks: () => dispatch(requestDecks())
 });
 
 

@@ -19,7 +19,7 @@ Card.create!(author_id: guest.id, deck_id: deck.id, title: 'aolian', body: '6th 
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'locrian', body: '7th mode of the major scale')
 
 
-deck_2 = Deck.create!(title: "Must Know", author_id: guest.id, subject_id: 2)
+deck_2 = Deck.create!(title: "Fun Facts", author_id: guest.id, subject_id: 2)
 
 Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'tree-sonous', body: 'It is illegal to climb trees in Oshawa, a town in Ontario, Canada.')
 Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'eye wish', body: 'Brown eyes are blue underneath, and you can actually get a surgery to turn brown eyes blue.')

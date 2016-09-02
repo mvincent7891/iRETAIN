@@ -1,7 +1,8 @@
 import Header from './header.jsx';
 import { connect } from 'react-redux';
 import { requestSingleDeck,
-         removeDeck } from '../../actions/deck_actions';
+         removeDeck,
+         requestDecks } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
