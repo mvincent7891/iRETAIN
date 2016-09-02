@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session/session_form_container';
+import { hashHistory } from 'react-router';
 
 class NavBar extends React.Component {
   constructor (props) {
@@ -9,11 +10,16 @@ class NavBar extends React.Component {
     this.state = {open: false, type: 'Login'};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.goHome = this.goHome.bind(this);
   }
 
   componentWillMount() {
     var appElement = document.getElementById('page-wrapper');
     Modal.setAppElement(appElement);
+  }
+
+  goHome () {
+    hashHistory.push('/dashboard');
   }
 
   componentWillReceiveProps(newProps) {
@@ -43,7 +49,10 @@ class NavBar extends React.Component {
       <div>
         <header className="nav-header">
           <ul className="nav">
-            <li className="link"><strong className="logo">iRETAIN</strong>.IO</li>
+            <li className="link"
+                onClick={ this.goHome } >
+              <strong className="logo">iRETAIN</strong>.IO
+            </li>
             <li className="link">How It Works</li>
             <li className="link">Flashcards</li>
             <li className="link">Educators</li>
