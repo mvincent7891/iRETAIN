@@ -19,11 +19,27 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+div.search-result-item {
+  padding: 10px;
+  padding-bottom: 4px;
+  border-bottom: 3px solid $secondary-grey;
+  width: 100%;
+}
+
+div.search-result-item:hover {
+  background-color: #eeeeee;
+}
+
+div.search-results-index {
+  width: 90%;
+}
+
 ul.search-bar {
   display: flex;
   width: 90%;
   margin-left: 15px;
   margin-bottom: 40px;
+  margin-top: 20px;
 }
 .search-component-left, .search-component-right, .search-component-center {
   height: 18px;
@@ -33,6 +49,7 @@ ul.search-bar {
   height: 18px;
   background-color: $primary-blue;
   padding: 5px;
+  transition: all .2s ease-in-out;
 }
 
 .search-component-left {
@@ -86,8 +103,9 @@ ul.search-bar {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 95%;
   font-weight: normal;
   font-size: 1.2em;
-  margin-bottom: 10px;
   color: $primary-grey;
+  border-bottom: 3px solid $secondary-grey;
 }

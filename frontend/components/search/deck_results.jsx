@@ -19,9 +19,13 @@ class DeckResults extends React.Component {
   render () {
     console.log(this.props.decks);
     return (
-      <div className="search-header-item">
-        Results
-        { this.renderResults() }
+      <div>
+        <div className="search-header-item">
+          Results
+        </div>
+        <div className="search-results-index">
+          { this.renderResults() }
+        </div>
       </div>
     );
   }
