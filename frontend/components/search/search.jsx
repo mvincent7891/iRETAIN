@@ -34,7 +34,7 @@ class Search extends React.Component {
         <li className="search-component-center">
           <form onSubmit={ this.handleSubmit } >
             <input type="text"
-                   placeholder="Enter search parameters..."
+                   placeholder="Try typing music, plants, general..."
                    value={ this.state.query }
                    onChange={ this.handleChange }
                    className="search-component-field"/>
