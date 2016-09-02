@@ -41,6 +41,9 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea {
   margin-top: 80px;
 }
 
+ li.search-component-right {
+   background-image: url('search.png');
+ }
  button.edit-card {
    background-image: url('pencil.png');
  }

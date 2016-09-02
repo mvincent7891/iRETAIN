@@ -11,6 +11,10 @@ class Search extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentDidMount () {
+    this.props.search("ALL");
+  }
+
   handleSubmit (event) {
     event.preventDefault();
     this.props.search(this.state.query);
@@ -19,6 +23,7 @@ class Search extends React.Component {
   handleChange (event) {
     event.preventDefault();
     this.setState({ query: event.currentTarget.value });
+    this.props.search(this.state.query);
   }
 
   renderSearchItem () {
@@ -37,7 +42,6 @@ class Search extends React.Component {
         </li>
         <li className="search-component-right"
             onClick={ this.handleSubmit }>
-          Search
         </li>
       </ul>
     );

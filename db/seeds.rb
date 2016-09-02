@@ -38,9 +38,9 @@ Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'The Holy See(d)', 
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Big ol\' seed', body: 'The biggest seed belongs to the coco de mer palm (Lodoicea maldivica). Their fruit usually contain just one seed, which can weigh almost three stone, but no one knows what a stone is.')
 
 
-t1 = Tag.create!(name: music)
-t2 = Tag.create!(name: plants)
-t3 = Tag.create!(name: general)
+t1 = Tag.create!(name: "music")
+t2 = Tag.create!(name: "plants")
+t3 = Tag.create!(name: "general")
 
 tag1 = Tagging.create!(tag_id: t1.id, deck_id: deck.id)
 tag2 = Tagging.create!(tag_id: t2.id, deck_id: deck_3.id)

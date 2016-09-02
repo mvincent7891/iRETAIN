@@ -1,9 +1,20 @@
 class Api::DecksController < ApplicationController
   def index
     if params[:query]
-      queyr = params[:query].downcase
-      @decks = Deck.where("title LIKE ?", "%#{params[:query]}%")
-      render :index
+      if params[:query] == "ALL" || params[:query] === ""
+        @decks = Deck.all
+        render :index
+      else
+        queyr = params[:query].downcase
+        @tags = Tag.where("name LIKE ?", "%#{params[:query]}%")
+        deck_ids = []
+        @tags.each do |tag|
+          deck_ids << tag.deck_ids
+        end
+        deck_ids = deck_ids.uniq
+        @decks = Deck.where(id: deck_ids)
+        render :index
+      end
     else
       author_id = current_user.id
       @decks = Deck.where(author_id: author_id)

@@ -23,6 +23,7 @@ ul.search-bar {
   display: flex;
   width: 90%;
   margin-left: 15px;
+  margin-bottom: 40px;
 }
 .search-component-left, .search-component-right, .search-component-center {
   height: 18px;
@@ -35,9 +36,9 @@ ul.search-bar {
 }
 
 .search-component-left {
-  width: 20px;
-  border-top-left-radius: $radius;
-  border-bottom-left-radius: $radius;
+  width: 7px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 .search-component-right:hover {
   background-color: $flash-blue;
@@ -45,13 +46,13 @@ ul.search-bar {
 }
 
 .search-component-right {
-  padding: 2px 15px;
-  padding-top: 8px;
-  font-size: .7em;
-  color: white;
-  font-weight: normal;
+  width: 30px;
+  padding-right: 10px;
   border-top-right-radius: $radius;
   border-bottom-right-radius: $radius;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .search-component-center {
@@ -73,10 +74,6 @@ ul.search-bar {
   height: 100%;
 }
 
-.search-component-right {
-
-}
-
 .search-container {
   margin-left: 20px;
   background-color: $tirtiary-grey;
@@ -90,7 +87,7 @@ ul.search-bar {
   flex-direction: column;
   justify-content: flex-start;
   font-weight: normal;
-  font-size: 18px;
-  margin: 15px;
+  font-size: 1.2em;
+  margin-bottom: 10px;
   color: $primary-grey;
 }
