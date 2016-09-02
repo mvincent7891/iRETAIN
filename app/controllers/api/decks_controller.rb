@@ -24,6 +24,16 @@ class Api::DecksController < ApplicationController
   end
 
   def update
+    @deck = Deck.find(deck_params[:id])
+    author_id = current_user.id
+    if @deck.update(title: deck_params[:title],
+            subject_id: deck_params[:subject_id],
+            author_id: author_id)
+      @decks = Deck.where(author_id: author_id)
+      render :index
+     else
+      render json: @deck.errors.full_messages, :status => 422
+    end
   end
 
   def destroy
@@ -39,6 +49,6 @@ class Api::DecksController < ApplicationController
 
   private
   def deck_params
-    params.require(:deck).permit(:title, :id, :subject_id, :author_id)
+    params.require(:deck).permit(:title, :id, :subject_id, :author_id, :type)
   end
 end

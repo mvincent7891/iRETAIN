@@ -29,18 +29,17 @@ export const createDeck = (success, error, deck) => {
     error
   });
 };
-//
-// export const updateDeck = (success, error, deck) => {
-//   $.ajax({
-//     url: ,
-//     method: ,
-//     dataType: ,
-//     data: ,
-//     success,
-//     error
-//   });
-// };
-//
+
+export const updateDeck = (success, error, deckObject) => {
+  $.ajax({
+    url: `api/decks/${deckObject.deck.id}`,
+    method: `PATCH`,
+    dataType: `json`,
+    data: deckObject,
+    success,
+    error
+  });
+};
 
 export const removeDeck = (success, error, deckId) => {
   $.ajax({
