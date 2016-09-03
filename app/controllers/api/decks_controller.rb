@@ -5,8 +5,8 @@ class Api::DecksController < ApplicationController
         @decks = Deck.all
         render :index
       else
-        queyr = params[:query].downcase
-        @tags = Tag.where("name LIKE ?", "%#{params[:query]}%")
+        queries = params[:query].downcase.split(' ')
+        @tags = Tag.use_queries(queries)
         deck_ids = []
         @tags.each do |tag|
           deck_ids << tag.deck_ids

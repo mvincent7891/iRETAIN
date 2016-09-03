@@ -103,7 +103,7 @@ class DeckForm extends React.Component {
                   onChange={this.update("title")}
                   />
               </li>
-
+              <br/>
               <li className="deck-form-item">
                 <Tagger tags={ this.state.tags }
                         suggestions={ this.props.allTags }
