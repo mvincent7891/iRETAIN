@@ -7,11 +7,12 @@ const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUser),
   decks: deckSelector(state.decks),
   errors: state.errors.deck,
-  showDeck: state.showDeck
+  showDeck: state.showDeck,
+  activeDeck: state.activeDeck
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDecks: () => dispatch(requestDecks()),
+  fetchDecks: () => dispatch(requestDecks())
 });
 
 export default connect(

@@ -4,6 +4,7 @@ import DeckHeaderContainer from './header_container';
 import CardsIndexContainer from '../cards/index_container';
 import DashboardContainer from '../dashboard/dashboard_container';
 import { hashHistory } from 'react-router';
+import { tabIndexSelector } from '../../util/deck_selector';
 
 export class DeckIndex extends React.Component {
 
@@ -55,6 +56,11 @@ export class DeckIndex extends React.Component {
 
   componentDidMount () {
     this.props.fetchDecks();
+    const activeId = this.props.activeDeck.id;
+    if (activeId) {
+      this.setState({ selectedTab: activeId });
+      this.setBoundaries(tabIndexSelector(activeId, this.props.decks));
+    }
   }
 
   moreDecks () {

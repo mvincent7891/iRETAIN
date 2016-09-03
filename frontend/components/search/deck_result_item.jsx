@@ -1,9 +1,17 @@
 import React from 'react';
+import { hashHistory } from 'react-router';
+
 class DeckResultItem extends React.Component {
 
   constructor (props) {
     super(props);
     this.renderOptions = this.renderOptions.bind(this);
+    this.viewOwnDeck = this.viewOwnDeck.bind(this);
+  }
+
+  viewOwnDeck () {
+    this.props.viewOwnDeck(this.props.deck);
+    hashHistory.push('/dashboard');
   }
 
   renderOptions () {
@@ -13,7 +21,10 @@ class DeckResultItem extends React.Component {
     if (this.props.user.id !== this.props.deck.author_id) {
       return (<button className="add-card">Add</button>);
     } else {
-      return (<button className="add-new-deck">View</button>);
+      return (<button className="add-new-deck"
+                      onClick={ this.viewOwnDeck }>
+                View
+              </button>);
     }
   }
 

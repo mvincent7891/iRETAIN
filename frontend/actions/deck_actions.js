@@ -7,13 +7,20 @@ export const DeckConstants = {
   REMOVE_DECK: "REMOVE_DECK",
   UPDATE_DECK: "UPDATE_DECK",
   REMOVED_DECK: "REMOVED_DECK",
-  CREATED_DECK: "CREATED_DECK"
+  CREATED_DECK: "CREATED_DECK",
+  VIEW_SINGLE_DECK: "VIEW_SINGLE_DECK"
 };
+
+export const viewSingleDeck = deck => ({
+  type: DeckConstants.VIEW_SINGLE_DECK,
+  deck
+});
 
 export const removedDeck = decks => ({
   type: DeckConstants.REMOVED_DECK,
   decks
 });
+
 export const createdDeck = decks => ({
   type: DeckConstants.CREATED_DECK,
   decks
@@ -43,7 +50,6 @@ export const createDeck = deck => ({
   type: DeckConstants.CREATE_DECK,
   deck
 });
-
 
 export const requestDecks = () => ({
   type: DeckConstants.REQUEST_DECKS

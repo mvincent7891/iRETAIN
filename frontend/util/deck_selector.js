@@ -9,3 +9,13 @@ export const deckSelector = (decks) => {
   return deckArray;
 
 };
+
+export const tabIndexSelector = (deckId, decks) => {
+  let tabIndex = 0;
+  decks.forEach((deck, index) => {
+    if (deck.id === deckId) {
+      tabIndex = index;
+    }
+  });
+  return tabIndex;
+};

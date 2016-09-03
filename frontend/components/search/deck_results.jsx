@@ -13,6 +13,7 @@ class DeckResults extends React.Component {
       this.props.decks.map((deck, idx) => (
         <DeckResultItem deck={deck}
                         key={`${deck.title}-${idx}`}
+                        viewOwnDeck={ this.props.viewOwnDeck }
                         user={ this.props.user }/>
       ))
     );
