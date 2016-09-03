@@ -78,7 +78,7 @@ class NavBar extends React.Component {
         </header>
         <Modal
           overlayClassName="OverlayClass"
-          className="ModalClass"
+          className="LoginModalClass"
           onRequestClose={this.closeModal}
           isOpen={this.state.open}>
           <SessionFormContainer type={this.state.type}/>

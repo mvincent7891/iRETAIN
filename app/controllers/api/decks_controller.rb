@@ -29,9 +29,10 @@ class Api::DecksController < ApplicationController
 
   def create
     author_id = current_user.id
+    @tag_ids = Tag.newDeckTags(deck_params[:tags])
     @deck = Deck.new(title: deck_params[:title],
                      subject_id: deck_params[:subject_id],
-                     author_id: author_id)
+                     author_id: author_id, tag_ids: @tag_ids)
     if @deck.save
       @decks = Deck.where(author_id: author_id)
       render :index
@@ -42,10 +43,11 @@ class Api::DecksController < ApplicationController
 
   def update
     @deck = Deck.find(deck_params[:id])
+    @tag_ids = Tag.extractTags(deck_params[:id], deck_params[:tags])
     author_id = current_user.id
     if @deck.update(title: deck_params[:title],
             subject_id: deck_params[:subject_id],
-            author_id: author_id)
+            author_id: author_id, tag_ids: @tag_ids)
       @decks = Deck.where(author_id: author_id)
       render :index
      else
@@ -66,6 +68,6 @@ class Api::DecksController < ApplicationController
 
   private
   def deck_params
-    params.require(:deck).permit(:tags, :title, :id, :subject_id, :author_id, :type)
+    params.require(:deck).permit(:title, :id, :subject_id, :author_id, :type, :tags => [])
   end
 end

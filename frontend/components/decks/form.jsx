@@ -1,6 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 import Tagger from '../tags/tagger';
+import { tagNameSelector } from '../../util/tag_name_selector';
 
 class DeckForm extends React.Component {
   constructor(props) {
@@ -25,6 +26,7 @@ class DeckForm extends React.Component {
     this.cancelForm = this .cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.setTags = this.setTags.bind(this);
   }
 
   cancelForm (event) {
@@ -34,7 +36,8 @@ class DeckForm extends React.Component {
 
   submitForm (event) {
     event.preventDefault();
-    const deck = this.state;
+    let deck = this.state;
+    deck.tags = tagNameSelector(this.state.tags);
     if (this.state.type === 'Edit') {
       this.props.updateDeck({ deck });
       this.props.fetchDecks();
@@ -79,6 +82,10 @@ class DeckForm extends React.Component {
                       this.setState({[field]: event.currentTarget.value }); };
   }
 
+  setTags (tags) {
+    this.setState({ tags });
+  }
+
   render () {
     return (
       <div>
@@ -99,7 +106,8 @@ class DeckForm extends React.Component {
 
               <li className="deck-form-item">
                 <Tagger tags={ this.state.tags }
-                        suggestions={ this.props.allTags }/>
+                        suggestions={ this.props.allTags }
+                        setTags = { this.setTags } />
               </li>
 
               <li className="deck-form-item">

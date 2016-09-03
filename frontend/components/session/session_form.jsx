@@ -9,6 +9,9 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount () {
     this.props.deleteErrors();
   }
 

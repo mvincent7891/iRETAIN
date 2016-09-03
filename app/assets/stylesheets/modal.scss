@@ -1,14 +1,14 @@
-.ModalClass {
+.LoginModalClass {
   position: absolute;
   top: 20%;
-  left: 30%;
-  right: 30%;
-  bottom: 40%;
-  min-height: 250px;
+  left: 36%;
+  right: 36%;
+  bottom: 600px;
+  min-height: 280px;
   min-width: 500px;
   background-color: #e7e7e7;
-  border: 3px solid #999;
-  border-radius: 4px;
+  border: 0px solid #999;
+  border-radius: 0px;
   transition: all .4s ease-in-out;
 }
 
@@ -27,4 +27,4 @@
   opacity: .5;
 }
 
-.ModalClass:focus {outline:none;}
+.LoginModalClass:focus {outline:none;}

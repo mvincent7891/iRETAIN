@@ -36,15 +36,20 @@ class Tagger extends React.Component {
         let tags = this.state.tags;
         tags.splice(i, 1);
         this.setState({tags: tags});
+        this.props.setTags(tags);
     }
 
     handleAddition(tag) {
         let tags = this.state.tags;
-        tags.push({
+        const tagNames = tagNameSelector(tags);
+        if (tagNames.indexOf(tag) === -1) {
+          tags.push({
             id: tags.length + 1,
             text: tag
-        });
+          });
+        }
         this.setState({tags: tags});
+        this.props.setTags(tags);
     }
 
     handleDrag(tag, currPos, newPos) {
@@ -59,17 +64,17 @@ class Tagger extends React.Component {
     }
 
     render() {
-        console.log('Params:');
-        console.log(this.state.suggestions);
-        console.log(this.state.tags);
         let tags = this.state.tags;
         let suggestions = this.state.suggestions;
         return (
             <div>
                 <ReactTags tags={tags}
                     suggestions={suggestions}
+                    allowDeleteFromEmptyInput={false}
+                    autofocus={false}
                     handleDelete={this.handleDelete}
                     handleAddition={this.handleAddition}
+                    handleInputChange={this.handleInputChange}
                     handleDrag={this.handleDrag} />
             </div>
         );

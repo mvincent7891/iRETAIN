@@ -22,6 +22,14 @@ div.ReactTags__selected {
   height: auto;
 }
 
+.ReactTags__suggestions {
+
+}
+
+mark {
+  background-color: #FFCC80;
+}
+
 span.ReactTags__tag {
   background-color: $edit-color;
   padding: 5px 10px;
