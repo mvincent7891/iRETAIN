@@ -4,7 +4,7 @@
   left: 36%;
   right: 36%;
   bottom: 600px;
-  min-height: 280px;
+  min-height: 320px;
   min-width: 500px;
   background-color: #e7e7e7;
   border: 0px solid #999;
@@ -28,3 +28,7 @@
 }
 
 .LoginModalClass:focus {outline:none;}
+
+li.large-logo {
+  opacity: 1;
+}

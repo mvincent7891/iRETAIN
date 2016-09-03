@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       <div className="relative-container">
 
         <form onSubmit={this.handleSubmit} className="login">
-
+          <ul><li className="large-logo"></li></ul>
           <h2 className="login-item">{this.props.type}</h2>
           { this.renderErrors() }
 
@@ -70,6 +70,8 @@ class SessionForm extends React.Component {
                 />
 
         </form>
+
+
 
       </div>
     );

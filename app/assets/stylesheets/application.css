@@ -59,14 +59,11 @@ li.logo-image {
 
 li.large-logo {
   background-image: url('logo.png');
-  height: 200px;
-  width: 200px;
-  background-size: 200px;
+  height: 160px;
+  width: 160px;
+  background-size: 160px;
   background-position: center;
   background-repeat: no-repeat;
-  position: absolute;
-  bottom: 50px;
-  left: 50px;
 }
 
 li.search-component-right {
