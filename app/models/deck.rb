@@ -1,14 +1,34 @@
 class Deck < ActiveRecord::Base
   validates :author_id, :title, :subject_id, presence: true
+  validates :title, uniqueness: { scope: :author_id }
 
-  has_many :taggings
+  has_many :cards, dependent: :destroy
+  has_many :taggings, dependent: :destroy
   has_many :tags,
     through: :taggings
 
   def self.create_default_deck(user_id)
-    default_subject = Subject.where(title: "General Knowledge").first
-    default_deck = Deck.create!(title: "Default", author_id: user_id, subject_id: default_subject.id)
-    Card.create!(author_id: user_id, deck_id: default_deck.id, title: 'Your First Card: Click on Me!', body: 'Clicking on cards will reveal their body as well as some basic options. Click on the magnifying glass in the search bar to find more decks and cards.')
+    default_deck = Deck.where(title: "Default").first
+    self.clone_deck(default_deck.id, user_id)
+  end
+
+  def self.clone_deck(deck_id, user_id)
+    old_deck = Deck.find(deck_id)
+    old_subject = old_deck.subject_id
+    old_title = old_deck.title
+    new_deck = Deck.create!(author_id: user_id,
+                            title: old_title,
+                            subject_id: old_subject)
+
+    old_deck.cards.each do |card|
+      card_title = card.title
+      card_body = card.body
+      Card.create!(author_id: user_id,
+                   deck_id: new_deck.id,
+                   title: card_title,
+                   body: card_body)
+    end
+
   end
 
 end
