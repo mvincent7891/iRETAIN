@@ -65,7 +65,9 @@ class NavBar extends React.Component {
       <div>
         <header className="nav-header">
           <ul className="nav">
-            <li className="link"
+            <li className="link logo-image" onClick={ this.goHome }>
+            </li>
+            <li className="link logo-name"
                 onClick={ this.goHome } >
               <strong className="logo">iRETAIN</strong>.IO
             </li>

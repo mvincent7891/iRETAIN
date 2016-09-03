@@ -46,9 +46,20 @@ input[type=text] {
   font-size: .9em;
 }
 
- li.search-component-right {
-   background-image: url('search.png');
- }
+li.logo-image {
+  background-image: url('logo.png');
+  height: 35px;
+  width: 35px;
+  background-size: 35px;
+  margin-right: 0px;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-right: 0px;
+}
+
+li.search-component-right {
+  background-image: url('search.png');
+}
  button.edit-card {
    background-image: url('pencil.png');
  }
