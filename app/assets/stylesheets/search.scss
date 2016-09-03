@@ -122,6 +122,7 @@ ul.search-bar {
   border-bottom: 3px solid $secondary-grey;
 }
 
+
 button.add-new-deck {
   transition: all $button-transition ease-in-out;
   background-color: $edit-color;
@@ -129,14 +130,8 @@ button.add-new-deck {
   color: white;
   padding: $button-padding;
   margin: 5px;
-  margin-right: 0px;
   border-radius: 5px;
-  font-size: .8em;
-  height: 30px;
-  width: 50px;
-  background-size: 15px;
-  background-position: center;
-  background-repeat: no-repeat;
+  font-size: .9em;
 }
 
 button.add-new-deck:hover {

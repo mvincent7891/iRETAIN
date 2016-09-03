@@ -7,6 +7,9 @@ class DeckResultItem extends React.Component {
   }
 
   renderOptions () {
+    if (!this.props.user) {
+      return;
+    }
     if (this.props.user.id !== this.props.deck.author_id) {
       return (<button className="add-card">Add</button>);
     } else {
