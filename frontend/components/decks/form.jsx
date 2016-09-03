@@ -44,7 +44,7 @@ class DeckForm extends React.Component {
   }
 
   componentDidMount () {
-
+    this.props.requestAllTags();
   }
 
   componentWillReceiveProps (newProps) {
@@ -98,7 +98,8 @@ class DeckForm extends React.Component {
               </li>
 
               <li className="deck-form-item">
-                <Tagger tags={ this.state.tags } />
+                <Tagger tags={ this.state.tags }
+                        suggestions={ this.props.allTags }/>
               </li>
 
               <li className="deck-form-item">

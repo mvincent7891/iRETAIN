@@ -76,15 +76,15 @@ ul.nav li.link:hover {
 }
 
 ul.nav li.material-icons {
-  padding: 5px;
   color: #858585;
   transition: color .4s ease-in-out;
   transition: transform .4s ease-in-out;
+  margin-left: 30px;
 }
 
 li.settings {
   transition: all .4s ease-in-out;
-  margin-right: 20px;
+  margin-right: 30px;
 }
 
 li.settings:hover {
