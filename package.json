@@ -7,7 +7,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/webpack"
+    "postinstall": "process.env.NODE_ENV = 'production'; ./node_modules/.bin/webpack -p"
   },
   "repository": {
     "type": "git",
