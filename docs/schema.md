@@ -28,10 +28,7 @@ public      | boolean   | not null, default: false
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-author_id   | integer   | not null, foreign key (references users), indexed
 title       | string    | not null
-highlight   | boolean   | not null, default: false
-public      | boolean   | not null, default: false
 
 ## cards
 column name       | data type | details

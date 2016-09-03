@@ -8,7 +8,14 @@ class User < ActiveRecord::Base
   has_many :cards,
   primary_key: :id,
   foreign_key: :author_id,
-  class_name: Card
+  class_name: Card,
+  dependent: :destroy
+
+  has_many :decks,
+  primary_key: :id,
+  foreign_key: :author_id,
+  class_name: Deck,
+  dependent: :destroy
 
 def self.find_by_credentials(username, password)
   user = User.find_by_username(username)

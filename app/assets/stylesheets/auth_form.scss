@@ -19,6 +19,17 @@
   padding: 5px;
   font-size: 1em;
 }
+input.login-item:focus {
+  outline: none;
+}
+input.login-item {
+  background-color: transparent;
+  border-bottom: 3px solid #272727;
+  border-left: 30px solid #272727;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding-left: 10px;
+}
 
 .login h4 {
   font-weight: lighter;

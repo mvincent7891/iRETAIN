@@ -6,9 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-guest = User.create!(username: "guest", password: "password")
+subject_1 = Subject.create!(title: "General Knowledge")
 
-deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: 1)
+guest = User.create!(username: "guest", password: "password")
+user_2 = User.create!(username: "james", password: "password")
+
+deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: subject_1.id)
 
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'ionian', body: 'first mode of the major scale')
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'dorian', body: '2nd mode of the major scale')
@@ -19,18 +22,18 @@ Card.create!(author_id: guest.id, deck_id: deck.id, title: 'aolian', body: '6th 
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'locrian', body: '7th mode of the major scale')
 
 
-deck_2 = Deck.create!(title: "Fun Facts", author_id: guest.id, subject_id: 2)
+deck_2 = Deck.create!(title: "Fun Facts", author_id: user_2.id, subject_id: subject_1.id)
 
-Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'tree-sonous', body: 'It is illegal to climb trees in Oshawa, a town in Ontario, Canada.')
-Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'eye wish', body: 'Brown eyes are blue underneath, and you can actually get a surgery to turn brown eyes blue.')
-Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'gut-shy', body: 'When you blush, the lining of your stomach also turns red.')
-Card.create!(author_id: guest.id, deck_id: deck_2.id, title: 'seed data', body: 'Coffee beans aren’t beans; they are seeds of coffee berries.')
+Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'tree-sonous', body: 'It is illegal to climb trees in Oshawa, a town in Ontario, Canada.')
+Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'eye wish', body: 'Brown eyes are blue underneath, and you can actually get a surgery to turn brown eyes blue.')
+Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'gut-shy', body: 'When you blush, the lining of your stomach also turns red.')
+Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'seed data', body: 'Coffee beans aren’t beans; they are seeds of coffee berries.')
 
-deck_3 = Deck.create!(title: "Seed Data", author_id: guest.id, subject_id: 2)
-deck_4 = Deck.create!(title: "Big Words", author_id: guest.id, subject_id: 2)
-deck_5 = Deck.create!(title: "Computer Science", author_id: guest.id, subject_id: 2)
-deck_6 = Deck.create!(title: "Politics", author_id: guest.id, subject_id: 2)
-deck_7 = Deck.create!(title: "Science", author_id: guest.id, subject_id: 2)
+deck_3 = Deck.create!(title: "Seed Data", author_id: guest.id, subject_id: subject_1.id)
+deck_4 = Deck.create!(title: "Big Words", author_id: guest.id, subject_id: subject_1.id)
+deck_5 = Deck.create!(title: "Computer Science", author_id: user_2.id, subject_id: subject_1.id)
+deck_6 = Deck.create!(title: "Politics", author_id: user_2.id, subject_id: subject_1.id)
+deck_7 = Deck.create!(title: "Science", author_id: guest.id, subject_id: subject_1.id)
 
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Production', body: 'Seeds are produced when pollen is released from the male (stamen) part of a plant')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Seed plants', body: 'There are two types of plants that produce seeds: gymnosperms (like the conifer family), whose seeds are exposed, and angiosperms, or flowering plants, whose seeds are protected by fruits')
