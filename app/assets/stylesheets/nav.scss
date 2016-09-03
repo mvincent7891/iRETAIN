@@ -59,7 +59,8 @@ ul.nav li.link {
   padding: 15px 20px;
   color: #858585;
   height: 100%;
-  transition: all .4s ease-in-out;
+
+  transition: font-size 0s ease-in-out;
 }
 
 ul.nav li.greeting {
@@ -84,6 +85,7 @@ ul.nav li.material-icons {
 
 li.settings {
   transition: all .4s ease-in-out;
+  transition: font-size 0s ease-in-out;
   margin-right: 30px;
 }
 
