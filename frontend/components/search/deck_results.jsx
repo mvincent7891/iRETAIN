@@ -14,6 +14,7 @@ class DeckResults extends React.Component {
         <DeckResultItem deck={deck}
                         key={`${deck.title}-${idx}`}
                         viewOwnDeck={ this.props.viewOwnDeck }
+                        cloneDeck={ this.props.cloneDeck }
                         user={ this.props.user }/>
       ))
     );

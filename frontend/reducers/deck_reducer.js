@@ -1,4 +1,5 @@
 import { DeckConstants } from '../actions/deck_actions.js';
+import { SessionConstants } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 
 const defaultState = {
@@ -15,12 +16,16 @@ export const DeckReducer = (state = defaultState, action) => {
       return merge({}, state, {[id]: action.deck});
     default:
       return state;
+    case SessionConstants.LOGOUT:
+      return defaultState;
   }
 
 };
 
 export const ShowDeckReducer = (state = defaultState, action) => {
   switch(action.type) {
+    case SessionConstants.LOGOUT:
+      return defaultState;
     case DeckConstants.RECEIVE_SINGLE_DECK:
       return defaultState;
     case DeckConstants.REMOVED_DECK:

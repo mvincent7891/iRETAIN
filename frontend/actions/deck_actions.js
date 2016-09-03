@@ -8,8 +8,14 @@ export const DeckConstants = {
   UPDATE_DECK: "UPDATE_DECK",
   REMOVED_DECK: "REMOVED_DECK",
   CREATED_DECK: "CREATED_DECK",
-  VIEW_SINGLE_DECK: "VIEW_SINGLE_DECK"
+  VIEW_SINGLE_DECK: "VIEW_SINGLE_DECK",
+  CLONE_DECK: "CLONE_DECK"
 };
+
+export const cloneDeck = deck => ({
+  type: DeckConstants.CLONE_DECK,
+  deck
+});
 
 export const viewSingleDeck = deck => ({
   type: DeckConstants.VIEW_SINGLE_DECK,

@@ -28,7 +28,7 @@ class Deck < ActiveRecord::Base
                    title: card_title,
                    body: card_body)
     end
-
+    new_deck.tag_ids = old_deck.tag_ids
   end
 
 end

@@ -2,7 +2,7 @@ class Api::DecksController < ApplicationController
   def index
     if params[:query]
       if params[:query] == "ALL" || params[:query] === ""
-        @decks = Deck.all
+        @decks = Deck.where.not(title: 'Default')
         render :index
       else
         queries = params[:query].downcase.split(' ')
@@ -12,7 +12,8 @@ class Api::DecksController < ApplicationController
           deck_ids << tag.deck_ids
         end
         deck_ids = deck_ids.uniq
-        @decks = Deck.where(id: deck_ids)
+        @all_decks = Deck.where(id: deck_ids)
+        @decks = @all_decks.where.not(title: 'Default')
         render :index
       end
     else

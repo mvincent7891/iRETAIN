@@ -1,7 +1,8 @@
 import DeckResults from './deck_results.jsx';
 import { connect } from 'react-redux';
 import { deckSelector } from '../../util/deck_selector';
-import { viewSingleDeck } from '../../actions/deck_actions';
+import { viewSingleDeck,
+          cloneDeck } from '../../actions/deck_actions';
 // import { } from '../../actions/search_actions';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,7 +12,8 @@ const mapStateToProps = (state, ownProps) => ({
   });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewOwnDeck: deckId => dispatch(viewSingleDeck(deckId))
+  viewOwnDeck: deckId => dispatch(viewSingleDeck(deckId)),
+  cloneDeck: deck => dispatch(cloneDeck(deck))
 });
 
 export default connect(

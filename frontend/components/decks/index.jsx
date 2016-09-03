@@ -31,6 +31,10 @@ export class DeckIndex extends React.Component {
       lastDeck = indexLength;
       firstDeck = indexLength - 3;
     }
+    if (firstDeck <= 0) {
+      firstDeck = 0;
+      lastDeck = 3;
+    }
     this.setState({ firstDeck, lastDeck });
   }
 
@@ -55,6 +59,7 @@ export class DeckIndex extends React.Component {
   }
 
   componentDidMount () {
+
     this.props.fetchDecks();
     const activeId = this.props.activeDeck.id;
     if (activeId) {
@@ -140,6 +145,7 @@ export class DeckIndex extends React.Component {
   }
 
   render () {
+    console.log(this.props.decks);
     return (
 
       <div className="deck-index-container">

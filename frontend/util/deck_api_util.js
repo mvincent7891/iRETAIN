@@ -1,3 +1,12 @@
+export const cloneDeck = (success, error, deck) => {
+  $.ajax({
+    url: `api/clones/${deck.id}`,
+    method: `GET`,
+    dataType: `json`,
+    success,
+    error
+  });
+};
 
 export const fetchDecks = (success, error) => {
   $.ajax({

@@ -7,6 +7,11 @@ class DeckResultItem extends React.Component {
     super(props);
     this.renderOptions = this.renderOptions.bind(this);
     this.viewOwnDeck = this.viewOwnDeck.bind(this);
+    this.cloneDeck = this.cloneDeck.bind(this);
+  }
+
+  cloneDeck () {
+    this.props.cloneDeck(this.props.deck);
   }
 
   viewOwnDeck () {
@@ -19,7 +24,10 @@ class DeckResultItem extends React.Component {
       return;
     }
     if (this.props.user.id !== this.props.deck.author_id) {
-      return (<button className="add-card">Add</button>);
+      return (<button className="add-card"
+                      onClick={ this.cloneDeck }>
+                Add
+              </button>);
     } else {
       return (<button className="add-new-deck"
                       onClick={ this.viewOwnDeck }>

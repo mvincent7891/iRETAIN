@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy, :show]
     resources :tags, only: [:index]
+    resources :clones, only: [:show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

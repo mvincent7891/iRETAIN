@@ -14,7 +14,15 @@ import * as UTILS from '../util/deck_api_util.js';
 import { hashHistory } from 'react-router';
 
 const DeckMiddleware = ({getState, dispatch}) => next => action => {
+
   const success = decks => dispatch(receiveDecks(decks));
+  const createDeckSuccess = decks => {
+    const id = Object.keys(decks)[Object.keys(decks).length - 1];
+    dispatch(receiveDecks(decks));
+    dispatch(createdDeck(decks));
+    hashHistory.push(`/dashboard/${id}`); };
+  const createDeckError = errors =>   dispatch(createDeckErrors(errors.responseJSON));
+
   switch(action.type) {
     case DeckConstants.UPDATE_DECK:
       const updateError = errors => dispatch(receiveUpdateDeckErrors(errors.responseJSON));
@@ -35,13 +43,10 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       UTILS.fetchDeck(singleDeckSuccess, singleDeckError, action.deckId);
       return next(action);
     case DeckConstants.CREATE_DECK:
-      const createDeckSuccess = decks => {
-        const id = Object.keys(decks)[Object.keys(decks).length - 1];
-        dispatch(receiveDecks(decks));
-        dispatch(createdDeck(decks));
-        hashHistory.push(`/dashboard/${id}`); };
-      const createDeckError = errors =>   dispatch(createDeckErrors(errors.responseJSON));
       UTILS.createDeck(createDeckSuccess, createDeckError, action.deck);
+      return next(action);
+    case DeckConstants.CLONE_DECK:
+      UTILS.cloneDeck(createDeckSuccess, createDeckError, action.deck);
       return next(action);
     case DeckConstants.REMOVE_DECK:
       const removeDeckError = errors => dispatch(receiveRemoveDeckErrors(errors));
