@@ -5,7 +5,7 @@ import DecksIndexContainer from '../decks/index_container';
 import DeckFormContainer from '../decks/form_container';
 import SearchContainer from '../search/container';
 
-const SplashPage = () => ( <li></li>);
+const SplashPage = () => ( <li className="large-logo"></li>);
 
 class AppRouter extends React.Component {
   constructor(props) {
