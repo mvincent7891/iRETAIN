@@ -20,7 +20,7 @@ class NavBar extends React.Component {
   }
 
   searchCards () {
-    hashHistory.push('/search');    
+    hashHistory.push('/search');
   }
 
   goHome () {
@@ -42,7 +42,18 @@ class NavBar extends React.Component {
     const sessionNav = this.props.loggedIn ?
       <ul className="nav">
         <li className="greeting">Signed in as {this.props.user}</li>
-        <li className="link" onClick={ this.props.logout }>Logout</li>
+        <li className="material-icons"
+          onClick={ this.searchCards }>
+          search
+        </li>
+        <li className="material-icons"
+          onClick={ this.goHome }>
+          home
+        </li>
+        <li className="material-icons settings"
+          onClick={ this.props.logout }>
+          settings
+        </li>
       </ul> :
       <ul className="nav">
         <li className="link" onClick={this.openModal.bind(this, "Login")}>Login</li>

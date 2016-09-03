@@ -1,3 +1,38 @@
 // Place all the styles related to the api/tags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+$button-padding: 6px;
+$primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+
+div.ReactTags__selected {
+  height: auto;
+}
+
+span.ReactTags__tag {
+  background-color: $edit-color;
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  color: white;
+}
+
+input[type=text] {
+  padding: 5px;
+  font-size: .9em;
+  margin-top: 10px;
+}

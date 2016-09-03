@@ -1,3 +1,25 @@
+$deck-header-width: 500px;
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+$button-padding: 6px;
+$primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+$button-transition: .2s;
+$card-index-width: 500px;
+$radius: 12px;
+
+
+
 header.nav-header {
   z-index: 100;
   display: flex;
@@ -49,6 +71,27 @@ ul.nav li.greeting {
 }
 
 ul.nav li.link:hover {
+  color: #29a5dc;
+  cursor: pointer;
+}
+
+ul.nav li.material-icons {
+  padding: 5px;
+  color: #858585;
+  transition: color .4s ease-in-out;
+  transition: transform .4s ease-in-out;
+}
+
+li.settings {
+  transition: all .4s ease-in-out;
+  margin-right: 20px;
+}
+
+li.settings:hover {
+  transform: rotate(0.15turn);
+}
+
+ul.nav li.material-icons:hover {
   color: #29a5dc;
   cursor: pointer;
 }

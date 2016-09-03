@@ -89,11 +89,12 @@ ul.search-bar {
   outline: none;
 }
 
-.search-component-field:focus {
+input[type=text].search-component-field:focus {
   background-color: white;
 }
-.search-component-field {
+input[type=text].search-component-field {
   font-size: 1em;
+  margin-top: 0px;
   padding: 5px;
   width: 100%;
   background-color: #fafafa;
