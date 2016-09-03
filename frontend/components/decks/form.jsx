@@ -1,21 +1,27 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import Tagger from '../tags/tagger';
 
 class DeckForm extends React.Component {
   constructor(props) {
     super(props);
+
     const path = this.props.location.pathname;
-    let type, title, id;
+    let type, title, id, tags;
     if (path.includes('edit')) {
-      type = 'Edit';
-      title = this.props.decks[this.props.params.deckId].title;
       id = this.props.params.deckId;
+      const deck = this.props.decks[id];
+      type = 'Edit';
+      title = deck.title;
+      tags = deck.tags;
     } else {
       type = 'New';
       title = this.props.title;
       id = null;
+      tags = [];
     }
-    this.state = { title, subject_id: 1, id, type, errors: [] };
+
+    this.state = { tags, title, subject_id: 1, id, type, errors: [] };
     this.cancelForm = this .cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
@@ -89,6 +95,10 @@ class DeckForm extends React.Component {
                   value={this.state.title}
                   onChange={this.update("title")}
                   />
+              </li>
+
+              <li className="deck-form-item">
+                <Tagger tags={ this.state.tags } />
               </li>
 
               <li className="deck-form-item">
