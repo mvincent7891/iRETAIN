@@ -64,7 +64,7 @@ class NavBar extends React.Component {
       <ul className="nav">
         <li className="link" onClick={this.openModal.bind(this, "Login")}>Login</li>
         <li className="link" onClick={this.openModal.bind(this, "Sign Up")}>Sign Up</li>
-        <li className="link">Guest</li>
+        <li className="link" onClick={this.openModal.bind(this, "Guest Login")}>Guest</li>
       </ul>;
 
     return (

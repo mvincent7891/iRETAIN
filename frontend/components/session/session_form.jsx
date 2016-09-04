@@ -9,10 +9,47 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
+    this.enterGuestUsername = this.enterGuestUsername.bind(this);
+    this.enterGuestPassword = this.enterGuestPassword.bind(this);
   }
 
   componentDidMount () {
     this.props.deleteErrors();
+    if (this.props.type === "Guest Login") {
+      this.guestLogin();
+    }
+  }
+
+  guestLogin () {
+    const uname = (i) => this.enterGuestUsername(i);
+    const pword = (i) => this.enterGuestPassword(i);
+    for (var i = 0; i < 5; i++) {
+      uname(i);
+    }
+    setTimeout(() => {
+      for (var j = 0; j < 8; j++) {
+        pword(j);
+      }
+    }, 450);
+    setTimeout(() => {
+      const user = this.state;
+      this.props.processForm({user});
+    }, 1500);
+  }
+
+  enterGuestUsername (i) {
+    const username = "guest".slice(0,(i+1));
+    setTimeout(() => {
+      this.setState({username});
+    }, i*90);
+  }
+
+  enterGuestPassword (i) {
+    const password = "password".slice(0,(i+1));
+    setTimeout(() => {
+      this.setState({password});
+    }, i*90);
   }
 
   update(field){
