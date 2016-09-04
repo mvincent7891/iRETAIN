@@ -2,14 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import SessionFormContainer from '../session/session_form_container';
+import AccountMenuContainer from '../session/account_menu_container';
 import { hashHistory } from 'react-router';
 
 class NavBar extends React.Component {
   constructor (props) {
     super(props);
-    this.state = {open: false, type: 'Login'};
+    this.state = {open: false, type: 'Login', openAccount: false};
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.closeAccountModal = this.closeAccountModal.bind(this);
     this.goHome = this.goHome.bind(this);
     this.searchCards = this.searchCards.bind(this);
   }
@@ -33,6 +35,10 @@ class NavBar extends React.Component {
     }
   }
 
+  openAccountModal (type = "") { this.setState({openAccount: true}); }
+
+  closeAccountModal (type = "") { this.setState({openAccount: false}); }
+
   openModal (type = "") { this.setState({open: true, type}); }
 
   closeModal (type = "") { this.setState({open: false, type}); }
@@ -51,7 +57,7 @@ class NavBar extends React.Component {
           home
         </li>
         <li className="material-icons settings"
-          onClick={ this.props.logout }>
+          onMouseOver={this.openAccountModal.bind(this)}>
           settings
         </li>
       </ul> :
@@ -84,6 +90,13 @@ class NavBar extends React.Component {
           onRequestClose={this.closeModal}
           isOpen={this.state.open}>
           <SessionFormContainer type={this.state.type}/>
+        </Modal>
+        <Modal
+          overlayClassName="AccountOverlayClass"
+          className="AccountModalClass"
+          onRequestClose={this.closeAccountModal}
+          isOpen={this.state.openAccount}>
+          <AccountMenuContainer closeModal={ this.closeAccountModal }/>
         </Modal>
         { this.props.children }
       </div>
