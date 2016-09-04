@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 subject_1 = Subject.create!(title: "General Knowledge")
+subject_2 = Subject.create!(title: "Music")
 
 guest = User.create!(username: "guest", password: "password")
 user_2 = User.create!(username: "james", password: "password")
@@ -17,7 +18,7 @@ Card.create!(author_id: guest.id, deck_id: default_deck.id, title: 'Your First C
 
 Deck.clone_deck(default_deck.id, guest.id)
 
-deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: subject_1.id)
+deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: subject_2.id)
 
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'ionian', body: 'first mode of the major scale')
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'dorian', body: '2nd mode of the major scale')

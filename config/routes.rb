@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy, :show]
     resources :tags, only: [:index]
     resources :clones, only: [:show]
+    resources :subjects, only: [:create, :destroy, :index, :show]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

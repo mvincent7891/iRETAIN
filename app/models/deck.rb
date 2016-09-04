@@ -2,6 +2,7 @@ class Deck < ActiveRecord::Base
   validates :author_id, :title, :subject_id, presence: true
   validates :title, uniqueness: { scope: :author_id }
 
+  belongs_to :subject
   has_many :cards, dependent: :destroy
   has_many :taggings, dependent: :destroy
   has_many :tags,
@@ -31,4 +32,9 @@ class Deck < ActiveRecord::Base
     new_deck.tag_ids = old_deck.tag_ids
   end
 
+  def self.subjects(deck_ids)
+    subject_ids = [];
+    deck_ids.each { |id| subject_ids << Deck.find(id).subject_id }
+    subject_ids.uniq
+  end
 end
