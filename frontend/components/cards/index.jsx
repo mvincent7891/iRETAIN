@@ -33,6 +33,7 @@ export class CardsIndex extends React.Component {
   }
 
   render () {
+
     const cardList = [];
     this.props.cards.forEach((card, idx) => {
       // HACKED Solution for lookup -> fix after lookup redux cycle finished
@@ -47,6 +48,7 @@ export class CardsIndex extends React.Component {
             cardSaved={ this.props.cardSaved }
             deleteLookup={ this.props.deleteLookup }
             deckId={ this.props.deckId }
+            setCardSavedFalse={ this.props.setCardSavedFalse }
             processCard={ this.props.updateCard} />
         );
       }
@@ -59,6 +61,7 @@ export class CardsIndex extends React.Component {
                                 errors={ this.props.errors}
                                 lookupCard={ this.props.lookupCard }
                                 lookup={ this.props.lookup }
+                                setCardSavedFalse={ this.props.setCardSavedFalse }
                                 cardSaved={ this.props.cardSaved }
                                 deckId={ this.props.deckId }
                                 deleteLookup={ this.props.deleteLookup }

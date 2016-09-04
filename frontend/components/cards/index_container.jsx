@@ -4,6 +4,7 @@ import { requestCards,
          createCard,
          lookupCard,
          removeSingleCard,
+         setCardSavedFalse,
          deleteLookup,
          updateCard } from '../../actions/card_actions';
 import { cardSelector } from '../../util/card_selector';
@@ -25,7 +26,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   updateCard: (card, deckId = ownProps.deckId) => dispatch(updateCard(card, deckId)),
   deleteErrors: () => dispatch(deleteCardErrors()),
   deleteLookup: () => dispatch(deleteLookup()),
-  lookupCard: card => dispatch(lookupCard(card))
+  lookupCard: card => dispatch(lookupCard(card)),
+  setCardSavedFalse: () => dispatch(setCardSavedFalse())
 });
 
 export default connect(

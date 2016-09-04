@@ -11,8 +11,11 @@ subject_1 = Subject.create!(title: "General Knowledge")
 guest = User.create!(username: "guest", password: "password")
 user_2 = User.create!(username: "james", password: "password")
 
-default_deck = Deck.create!(title: "Default", author_id: guest.id, subject_id: subject_1.id)
+default_deck = Deck.create!(title: "Default", author_id: 0, subject_id: subject_1.id)
+
 Card.create!(author_id: guest.id, deck_id: default_deck.id, title: 'Your First Card: Click on Me!', body: 'Clicking on cards will reveal their body as well as some basic options. Click on the magnifying glass in the search bar to find more decks and cards.')
+
+Deck.clone_deck(default_deck.id, guest.id)
 
 deck = Deck.create!(title: "Major Scale Modes", author_id: guest.id, subject_id: subject_1.id)
 

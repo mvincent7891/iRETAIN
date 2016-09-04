@@ -1,6 +1,7 @@
 import React from 'react';
 
 class CardForm extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -12,6 +13,9 @@ class CardForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleLookup = this.handleLookup.bind(this);
     this.update = this.update.bind(this);
+  }
+  componentDidMount () {
+    this.props.setCardSavedFalse();
   }
 
   update(field){
@@ -35,9 +39,6 @@ class CardForm extends React.Component {
   componentWillReceiveProps(newProps) {
 
     if (newProps.cardSaved) {
-      // TODO: Code is reaching this point after looking up due to new
-      // props update with deck. Need to refactor lookup to take care of
-      // this issue.
       newProps.cancelForm();
     }
     if (newProps.lookup &&
@@ -45,7 +46,6 @@ class CardForm extends React.Component {
       const lookup = newProps.lookup.join("\n\n");
       this.setState({body: lookup});
     }
-
   }
 
   renderErrors(){
@@ -79,6 +79,7 @@ class CardForm extends React.Component {
   }
 
   render() {
+
     return (
       <div className="add-card-container">
 

@@ -1,4 +1,3 @@
-
 export const fetchCards = (success, error, deckId) => {
   $.ajax({
     url: `api/decks/${deckId}/cards`,
@@ -31,7 +30,6 @@ export const updateCard = (success, error, card) => {
     error
   });
 };
-
 
 export const removeSingleCard = (success, error, card) => {
   $.ajax({

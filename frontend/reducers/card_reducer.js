@@ -11,7 +11,9 @@ const CardReducer = (state = defaultState, action) => {
   switch(action.type) {
     case CardConstants.RECEIVE_LOOKUP:
       const lookupArray = lookupSelector(action.card);
-      return merge({}, state, { lookup: lookupArray });
+      return merge({}, state, { lookup: lookupArray, cardSaved: false });
+    case CardConstants.SET_CARD_SAVED_FALSE:
+      return merge({}, state, { cardSaved: false });
     case CardConstants.DELETE_LOOKUP:
       return merge({}, state, { lookup: null });
     case CardConstants.RECEIVE_CARDS:
