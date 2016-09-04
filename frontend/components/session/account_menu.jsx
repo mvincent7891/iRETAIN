@@ -14,6 +14,11 @@ class AccountMenu extends React.Component {
     this.props.closeModal();
   }
 
+  logoutAndClose () {
+    this.props.closeModal();
+    this.props.logout();
+  }
+
   render() {
     return (
       <div className="account-menu"
@@ -22,7 +27,7 @@ class AccountMenu extends React.Component {
           <li className="account-menu-item">
             Account Settings
           </li>
-          <li onClick={ this.props.logout }
+          <li onClick={ this.logoutAndClose.bind(this) }
               className="account-menu-item">
             Logout
           </li>
