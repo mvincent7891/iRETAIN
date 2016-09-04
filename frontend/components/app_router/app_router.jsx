@@ -2,6 +2,7 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import { App } from '../app.jsx';
 import DecksIndexContainer from '../decks/index_container';
+import SubjectIndexContainer from '../subjects/index_container';
 import DeckFormContainer from '../decks/form_container';
 import SearchContainer from '../search/container';
 
@@ -22,6 +23,7 @@ class AppRouter extends React.Component {
             <Route path="/edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
           </Route>
           <Route path ="/search(/:query_parms)" component={ SearchContainer } />
+          <Route path ="/subjects" component={ SubjectIndexContainer } />
         </Route>
       </Router>
     );

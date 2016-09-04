@@ -31,25 +31,25 @@ class SessionForm extends React.Component {
       for (var j = 0; j < 8; j++) {
         pword(j);
       }
-    }, 450);
+    }, 550);
     setTimeout(() => {
       const user = this.state;
       this.props.processForm({user});
-    }, 1500);
+    }, 1700);
   }
 
   enterGuestUsername (i) {
     const username = "guest".slice(0,(i+1));
     setTimeout(() => {
       this.setState({username});
-    }, i*90);
+    }, i*110);
   }
 
   enterGuestPassword (i) {
     const password = "password".slice(0,(i+1));
     setTimeout(() => {
       this.setState({password});
-    }, i*90);
+    }, i*110);
   }
 
   update(field){
