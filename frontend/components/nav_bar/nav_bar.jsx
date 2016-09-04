@@ -69,7 +69,7 @@ class NavBar extends React.Component {
             </li>
             <li className="link logo-name"
                 onClick={ this.goHome } >
-              <strong className="logo">iRETAIN</strong>.IO
+              <strong className="logo">iRETAIN</strong><span id="logo-io">.IO</span>
             </li>
             <li className="link">How It Works</li>
             <li className="link" onClick={ this.searchCards }>Flashcards</li>

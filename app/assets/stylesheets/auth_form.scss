@@ -4,7 +4,7 @@
 
 .login {
   position: absolute;
-  top: -80px;
+  top: 40px;
   bottom: 20px;
   left: 40px;
   right: 40px;
@@ -38,9 +38,30 @@ input.login-item {
   size: .5em;
   margin: 20px;
 }
+button#login-button:hover {
+  background-color: #676767;
+}
 
-.login button {
+button#login-button {
+  font-size: 1em;
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 8px 14px;
+  margin-top: 20px;
+  border: 5px;
+  font-weight: lighter;
+  color: #dddddd;
+  background-color: #272727;
+}
+
+#login-1 {
   width: 60px;
+  height: 30px;
+  padding: 0px;
+  border: 0px;
+  color: #dddddd;
+  background-color: #272727;
 }
 li.large-logo {
   opacity: 1;

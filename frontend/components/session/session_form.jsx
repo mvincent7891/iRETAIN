@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
       <div className="relative-container">
 
         <form onSubmit={this.handleSubmit} className="login">
-          <ul><li className="large-logo"></li></ul>
+
           <h2 className="login-item">{this.props.type}</h2>
           { this.renderErrors() }
 
@@ -63,12 +63,14 @@ class SessionForm extends React.Component {
               onChange={this.update("password")}
               />
           </label>
+          <label>
+            <button id="login-button"
+              onClick={ this.handleSubmit }>{ this.props.type }</button>
 
-          <h4>Enter to Submit</h4>
+          </label>
           <input type="submit"
-                 value={this.props.type}
-                />
-
+            value={this.props.type}
+            />
         </form>
 
 
