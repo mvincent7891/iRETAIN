@@ -24,7 +24,7 @@ class DeckResults extends React.Component {
     return (
       <div>
         <div className="search-header-item">
-          Results
+          Flashcard Decks
         </div>
         <div className="search-results-index">
           { this.renderResults() }
