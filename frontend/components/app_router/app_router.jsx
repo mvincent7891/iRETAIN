@@ -5,6 +5,7 @@ import DecksIndexContainer from '../decks/index_container';
 import SubjectIndexContainer from '../subjects/index_container';
 import DeckFormContainer from '../decks/form_container';
 import SearchContainer from '../search/container';
+import SubjectContainer from '../subjects/container';
 
 const SplashPage = () => ( <li></li>);
 
@@ -23,7 +24,10 @@ class AppRouter extends React.Component {
             <Route path="/edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
           </Route>
           <Route path ="/search(/:query_parms)" component={ SearchContainer } />
-          <Route path ="/subjects" component={ SubjectIndexContainer } />
+          <Route path ="/subjects" component={ SubjectIndexContainer } >
+            <Route path ="/subjects/:subjectId"
+                   component={ SubjectContainer } />
+          </Route>
         </Route>
       </Router>
     );

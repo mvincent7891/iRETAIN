@@ -19,6 +19,7 @@ export class SubjectIndex extends React.Component {
 
   selectTab (subjectId) {
     this.setState({ selectedTab: subjectId });
+    hashHistory.push(`subjects/${subjectId}`);
   }
 
   componentDidMount () {
@@ -45,14 +46,17 @@ export class SubjectIndex extends React.Component {
     return (
 
       <div className="subject-index-container">
-        <div className="subject-index-header">
-          <h3 className="subjects">Subjects</h3>
+        <div>
+          <div className="subject-index-header">
+            <h3 className="subjects">Subjects</h3>
+          </div>
+          <div className="divider"></div>
+          <ul className="subject-index">
+            { this.renderSubjects() }
+            <li className="last-subject-item"></li>
+          </ul>
         </div>
-        <div className="divider"></div>
-        <ul className="subject-index">
-          { this.renderSubjects() }
-          <li className="last-subject-item"></li>
-        </ul>
+        { this.props.children }
       </div>
     );
   }

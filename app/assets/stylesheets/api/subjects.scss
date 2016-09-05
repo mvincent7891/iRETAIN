@@ -12,6 +12,7 @@ $primary-blue: #29a5dc;
 $flash-blue: #90CAF9;
 $secondary-grey: #dddddd;
 $tirtiary-grey: #f3f3f3;
+$grey-four: #999;
 $button-padding: 6px;
 $primary-margin: 10px;
 $edit-color: #f0ad4e;
@@ -22,9 +23,17 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+h2.subject-title {
+  color: $primary-grey;
+  font-size: 1.4em;
+  font-weight: normal;
+}
+
 .subject-index-container {
   background-color: white;
   height: 100%;
+  position: relative;
+  display: flex;
 }
 
 #selected-subject {
@@ -36,6 +45,7 @@ $radius: 12px;
 
 .subject-index {
   height: 100%;
+  width: 180px;
 }
 
 .divider {
@@ -73,9 +83,13 @@ $radius: 12px;
 }
 
 .subject-detail-index {
-  color: $primary-grey;
+  color: $grey-four;
   font-weight: normal;
   font-size: .9em;
+}
+
+.subject-index-item:hover {
+  background-color: #ebebeb;
 }
 
 .subject-index-item {

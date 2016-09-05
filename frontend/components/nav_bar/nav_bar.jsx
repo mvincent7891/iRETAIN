@@ -26,7 +26,7 @@ class NavBar extends React.Component {
   }
 
   goHome () {
-    hashHistory.push('/dashboard');
+    hashHistory.push('/subjects');
   }
 
   componentWillReceiveProps(newProps) {

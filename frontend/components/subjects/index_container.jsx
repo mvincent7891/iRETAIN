@@ -1,12 +1,14 @@
 import { connect } from 'react-redux';
 import { SubjectIndex } from './index';
 import { requestSubjects } from '../../actions/subject_actions';
+import { subjectSelector } from '../../util/subject_selector';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  subjects: state.subjects,
+  subjects: subjectSelector(state.subjects),
   errors: state.errors.subjects,
-  decks: state.decks
+  decks: state.decks,
+  children: ownProps.children
 });
 
 const mapDispatchToProps = dispatch => ({
