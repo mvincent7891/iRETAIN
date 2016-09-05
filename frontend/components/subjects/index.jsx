@@ -13,13 +13,13 @@ export class SubjectIndex extends React.Component {
 
   }
 
-  newDeck () {
-    hashHistory.push('/new-subject');
+  newSubject () {
+
   }
 
   selectTab (subjectId) {
     this.setState({ selectedTab: subjectId });
-    hashHistory.push(`subjects/${subjectId}`);
+    hashHistory.push(`subjects/${subjectId}/dashboard`);
   }
 
   componentDidMount () {
@@ -44,19 +44,22 @@ export class SubjectIndex extends React.Component {
 
   render () {
     return (
-
-      <div className="subject-index-container">
-        <div>
-          <div className="subject-index-header">
-            <h3 className="subjects">Subjects</h3>
+      // eventually move this to a separate component to contain
+      // all logged-in content
+      <div  className="content-container">
+        <div className="subject-index-container">
+          <div>
+            <div className="subject-index-header">
+              <h3 className="subjects">Subjects</h3>
+            </div>
+            <div className="divider"></div>
+            <ul className="subject-index">
+              { this.renderSubjects() }
+              <li className="last-subject-item"></li>
+            </ul>
           </div>
-          <div className="divider"></div>
-          <ul className="subject-index">
-            { this.renderSubjects() }
-            <li className="last-subject-item"></li>
-          </ul>
+          { this.props.children }
         </div>
-        { this.props.children }
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
+import { withRouter } from 'react-router';
 
 class Header extends React.Component {
   constructor(props) {
@@ -20,7 +21,8 @@ class Header extends React.Component {
   }
 
   editDeck (deckId) {
-    hashHistory.push(`/edit-deck/${deckId}`);
+    const path = this.props.path;
+    hashHistory.push(`${path}/edit-deck/${deckId}`);
   }
 
   renderButtons () {
@@ -29,7 +31,7 @@ class Header extends React.Component {
         <ul className="deck-header-options">
           <li className="deck-option-edit">
             <button className="edit-deck"
-              onClick={ this.editDeck.bind(null, this.props.deckId) }>
+              onClick={ this.editDeck.bind(this, this.props.deckId) }>
 
             </button>
           </li>

@@ -31,7 +31,10 @@ class DeckForm extends React.Component {
 
   cancelForm (event) {
     event.preventDefault();
-    hashHistory.push('/dashboard');
+    const currentPath = this.props.location.pathname;
+    const pathIndex = currentPath.indexOf("dashboard") + 9;
+    const path = currentPath.slice(0, pathIndex);
+    hashHistory.push(`${path}`);
   }
 
   submitForm (event) {

@@ -1,1 +1,1 @@
-json.partial! '/api/cards/card', card: @card
+json.extract! card, :id, :title, :body, :deck_id

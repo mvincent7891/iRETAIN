@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
   user: state.session.currentUser,
   deckId: ownProps.deckId,
   deck: state.activeDeck,
-  children: ownProps.children
+  children: ownProps.children,
+  path: ownProps.path
 });
 
 const mapDispatchToProps = dispatch => ({

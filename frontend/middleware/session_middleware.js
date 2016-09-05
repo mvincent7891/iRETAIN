@@ -10,7 +10,7 @@ const SessionMiddleware = ({dispatch}) => next => action => {
   const error = errors => dispatch(receiveSessionErrors(errors));
   const success = user => {
     dispatch(receiveCurrentUser(user));
-    hashHistory.push('dashboard');
+    hashHistory.push('subjects');
   };
 
   switch(action.type) {

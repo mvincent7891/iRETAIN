@@ -35,7 +35,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       return next(action);
     case DeckConstants.REQUEST_DECKS:
       const error = decks => dispatch(receiveDecksErrors);
-      UTILS.fetchDecks(success, error);
+      UTILS.fetchDecks(success, error, action.subjectId);
       return next(action);
     case DeckConstants.REQUEST_SINGLE_DECK:
       const singleDeckSuccess = deck => dispatch(receiveSingleDeck(deck));

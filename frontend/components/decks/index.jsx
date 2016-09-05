@@ -5,6 +5,7 @@ import CardsIndexContainer from '../cards/index_container';
 import DashboardContainer from '../dashboard/dashboard_container';
 import { hashHistory } from 'react-router';
 import { tabIndexSelector } from '../../util/deck_selector';
+import { withRouter } from 'react-router';
 
 export class DeckIndex extends React.Component {
 
@@ -51,7 +52,8 @@ export class DeckIndex extends React.Component {
   }
 
   newDeck () {
-    hashHistory.push('/new-deck');
+    const path = this.props.location.pathname;
+    hashHistory.push(`${path}/new-deck`);
   }
 
   selectTab (deckId) {
@@ -59,8 +61,8 @@ export class DeckIndex extends React.Component {
   }
 
   componentDidMount () {
-
-    this.props.fetchDecks();
+    const subjectId = parseInt(this.props.params.subjectId)
+    this.props.fetchDecks(subjectId);
     const activeId = this.props.activeDeck.id;
     if (activeId) {
       this.setState({ selectedTab: activeId });
@@ -135,7 +137,8 @@ export class DeckIndex extends React.Component {
       return (
         <div>
           <DeckHeaderContainer deckId={ this.state.selectedTab }
-                               children={ children } />
+                               children={ children }
+                               path={ this.props.location.pathname }/>
           <CardsIndexContainer deckId={ this.state.selectedTab } />
         </div>
       );

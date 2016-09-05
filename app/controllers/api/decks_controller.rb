@@ -18,7 +18,7 @@ class Api::DecksController < ApplicationController
       end
     else
       author_id = current_user.id
-      @decks = Deck.where(author_id: author_id)
+      @decks = Deck.where(author_id: author_id).where(subject_id: params[:subjectId].to_i)
       render :index
     end
   end

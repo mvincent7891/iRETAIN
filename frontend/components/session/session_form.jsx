@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     const password = "password".slice(0,(i+1));
     setTimeout(() => {
       this.setState({password});
-    }, i*interval);
+    }, i*(interval - 40));
   }
 
   update(field){

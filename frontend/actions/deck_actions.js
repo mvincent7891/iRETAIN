@@ -57,8 +57,9 @@ export const createDeck = deck => ({
   deck
 });
 
-export const requestDecks = () => ({
-  type: DeckConstants.REQUEST_DECKS
+export const requestDecks = subjectId => ({
+  type: DeckConstants.REQUEST_DECKS,
+  subjectId
 });
 
 export const receiveDecks = decks => ({
