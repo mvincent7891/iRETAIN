@@ -1,3 +1,82 @@
 // Place all the styles related to the api/subjects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$deck-header-width: 500px;
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+$button-padding: 6px;
+$primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+$button-transition: .2s;
+$card-index-width: 500px;
+$radius: 12px;
+
+.subject-index-container {
+  background-color: white;
+  height: 100%;
+}
+
+#selected-subject {
+  background-color: white;
+  border-right: 0px solid white;
+  border-bottom: 4px solid $secondary-grey;
+  border-top: 0px solid $secondary-grey;
+}
+
+.subject-index {
+  height: 100%;
+}
+
+.divider {
+  width: 180px;
+  height: 18px;
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.subject-index-header  {
+  border-right: 4px solid $secondary-grey;
+  border-bottom: 2px solid $secondary-grey;
+  display: flex;
+  width: 180px;
+  height: 60px;
+  padding: 10px;
+  background-color: $tirtiary-grey;
+  box-sizing: border-box;
+}
+
+.last-subject-item {
+  border-right: 4px solid $secondary-grey;
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px;
+  width: 180px;
+  height: 100%  ;
+  background-color: $tirtiary-grey;
+}
+
+.subject-index-item {
+  color: $primary-blue;
+  font-weight: normal;
+  font-size: 1em;
+  border-right: 4px solid $secondary-grey;
+  box-sizing: border-box;
+  display: flex;
+  border-bottom: 0px solid $secondary-grey;
+  border-top: 0px solid $secondary-grey;
+  padding: 10px;
+  width: 180px;
+  height: 80px;
+  background-color: $tirtiary-grey;
+}
