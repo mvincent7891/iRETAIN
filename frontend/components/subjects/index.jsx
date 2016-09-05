@@ -17,9 +17,11 @@ export class SubjectIndex extends React.Component {
     hashHistory.push('/new-subject');
   }
 
-  selectTab (subjectId) {
-    this.setState({ selectedTab: subjectId });
-    hashHistory.push(`subjects/${subjectId}`);
+  selectTab (subject) {
+    this.setState({ selectedTab: subject.id });
+    this.props.fetchDecks(subject.id);
+    this.props.chooseSubject(subject);
+    hashHistory.push(`subjects/${subject.id}`);
   }
 
   componentDidMount () {
@@ -36,7 +38,7 @@ export class SubjectIndex extends React.Component {
           key={`${id}-${idx}`}
           subject={subject}
           selected={ id === this.state.selectedTab ? true : false }
-          selectThis={ this.selectTab.bind(this, id) }
+          selectThis={ this.selectTab.bind(this, subject) }
           />);
         });
     }

@@ -8,11 +8,12 @@ export const cloneDeck = (success, error, deck) => {
   });
 };
 
-export const fetchDecks = (success, error) => {
+export const fetchDecks = (success, error, subjectId) => {
   $.ajax({
     url: `api/decks`,
     method: `GET`,
     dataType: `json`,
+    data: { subjectId },
     success,
     error
   });

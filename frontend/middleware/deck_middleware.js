@@ -33,21 +33,26 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       };
       UTILS.updateDeck(updateDeckSuccess, updateError, action.deck);
       return next(action);
+
     case DeckConstants.REQUEST_DECKS:
       const error = decks => dispatch(receiveDecksErrors);
-      UTILS.fetchDecks(success, error);
+      UTILS.fetchDecks(success, error, action.subjectId);
       return next(action);
+
     case DeckConstants.REQUEST_SINGLE_DECK:
       const singleDeckSuccess = deck => dispatch(receiveSingleDeck(deck));
       const singleDeckError = decks => dispatch(receiveSingleDeckErrors());
       UTILS.fetchDeck(singleDeckSuccess, singleDeckError, action.deckId);
       return next(action);
+
     case DeckConstants.CREATE_DECK:
       UTILS.createDeck(createDeckSuccess, createDeckError, action.deck);
       return next(action);
+
     case DeckConstants.CLONE_DECK:
       UTILS.cloneDeck(createDeckSuccess, createDeckError, action.deck);
       return next(action);
+
     case DeckConstants.REMOVE_DECK:
       const removeDeckError = errors => dispatch(receiveRemoveDeckErrors(errors));
       const removeSuccess = decks => {
@@ -56,6 +61,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       };
       UTILS.removeDeck(removeSuccess, removeDeckError, action.deckId);
       return next(action);
+
     default:
       return next(action);
   }

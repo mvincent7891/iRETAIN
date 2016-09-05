@@ -19,15 +19,23 @@ class AppRouter extends React.Component {
       <Router history={ hashHistory } >
         <Route path="/" component={ App } >
           <IndexRoute component = { SplashPage } onEnter={this._redirectIfLoggedIn}/>
+
           <Route path="/dashboard(/:deck_id)" component={ DecksIndexContainer } onEnter={ this._ensureLoggedIn } >
             <Route path="/new-deck" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
             <Route path="/edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
           </Route>
-          <Route path ="/search(/:query_parms)" component={ SearchContainer } />
-          <Route path ="/subjects" component={ SubjectIndexContainer } >
+
+          <Route path ="/subjects" component={ SubjectIndexContainer } onEnter={ this._ensureLoggedIn } >
             <Route path ="/subjects/:subjectId"
-                   component={ SubjectContainer } />
+                   component={ SubjectContainer } onEnter={ this._ensureLoggedIn } >
+              <Route path="dashboard"
+                     component={ DecksIndexContainer } onEnter={ this._ensureLoggedIn } >
+                <Route path="new-deck" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
+                <Route path="edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
+              </Route>
+            </Route>
           </Route>
+          
         </Route>
       </Router>
     );

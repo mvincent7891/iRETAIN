@@ -14,3 +14,12 @@ export const SubjectReducer = (state = defaultState, action) => {
   }
 
 };
+
+export const CurrentSubjectReducer = (state = {}, action) => {
+  switch(action.type) {
+    case SubjectConstants.RECEIVE_CURRENT_SUBJECT:
+      return action.subject;
+    default:
+      return state;
+  }
+};
