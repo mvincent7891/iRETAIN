@@ -44,19 +44,20 @@ export class SubjectIndex extends React.Component {
 
   render () {
     return (
-
-      <div className="subject-index-container">
-        <div>
-          <div className="subject-index-header">
-            <h3 className="subjects">Subjects</h3>
+      <div className="content-container">
+        <div className="subject-index-container">
+          <div>
+            <div className="subject-index-header">
+              <h3 className="subjects">Subjects</h3>
+            </div>
+            <div className="divider"></div>
+            <ul className="subject-index">
+              { this.renderSubjects() }
+              <li className="last-subject-item"></li>
+            </ul>
           </div>
-          <div className="divider"></div>
-          <ul className="subject-index">
-            { this.renderSubjects() }
-            <li className="last-subject-item"></li>
-          </ul>
+          { this.props.children }
         </div>
-        { this.props.children }
       </div>
     );
   }
