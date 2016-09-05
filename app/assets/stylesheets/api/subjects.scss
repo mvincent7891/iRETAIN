@@ -66,16 +66,27 @@ $radius: 12px;
   background-color: $tirtiary-grey;
 }
 
-.subject-index-item {
+.subject-title-index {
   color: $primary-blue;
   font-weight: normal;
   font-size: 1em;
+}
+
+.subject-detail-index {
+  color: $primary-grey;
+  font-weight: normal;
+  font-size: .9em;
+}
+
+.subject-index-item {
   border-right: 4px solid $secondary-grey;
   box-sizing: border-box;
   display: flex;
+  flex-direction: column;
   border-bottom: 0px solid $secondary-grey;
   border-top: 0px solid $secondary-grey;
   padding: 10px;
+  padding-left: 15px;
   width: 180px;
   height: 80px;
   background-color: $tirtiary-grey;

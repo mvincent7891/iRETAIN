@@ -33,8 +33,10 @@ class Deck < ActiveRecord::Base
   end
 
   def self.subjects(deck_ids)
-    subject_ids = [];
-    deck_ids.each { |id| subject_ids << Deck.find(id).subject_id }
-    subject_ids.uniq
+    all_subject_ids = [];
+    deck_ids.each { |id| all_subject_ids << Deck.find(id).subject_id }
+    subjects = {}
+    all_subject_ids.uniq.each { |id| subjects[id] = all_subject_ids.count(id) }
+    subjects
   end
 end
