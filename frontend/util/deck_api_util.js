@@ -19,8 +19,14 @@ export const fetchDecks = (success, error) => {
 };
 
 export const fetchDeck = (success, error, deckId) => {
+  let id;
+  if (deckId && deckId.id) {
+    id = deckId.id;
+  } else {
+    id = deckId;
+  }
   $.ajax({
-    url: `api/decks/${deckId}`,
+    url: `api/decks/${id}`,
     method: `GET`,
     dataType: `json`,
     success,

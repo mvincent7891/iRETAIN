@@ -10,6 +10,21 @@ export const deckSelector = (decks) => {
 
 };
 
+export const subjectDeckSelector = (deckArray, currentSubject) => {
+  if (deckArray.length === 0 || isEmpty(currentSubject)) {
+    return deckArray;
+  } else {
+    const subjectDecks = [];
+    deckArray.forEach(deck => {
+
+      if (deck.subject_id === currentSubject.id ) {
+        subjectDecks.push(deck);
+      }
+    });
+    return subjectDecks;
+  }
+};
+
 export const tabIndexSelector = (deckId, decks) => {
   let tabIndex = 0;
   decks.forEach((deck, index) => {

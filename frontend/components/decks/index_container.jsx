@@ -1,18 +1,24 @@
 import { connect } from 'react-redux';
 import { DeckIndex } from './index';
-import { requestDecks } from '../../actions/deck_actions';
-import { deckSelector } from '../../util/deck_selector';
+import { requestDecks,
+         chooseDeck,
+         clearActiveDeck } from '../../actions/deck_actions';
+import { deckSelector,
+         subjectDeckSelector } from '../../util/deck_selector';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
-  decks: deckSelector(state.decks),
   errors: state.errors.deck,
   showDeck: state.showDeck,
-  activeDeck: state.activeDeck
+  activeDeck: state.activeDeck,
+  decks: subjectDeckSelector(deckSelector(state.decks), state.currentSubject),
+  children: ownProps.children
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchDecks: () => dispatch(requestDecks())
+  fetchDecks: () => dispatch(requestDecks()),
+  chooseDeck: deck => dispatch(chooseDeck(deck)),
+  clearActiveDeck: () => dispatch(clearActiveDeck())
 });
 
 export default connect(

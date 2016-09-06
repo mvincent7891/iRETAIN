@@ -9,10 +9,10 @@ const defaultState = {
 const ActiveDeckReducer = (state = defaultState, action) => {
 
   switch(action.type) {
-    case DeckConstants.RECEIVE_SINGLE_DECK:
+    case DeckConstants.CHOOSE_DECK:
       return action.deck;
-    case DeckConstants.VIEW_SINGLE_DECK:
-      return action.deck;
+    case DeckConstants.CLEAR_ACTIVE_DECK:
+      return defaultState;
     case SessionConstants.LOGOUT:
       return defaultState;
     default:

@@ -39,32 +39,47 @@ export class DeckIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    const id = newProps.showDeck.id;
-    if (id) {
-      this.setState({ selectedTab: parseInt(id) });
-      this.setBoundaries(newProps.showDeck.tabPos);
+    // const id = newProps.showDeck.id;
+    // if (newProps.decks.length > 0) {
+    //   this.setState({ selectedTab: newProps.decks[0].id });
+    // }
+    const active = newProps.activeDeck;
+    if (active && active.id) {
+      this.setState({ selectedTab: active.id });
+      this.setBoundaries(tabIndexSelector(active.id, this.props.decks));
+    } else {
+      this.setState({ selectedTab: null, firstDeck: 0, lastDeck: 3 });
     }
+    // if (id) {
+    //   this.setState({ selectedTab: parseInt(id) });
+    //   this.setBoundaries(newProps.showDeck.tabPos);
+    // }
   }
 
   selectDashboard () {
     this.setState({ selectedTab: null });
+    this.props.clearActiveDeck();
+    const path = this.props.location.pathname;
+    const pathIndex = path.indexOf('decks');
+    const newPath = `${path.slice(0, pathIndex)}decks`;
+    hashHistory.push(newPath);
   }
 
   newDeck () {
     hashHistory.push('/new-deck');
   }
 
-  selectTab (deckId) {
-    this.setState({ selectedTab: deckId });
+  selectTab (deck) {
+    this.setState({ selectedTab: deck.id });
+    this.props.chooseDeck(deck);
+    hashHistory.push(`subjects/${deck.subject_id}/decks/${deck.id}`);
   }
 
   componentDidMount () {
-
-    this.props.fetchDecks();
-    const activeId = this.props.activeDeck.id;
-    if (activeId) {
-      this.setState({ selectedTab: activeId });
-      this.setBoundaries(tabIndexSelector(activeId, this.props.decks));
+    const active = this.props.activeDeck;
+    if (active && active.id) {
+      this.setState({ selectedTab: active.id });
+      this.setBoundaries(tabIndexSelector(active.id, this.props.decks));
     }
   }
 
@@ -122,7 +137,7 @@ export class DeckIndex extends React.Component {
                 key={`${id}-${idx}`}
                 deck={deck}
                 selected={ id === this.state.selectedTab ? true : false }
-                selectThis={ this.selectTab.bind(this, id) }
+                selectThis={ this.selectTab.bind(this, deck) }
               />);
     });
   }
@@ -145,12 +160,13 @@ export class DeckIndex extends React.Component {
   }
 
   render () {
+
     return (
 
       <div className="deck-index-container">
 
-        { this.props.location.pathname.includes('edit') ?
-          "" : this.props.children }
+        {/* this.props.location.pathname.includes('edit') ?
+          "" : this.props.children */}
 
         <h3 className="decks">Decks</h3>
         <ul className="deck-index">
@@ -167,8 +183,8 @@ export class DeckIndex extends React.Component {
             <strong>{ " + "}</strong>
           </li>
         </ul>
-        { this.renderCards() }
-
+        {/* this.renderCards() */}
+        { this.props.children }
       </div>
     );
   }

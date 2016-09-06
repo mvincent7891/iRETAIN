@@ -10,6 +10,9 @@ class SubjectView extends React.Component {
     this.renderSubject = this.renderSubject.bind(this);
   }
 
+  componentDidMount() {
+  }
+
   componentWillReceiveProps(newProps) {
     const subjectId = parseInt(newProps.params.subjectId);
     const subject = newProps.subjects[subjectId];
@@ -31,6 +34,7 @@ class SubjectView extends React.Component {
     return (
       <div className="subject-view-container">
         { this.renderSubject() }
+        { this.props.children }
       </div>
     );
   }

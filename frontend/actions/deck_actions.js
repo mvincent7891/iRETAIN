@@ -9,8 +9,19 @@ export const DeckConstants = {
   REMOVED_DECK: "REMOVED_DECK",
   CREATED_DECK: "CREATED_DECK",
   VIEW_SINGLE_DECK: "VIEW_SINGLE_DECK",
-  CLONE_DECK: "CLONE_DECK"
+  CLONE_DECK: "CLONE_DECK",
+  CHOOSE_DECK: "CHOOSE_DECK",
+  CLEAR_ACTIVE_DECK: "CLEAR_ACTIVE_DECK"
 };
+
+export const chooseDeck = deck => ({
+  type: DeckConstants.CHOOSE_DECK,
+  deck
+});
+
+export const clearActiveDeck = deck => ({
+  type: DeckConstants.CLEAR_ACTIVE_DECK
+});
 
 export const cloneDeck = deck => ({
   type: DeckConstants.CLONE_DECK,

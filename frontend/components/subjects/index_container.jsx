@@ -3,6 +3,7 @@ import { SubjectIndex } from './index';
 import { requestSubjects,
          receiveCurrentSubject } from '../../actions/subject_actions';
 import { subjectSelector } from '../../util/subject_selector';
+import { clearActiveDeck } from '../../actions/deck_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
@@ -13,7 +14,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  chooseSubject: subject => dispatch(receiveCurrentSubject(subject))
+  chooseSubject: subject => dispatch(receiveCurrentSubject(subject)),
+  clearActiveDeck: () => dispatch(clearActiveDeck())
 });
 
 export default connect(

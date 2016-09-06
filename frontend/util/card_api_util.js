@@ -1,6 +1,14 @@
-export const fetchCards = (success, error, deckId) => {
+
+export const fetchCards = (success, error, deck = 0) => {
+  let id;
+
+  if (deck && deck.id) {
+    id = deck.id;
+  } else {
+    id = deck;
+  }
   $.ajax({
-    url: `api/decks/${deckId}/cards`,
+    url: `api/decks/${id}/cards`,
     method: 'GET',
     dataType: 'json',
     success,

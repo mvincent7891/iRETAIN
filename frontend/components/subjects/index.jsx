@@ -20,7 +20,8 @@ export class SubjectIndex extends React.Component {
   selectTab (subject) {
     this.setState({ selectedTab: subject.id });
     this.props.chooseSubject(subject);
-    hashHistory.push(`subjects/${subject.id}`);
+    this.props.clearActiveDeck();
+    hashHistory.push(`subjects/${subject.id}/decks`);
   }
 
   componentDidMount () {
