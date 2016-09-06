@@ -41,6 +41,7 @@ class DeckForm extends React.Component {
     } else {
       pathIndex = path.indexOf('new');
       newPath = `${path.slice(0, pathIndex - 1)}/decks`;
+      this.props.clearActiveDeck();
     }
     hashHistory.push(newPath);
   }

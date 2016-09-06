@@ -1,5 +1,13 @@
 import isEmpty from 'lodash/isEmpty';
 
+export const selectLastDeck = decks => {
+  if (isEmpty(decks)) {
+    return {};
+  }
+  const deckArray = Object.keys(decks);
+  return decks[deckArray[deckArray.length - 1]];
+};
+
 export const deckSelector = (decks) => {
   if (isEmpty(decks)) {
     return [];

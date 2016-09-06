@@ -1,6 +1,7 @@
 import { DeckConstants } from '../actions/deck_actions.js';
 import { SessionConstants } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
+import { selectLastDeck } from '../util/deck_selector';
 
 const defaultState = {
 
@@ -11,6 +12,10 @@ const ActiveDeckReducer = (state = defaultState, action) => {
   switch(action.type) {
     case DeckConstants.REMOVED_DECK:
       return defaultState;
+    case DeckConstants.CREATED_DECK:
+      const createdDeck = selectLastDeck(action.decks);
+      debugger
+      return state;
     case DeckConstants.CHOOSE_DECK:
       let deck;
       if (action.deck.deck) {
