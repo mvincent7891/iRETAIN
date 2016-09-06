@@ -61,7 +61,7 @@ export class DeckIndex extends React.Component {
     this.props.clearActiveDeck();
     const path = this.props.location.pathname;
     const pathIndex = path.indexOf('decks');
-    const newPath = `${path.slice(0, pathIndex)}decks`;
+    const newPath = `${path.slice(0, pathIndex)}decks/dashboard`;
     hashHistory.push(newPath);
   }
 

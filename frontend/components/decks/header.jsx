@@ -20,7 +20,7 @@ class Header extends React.Component {
   }
 
   editDeck (deckId) {
-    hashHistory.push(`/edit-deck/${deckId}`);
+    hashHistory.push(`${this.props.location.pathname}/edit`);
   }
 
   renderButtons () {

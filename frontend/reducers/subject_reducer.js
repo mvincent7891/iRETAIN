@@ -19,6 +19,8 @@ export const CurrentSubjectReducer = (state = {}, action) => {
   switch(action.type) {
     case SubjectConstants.RECEIVE_CURRENT_SUBJECT:
       return action.subject;
+    case SubjectConstants.CLEAR_ACTIVE_SUBJECT:
+      return defaultState;
     default:
       return state;
   }

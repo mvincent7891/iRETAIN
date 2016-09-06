@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import { DeckView } from './view';
 
 const mapStateToProps = (state, ownProps) => ({
-  state: state
+  deck: state.activeDeck,
+  children: ownProps.children
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import { SubjectIndex } from './index';
 import { requestSubjects,
-         receiveCurrentSubject } from '../../actions/subject_actions';
+         receiveCurrentSubject,
+         clearActiveSubject } from '../../actions/subject_actions';
 import { subjectSelector } from '../../util/subject_selector';
 import { clearActiveDeck } from '../../actions/deck_actions';
 
@@ -15,7 +16,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
   chooseSubject: subject => dispatch(receiveCurrentSubject(subject)),
-  clearActiveDeck: () => dispatch(clearActiveDeck())
+  clearActiveDeck: () => dispatch(clearActiveDeck()),
+  clearActiveSubject: () => dispatch(clearActiveSubject())
 });
 
 export default connect(

@@ -7,7 +7,9 @@ export class DeckView extends React.Component {
 
   constructor (props) {
     super(props);
-
+    const deckId = this.props.params.deckId;
+    const subjectId = this.props.params.subjectId;
+    this.state = { deckId, subjectId };
   }
 
   componentWillReceiveProps (newProps) {
@@ -19,26 +21,17 @@ export class DeckView extends React.Component {
   }
 
   renderCards () {
-    const children = this.props.location.pathname.includes('new') ?
-              ("") : (this.props.children);
-
-    if ( this.state.selectedTab ) {
-      return (
-        <div>
-          <DeckHeaderContainer deckId={ this.state.selectedTab }
-                               children={ children } />
-          <CardsIndexContainer deckId={ this.state.selectedTab } />
-        </div>
-      );
-    } else {
-      return <DashboardContainer />;
-    }
+    return (
+      <CardsIndexContainer deckId={ this.state.deckId } />
+    );
   }
 
   render () {
     return (
       <div className="deck-view-container">
-        Deck View Container
+        <div>
+          { this.props.children }
+        </div>
       </div>
     );
   }

@@ -10,7 +10,10 @@ export class SubjectIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-
+    if (!newProps.params.subjectId) {
+      this.props.clearActiveSubject();
+      this.setState({ selectedTab: null });
+    }
   }
 
   newDeck () {
@@ -21,11 +24,12 @@ export class SubjectIndex extends React.Component {
     this.setState({ selectedTab: subject.id });
     this.props.chooseSubject(subject);
     this.props.clearActiveDeck();
-    hashHistory.push(`subjects/${subject.id}/decks`);
+    hashHistory.push(`subjects/${subject.id}/decks/dashboard`);
   }
 
   componentDidMount () {
-
+    this.props.clearActiveSubject();
+    this.setState({ selectedTab: null });
   }
 
   renderSubjects () {

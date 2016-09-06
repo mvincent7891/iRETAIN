@@ -3,8 +3,13 @@
 export const SubjectConstants = {
   REQUEST_SUBJECTS: "REQUEST_SUBJECTS",
   RECEIVE_SUBJECTS: "RECEIVE_SUBJECTS",
-  RECEIVE_CURRENT_SUBJECT: "RECEIVE_CURRENT_SUBJECT"
+  RECEIVE_CURRENT_SUBJECT: "RECEIVE_CURRENT_SUBJECT",
+  CLEAR_ACTIVE_SUBJECT: "CLEAR_ACTIVE_SUBJECT"
 };
+
+export const clearActiveSubject = () => ({
+  type: SubjectConstants.CLEAR_ACTIVE_SUBJECT
+});
 
 export const requestSubjects = () => ({
   type: SubjectConstants.REQUEST_SUBJECTS
