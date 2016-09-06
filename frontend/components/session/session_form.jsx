@@ -1,7 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-const interval = 160;
+const interval = 120;
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
     setTimeout(() => {
       const user = this.state;
       this.props.processForm({user});
-    }, interval * 16);
+    }, interval * 14);
   }
 
   enterGuestUsername (i) {
@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
     const password = "password".slice(0,(i+1));
     setTimeout(() => {
       this.setState({password});
-    }, i*interval);
+    }, i*(interval - 40));
   }
 
   update(field){
