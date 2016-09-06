@@ -15,8 +15,8 @@ const mapStateToProps = (state, ownProps) => ({
   cards: cardSelector(state.cards),
   errors: state.errors.card,
   deckId: ownProps.deckId,
-  lookup: state.cards.lookup,
-  cardSaved: state.cards.cardSaved
+  lookup: state.lookup.lookup,
+  cardSaved: state.lookup.cardSaved
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({

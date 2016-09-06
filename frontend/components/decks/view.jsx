@@ -10,10 +10,11 @@ export class DeckView extends React.Component {
     const deckId = this.props.params.deckId;
     const subjectId = this.props.params.subjectId;
     this.state = { deckId, subjectId };
+    this.renderCards = this.renderCards.bind(this);
   }
 
   componentWillReceiveProps (newProps) {
-
+    this.setState({ deckId: newProps.deck.id });
   }
 
   componentDidMount () {
@@ -31,6 +32,7 @@ export class DeckView extends React.Component {
       <div className="deck-view-container">
         <div>
           { this.props.children }
+          { this.renderCards() }
         </div>
       </div>
     );

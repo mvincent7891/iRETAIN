@@ -1,8 +1,8 @@
 import { CardConstants, requestCards,
         receiveCards, receiveSingleCard,
         createCard, removeSingleCard,
-        updateCard, lookupCard,
-        receiveLookup } from '../actions/card_actions.js';
+        updateCard, lookupCard } from '../actions/card_actions.js';
+import { receiveLookup } from '../actions/lookup_actions';
 import { receiveCreateCardErrors,
          receiveUpdateCardErrors,
          receiveDeleteCardErrors,

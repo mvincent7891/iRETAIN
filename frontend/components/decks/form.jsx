@@ -40,7 +40,7 @@ class DeckForm extends React.Component {
       newPath = `${path.slice(0, pathIndex - 1)}`;
     } else {
       pathIndex = path.indexOf('new');
-      newPath = `${path.slice(0, pathIndex - 1)}/decks`;
+      newPath = `${path.slice(0, pathIndex - 1)}/decks/dashboard`;
       this.props.clearActiveDeck();
     }
     hashHistory.push(newPath);

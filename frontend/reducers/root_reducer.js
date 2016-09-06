@@ -7,6 +7,7 @@ import ActiveDeckReducer from './active_deck_reducer';
 import SearchReducer from './search_reducer';
 import {SubjectReducer, CurrentSubjectReducer } from './subject_reducer';
 import TagReducer from './tag_reducer';
+import LookupReducer from './lookup_reducer';
 
 const RootReducer = combineReducers({
   session: SessionReducer,
@@ -18,7 +19,8 @@ const RootReducer = combineReducers({
   search: SearchReducer,
   tags: TagReducer,
   subjects: SubjectReducer,
-  currentSubject: CurrentSubjectReducer
+  currentSubject: CurrentSubjectReducer,
+  lookup: LookupReducer
 });
 
 export default RootReducer;

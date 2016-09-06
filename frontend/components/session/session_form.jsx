@@ -111,9 +111,6 @@ class SessionForm extends React.Component {
             value={this.props.type}
             />
         </form>
-
-
-
       </div>
     );
   }
