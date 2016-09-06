@@ -29,13 +29,13 @@ class Header extends React.Component {
         <ul className="deck-header-options">
           <li className="deck-option-edit">
             <button className="edit-deck"
-              onClick={ this.editDeck.bind(null, this.props.deckId) }>
+              onClick={ this.editDeck.bind(this, this.props.deckId) }>
 
             </button>
           </li>
           <li className="deck-option-delete">
             <button className="remove-deck"
-              onClick={ this.props.removeDeck.bind(null, this.props.deckId) }>
+              onClick={ this.props.removeDeck.bind(this, this.props.deckId) }>
 
             </button>
           </li>
