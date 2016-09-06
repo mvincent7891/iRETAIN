@@ -1,6 +1,11 @@
 class Api::CardsController < ApplicationController
   def index
-    @cards = Card.where(deck_id: params[:deck_id])
+    if params[:deck_id] == "null"
+      user_id = current_user.id
+      @cards = Card.where(author_id: user_id)
+    else
+      @cards = Card.where(deck_id: params[:deck_id])
+    end
     render :index
   end
 

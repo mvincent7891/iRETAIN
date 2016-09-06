@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { SubjectIndex } from './index';
-import { requestSubjects } from '../../actions/subject_actions';
+import { requestSubjects,
+         receiveCurrentSubject } from '../../actions/subject_actions';
 import { subjectSelector } from '../../util/subject_selector';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -12,7 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestSubjects: () => dispatch(requestSubjects())
+  chooseSubject: subject => dispatch(receiveCurrentSubject(subject))
 });
 
 export default connect(

@@ -50,7 +50,7 @@ export const createCard = (card, deckId) => ({
 });
 
 
-export const requestCards = (deckId) => ({
+export const requestCards = (deckId = null) => ({
   type: CardConstants.REQUEST_CARDS,
   deckId
 });
