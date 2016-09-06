@@ -46,7 +46,6 @@ export const createDeck = (success, error, deck) => {
 };
 
 export const updateDeck = (success, error, deckObject) => {
-  debugger
   $.ajax({
     url: `api/decks/${deckObject.deck.id}`,
     method: `PATCH`,
