@@ -14,6 +14,7 @@ class Header extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
+
     if ( newProps.deckId !== this.props.deckId ) {
       newProps.requestSingleDeck(newProps.deckId);
     }
@@ -64,7 +65,6 @@ class Header extends React.Component {
   }
 
   render () {
-
     return (
       <div className="deck-header">
         { this.display.bind(this)() }

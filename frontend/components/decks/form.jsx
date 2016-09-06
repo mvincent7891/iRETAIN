@@ -10,7 +10,7 @@ class DeckForm extends React.Component {
     const path = this.props.location.pathname;
     let type, title, id, tags;
     if (path.includes('edit')) {
-      id = this.props.params.deckId;
+      id = parseInt(this.props.params.deckId);
       const deck = this.props.decks[id];
       type = 'Edit';
       title = deck.title;
@@ -32,8 +32,15 @@ class DeckForm extends React.Component {
   cancelForm (event) {
     event.preventDefault();
     const path = this.props.location.pathname;
-    const pathIndex = path.indexOf('edit');
-    const newPath = `${path.slice(0, pathIndex)}`;
+    let pathIndex;
+    let newPath;
+    if (this.state.type === 'Edit') {
+      pathIndex = path.indexOf('edit');
+      newPath = `${path.slice(0, pathIndex - 1)}`;
+    } else {
+      pathIndex = path.indexOf('new');
+      newPath = `${path.slice(0, pathIndex - 1)}/decks`;
+    }
     hashHistory.push(newPath);
   }
 

@@ -66,7 +66,7 @@ export class DeckIndex extends React.Component {
   }
 
   newDeck () {
-    hashHistory.push('/new-deck');
+    hashHistory.push(`subjects/${this.props.params.subjectId}/new`);
   }
 
   selectTab (deck) {

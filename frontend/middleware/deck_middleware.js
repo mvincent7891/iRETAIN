@@ -29,7 +29,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       const updateDeckSuccess = decks => {
         dispatch(receiveDecks(decks));
         dispatch(requestSingleDeck(action.deck.deck.id));
-        hashHistory.push(`/dashboard`);
+        hashHistory.push(`/subjects/${action.deck.deck.subject_id}/decks/${action.deck.deck.id}`);
       };
       UTILS.updateDeck(updateDeckSuccess, updateError, action.deck);
       return next(action);

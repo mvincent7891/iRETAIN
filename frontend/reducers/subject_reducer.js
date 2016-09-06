@@ -20,6 +20,7 @@ export const CurrentSubjectReducer = (state = {}, action) => {
     case SubjectConstants.RECEIVE_CURRENT_SUBJECT:
       return action.subject;
     case SubjectConstants.CLEAR_ACTIVE_SUBJECT:
+    // TODO: changing defaultState with {} causes max stack exceeds
       return defaultState;
     default:
       return state;

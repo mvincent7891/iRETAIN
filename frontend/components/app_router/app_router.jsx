@@ -33,7 +33,8 @@ class AppRouter extends React.Component {
           <Route path="/subjects" component={ SubjectIndexContainer } onEnter={ this._ensureLoggedIn } >
             <Route path="/subjects/:subjectId"
                    component={ SubjectContainer } >
-              <Route path="/subjects/:subjectId/decks" component={ DecksIndexContainer } >
+              <Route path="/subjects/:subjectId/new" component={ DeckFormContainer } />
+              <Route path="/subjects/:subjectId/decks(/new)" component={ DecksIndexContainer } >
                 <Route path="/subjects/:subjectId/decks/dashboard" component={ DashboardContainer } />
                 <Route path="/subjects/:subjectId/decks/:deckId" component={ DeckViewContainer } >
                   <IndexRoute component={ DeckHeaderContainer } />
