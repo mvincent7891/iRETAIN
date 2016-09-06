@@ -14,8 +14,7 @@ const ActiveDeckReducer = (state = defaultState, action) => {
       return defaultState;
     case DeckConstants.CREATED_DECK:
       const createdDeck = selectLastDeck(action.decks);
-      debugger
-      return state;
+      return createdDeck;
     case DeckConstants.CHOOSE_DECK:
       let deck;
       if (action.deck.deck) {

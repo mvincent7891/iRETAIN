@@ -12,6 +12,7 @@ import { receiveDecksErrors,
          receiveUpdateDeckErrors } from '../actions/error_actions.js';
 import * as UTILS from '../util/deck_api_util.js';
 import { hashHistory } from 'react-router';
+import { selectLastDeck } from '../util/deck_selector';
 
 const DeckMiddleware = ({getState, dispatch}) => next => action => {
 
@@ -20,9 +21,11 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
     const id = Object.keys(decks)[Object.keys(decks).length - 1];
     dispatch(receiveDecks(decks));
     dispatch(createdDeck(decks));
-    hashHistory.push(`/dashboard/${id}`); };
+    const newDeck = selectLastDeck(decks);
+    hashHistory.push(`/subjects/${newDeck.subject_id}/decks/${newDeck.id}`);
+  };
   const createDeckError = errors =>   dispatch(createDeckErrors(errors.responseJSON));
-
+  
   switch(action.type) {
     case DeckConstants.UPDATE_DECK:
       const updateError = errors => dispatch(receiveUpdateDeckErrors(errors.responseJSON));
