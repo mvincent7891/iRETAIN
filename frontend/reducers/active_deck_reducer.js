@@ -9,6 +9,8 @@ const defaultState = {
 const ActiveDeckReducer = (state = defaultState, action) => {
 
   switch(action.type) {
+    case DeckConstants.REMOVED_DECK:
+      return defaultState;
     case DeckConstants.CHOOSE_DECK:
       let deck;
       if (action.deck.deck) {

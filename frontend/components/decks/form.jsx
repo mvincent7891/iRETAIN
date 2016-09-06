@@ -21,8 +21,9 @@ class DeckForm extends React.Component {
       id = null;
       tags = [];
     }
+    const subject_id = parseInt(this.props.params.subjectId);
 
-    this.state = { tags, title, subject_id: 1, id, type, errors: [] };
+    this.state = { tags, title, subject_id, id, type, errors: [] };
     this.cancelForm = this .cancelForm.bind(this);
     this.submitForm = this.submitForm.bind(this);
     this.renderErrors = this.renderErrors.bind(this);

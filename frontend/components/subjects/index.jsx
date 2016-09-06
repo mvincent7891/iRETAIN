@@ -41,6 +41,7 @@ export class SubjectIndex extends React.Component {
         return (<SubjectIndexItem
           key={`${id}-${idx}`}
           subject={subject}
+          decks={ this.props.decks }
           selected={ id === this.state.selectedTab ? true : false }
           selectThis={ this.selectTab.bind(this, subject) }
           />);
