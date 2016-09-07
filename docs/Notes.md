@@ -1,7 +1,8 @@
 # Notes
 
-# TODO (Sep 2):
-- Add gear button to edit/remove (hover over?)
+# TODO (Sep 8):
+- Adding decks from search results (broken after subject integration)
+- Search results currently produce duplicates
 
 ## Issues - August 29
 - Can't change '.IO' font in logo for some reason

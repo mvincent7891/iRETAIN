@@ -41,8 +41,8 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
   position: absolute;
   top: 55px;
   bottom: 0px;
-  right: 40px;
-  left: 40px;
+  right: 10%;
+  left: 10%;
   min-width: 800px;
   background-color: white;
   opacity: .9;
