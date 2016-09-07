@@ -9,6 +9,19 @@ export const cardSelector = (cards) => {
   return cardArray;
 
 };
+export const deckCardSelector = (cards, deckId) => {
+  if (isEmpty(cards)) {
+    return [];
+  }
+  const cardArray = [];
+  Object.keys(cards).forEach(cardId => {
+    if (cards[cardId].deck_id === parseInt(deckId)) {
+      cardArray.push(cards[cardId]);
+    }
+  });
+  return cardArray;
+
+};
 
 export const lookupSelector = card => {
   const definitions = [];

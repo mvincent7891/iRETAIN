@@ -90,6 +90,7 @@ ul.deck-header {
    color: #676767;
  }
 
+
 li.deck-header-item {
   display: flex;
   flex-direction: column;
@@ -97,13 +98,23 @@ li.deck-header-item {
   height: auto;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 0px;
   background-color: $tirtiary-grey;
   font-weight: normal;
+  font-size: 1.2em;
   box-sizing: border-box;
-  color: $primary-grey;
 }
 
+span.deck-header-title {
+  font-weight: normal;
+  font-size: 1em;
+  box-sizing: border-box;
+  color: $primary-blue;
+}
+
+span.deck-header-title:hover {
+  cursor: pointer;
+}
 
 li.deck-index-item {
   padding: 10px;

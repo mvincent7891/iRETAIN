@@ -1,0 +1,33 @@
+$deck-header-width: 500px;
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+$button-padding: 6px;
+$primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+$button-transition: .2s;
+$card-index-width: 500px;
+$radius: 12px;
+
+.study-view-container {
+  position: absolute;
+  top: 55px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(0,0,0,.95);
+  color: white;
+}
+
+span.question-answer {
+  letter-spacing: 2px;
+}

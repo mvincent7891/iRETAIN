@@ -142,23 +142,6 @@ export class DeckIndex extends React.Component {
     });
   }
 
-  renderCards () {
-    const children = this.props.location.pathname.includes('new') ?
-              ("") : (this.props.children);
-
-    if ( this.state.selectedTab ) {
-      return (
-        <div>
-          <DeckHeaderContainer deckId={ this.state.selectedTab }
-                               children={ children } />
-          <CardsIndexContainer deckId={ this.state.selectedTab } />
-        </div>
-      );
-    } else {
-      return <DashboardContainer />;
-    }
-  }
-
   render () {
 
     return (
@@ -183,7 +166,6 @@ export class DeckIndex extends React.Component {
             <strong>{ " + "}</strong>
           </li>
         </ul>
-        {/* this.renderCards() */}
         { this.props.children }
       </div>
     );

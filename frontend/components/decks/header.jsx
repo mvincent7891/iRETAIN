@@ -6,7 +6,11 @@ class Header extends React.Component {
     super(props);
     this.state = { displayOptions: true };
     this.renderButtons = this.renderButtons.bind(this);
+    this.studyDeck = this.studyDeck.bind(this);
+  }
 
+  studyDeck () {
+    hashHistory.push(`study/${this.props.deckId}`);
   }
 
   componentDidMount () {
@@ -53,7 +57,10 @@ class Header extends React.Component {
       ( // ...OR THIS...
         <ul className="deck-header">
           <li className="deck-header-item">
-              { this.props.deck.title }
+              <span className="deck-header-title"
+                    onClick={ this.studyDeck }>
+                { this.props.deck.title }
+              </span>
           </li>
           <li>
               { this.renderButtons() }

@@ -9,6 +9,7 @@ import DeckViewContainer from '../decks/view_container';
 import DashboardContainer from '../dashboard/dashboard_container';
 import SearchContainer from '../search/container';
 import SubjectContainer from '../subjects/container';
+import StudyViewContainer from '../study/study_view_container';
 import {Greeting} from '../extras/greeting';
 import isEmpty from 'lodash/isEmpty';
 
@@ -26,12 +27,7 @@ class AppRouter extends React.Component {
         <Route path="/" component={ App } >
           <IndexRoute component = { Greeting }
                       onEnter={this._redirectIfLoggedIn}/>
-          <Route path="/dashboard(/:deck_id)" component={ DecksIndexContainer } onEnter={ this._ensureLoggedIn } >
-            <Route path="/new-deck" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
-            <Route path="/edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
-          </Route>
-
-
+          <Route path="/study(/:deckId)" component={ StudyViewContainer } onEnter={ this._ensureLoggedIn } />
           <Route path="/subjects" component={ SubjectIndexContainer } onEnter={ this._ensureLoggedIn } >
             <Route path="/subjects/:subjectId"
                    component={ SubjectContainer } >

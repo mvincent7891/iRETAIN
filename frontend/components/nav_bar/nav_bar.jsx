@@ -14,6 +14,7 @@ class NavBar extends React.Component {
     this.closeAccountModal = this.closeAccountModal.bind(this);
     this.goHome = this.goHome.bind(this);
     this.searchCards = this.searchCards.bind(this);
+    this.studyCards = this.studyCards.bind(this);
   }
 
   componentWillMount() {
@@ -22,11 +23,27 @@ class NavBar extends React.Component {
   }
 
   searchCards () {
-    hashHistory.push('/search');
+    if (!this.props.loggedIn) {
+      this.openModal("Login");
+    } else {
+      hashHistory.push('/search');
+    }
+  }
+
+  studyCards () {
+    if (!this.props.loggedIn) {
+      this.openModal("Login");
+    } else {
+      hashHistory.push('/study');
+    }
   }
 
   goHome () {
-    hashHistory.push('/subjects');
+    if (!this.props.loggedIn) {
+      this.openModal("Login");
+    } else {
+      hashHistory.push('/subjects');
+    }
   }
 
   componentWillReceiveProps(newProps) {
@@ -79,7 +96,7 @@ class NavBar extends React.Component {
             </li>
             <li className="link">How It Works</li>
             <li className="link" onClick={ this.searchCards }>Flashcards</li>
-            <li className="link">Educators</li>
+            <li className="link" onClick={ this.studyCards }>Study</li>
             <li className="link">more...</li>
           </ul>
           { sessionNav }
