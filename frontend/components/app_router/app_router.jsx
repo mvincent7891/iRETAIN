@@ -9,6 +9,7 @@ import DeckViewContainer from '../decks/view_container';
 import DashboardContainer from '../dashboard/dashboard_container';
 import SearchContainer from '../search/container';
 import SubjectContainer from '../subjects/container';
+import {Greeting} from '../extras/greeting';
 import isEmpty from 'lodash/isEmpty';
 
 const SplashPage = () => ( <li></li>);
@@ -23,7 +24,8 @@ class AppRouter extends React.Component {
     this.routes = (
       <Router history={ hashHistory } >
         <Route path="/" component={ App } >
-          <IndexRoute component = { SplashPage } onEnter={this._redirectIfLoggedIn}/>
+          <IndexRoute component = { Greeting }
+                      onEnter={this._redirectIfLoggedIn}/>
           <Route path="/dashboard(/:deck_id)" component={ DecksIndexContainer } onEnter={ this._ensureLoggedIn } >
             <Route path="/new-deck" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
             <Route path="/edit-deck/:deckId" component={ DeckFormContainer } onEnter={ this._ensureLoggedIn } />
