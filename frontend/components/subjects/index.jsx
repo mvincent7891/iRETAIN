@@ -1,5 +1,6 @@
 import React from 'react';
 import SubjectIndexItem from './index_item';
+import { selectSubjectFromArray } from '../../util/subject_selector';
 import { hashHistory } from 'react-router';
 
 export class SubjectIndex extends React.Component {
@@ -13,6 +14,17 @@ export class SubjectIndex extends React.Component {
     if (!newProps.params.subjectId) {
       this.props.clearActiveSubject();
       this.setState({ selectedTab: null });
+    }
+    const activeDeck = newProps.activeDeck;
+    if (activeDeck && activeDeck.id && !this.state.selectedTab) {
+      if (newProps.subjects.length > 0) {
+        const subject = selectSubjectFromArray(newProps.subjects, activeDeck.subject_id);
+        this.props.chooseSubject(subject);
+      }
+    }
+    const currentSubject = newProps.currentSubject;
+    if (currentSubject && currentSubject.id) {
+      this.setState({ selectedTab: newProps.currentSubject.id });
     }
   }
 

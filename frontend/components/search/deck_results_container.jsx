@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
   });
 
 const mapDispatchToProps = (dispatch) => ({
-  viewOwnDeck: deckId => dispatch(viewSingleDeck(deckId)),
+  viewOwnDeck: deck => dispatch(viewSingleDeck(deck)),
   cloneDeck: deck => dispatch(cloneDeck(deck))
 });
 

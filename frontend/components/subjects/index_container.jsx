@@ -11,7 +11,9 @@ const mapStateToProps = (state, ownProps) => ({
   subjects: subjectSelector(state.subjects),
   errors: state.errors.subjects,
   decks: state.decks,
-  children: ownProps.children
+  activeDeck: state.activeDeck,
+  children: ownProps.children,
+  currentSubject: state.currentSubject
 });
 
 const mapDispatchToProps = dispatch => ({

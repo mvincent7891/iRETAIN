@@ -9,3 +9,13 @@ export const subjectSelector = (subjects) => {
   return subjectArray;
 
 };
+
+export const selectSubjectFromArray = (subjectsArray, subject_id) => {
+  let chooseSubject = {};
+  subjectsArray.forEach(subject => {
+    if (subject.id === subject_id) {
+      chooseSubject = subject;
+    }
+  });
+  return chooseSubject;
+};

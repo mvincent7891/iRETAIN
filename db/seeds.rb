@@ -28,7 +28,6 @@ Card.create!(author_id: guest.id, deck_id: deck.id, title: 'mixolydian', body: '
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'aolian', body: '6th mode of the major scale')
 Card.create!(author_id: guest.id, deck_id: deck.id, title: 'locrian', body: '7th mode of the major scale')
 
-
 deck_2 = Deck.create!(title: "Fun Facts", author_id: user_2.id, subject_id: subject_1.id)
 
 Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'tree-sonous', body: 'It is illegal to climb trees in Oshawa, a town in Ontario, Canada.')
@@ -46,7 +45,6 @@ Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Production', body:
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Seed plants', body: 'There are two types of plants that produce seeds: gymnosperms (like the conifer family), whose seeds are exposed, and angiosperms, or flowering plants, whose seeds are protected by fruits')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'The Holy See(d)', body: 'The oldest viable seed to have grown into a plant was a date palm seed estimated to be 2,000 years old (making it the only surviving contemporary of Jesus)')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Big ol\' seed', body: 'The biggest seed belongs to the coco de mer palm (Lodoicea maldivica). Their fruit usually contain just one seed, which can weigh almost three stone, but no one knows what a stone is.')
-
 
 t1 = Tag.create!(name: "music")
 t2 = Tag.create!(name: "plants")
