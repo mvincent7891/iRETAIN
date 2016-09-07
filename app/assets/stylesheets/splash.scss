@@ -17,12 +17,27 @@ $error-color: #ff1818;
 $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
+$jackie-width: 240px;
+
+button.demo-button {
+  background-color: $primary-blue;
+  color: white;
+  font-weight: lighter;
+  font-size: 1.4em;
+  width: $jackie-width;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+button.demo-button:hover {
+  background-color: $flash-blue;
+}
 
 hr {
   margin: 20px;
-  margin-right: 80px;
-  width: 240px;
-  border-bottom: 1px solid white;
+  width: $jackie-width;
+  border-bottom: 1px solid $primary-blue;
 }
 
 #splash-greeting-container {
@@ -30,11 +45,12 @@ hr {
   top: 55px;
   left: 120px;
   bottom: 0px;
-  padding-left: 30px;
-  padding-right: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   color: white;
   min-height: 740px;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.6);
@@ -42,18 +58,18 @@ hr {
 }
 
 h1#splash-header {
-  font-size: 4.2em;
+  font-size: 3em;
   margin-bottom: 8px;
 }
 
 h3#splash-sub-header {
-  font-size: 1.8em;
+  font-size: 1.4em;
 }
 
 p#splash-p {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: normal;
-  width: 300px;
+  width: 260px;
   display: flex;
   margin-bottom: 36px;
 }
