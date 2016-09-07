@@ -26,7 +26,6 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
  }
 
  body {
-   display: flex;
    background-position: center;
    background-image: url('coffee.png');
    background-size: cover;
@@ -41,9 +40,11 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
   position: absolute;
   top: 55px;
   bottom: 0px;
-  right: 10%;
-  left: 10%;
-  min-width: 800px;
+  left: 8%;
+  right: 8%;
+  margin-left: 20px;
+  margin-right: 20px;
+  min-width: 840px;
   background-color: white;
   opacity: .9;
 }
