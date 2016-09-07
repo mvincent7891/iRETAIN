@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      Deck.create_default_deck(@user.id)
+      Deck.create_default_decks(@user.id)
       login!(@user)
       render "api/users/show"
     else

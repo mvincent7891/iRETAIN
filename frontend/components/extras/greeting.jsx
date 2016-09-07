@@ -34,8 +34,8 @@ export class Greeting extends React.Component {
           <h1 id="splash-header">iRETAIN:</h1>
           <h3 id="splash-sub-header">[i-ri-<b>teyn</b>] <i>application</i></h3>
         <hr/>
-        <p id="splash-p"><div>(1)</div> <div>study and create topical flash card decks</div></p>
-        <p id="splash-p"><div>(2)</div><div>transform everyday browsing into an educational experience with the iRETAIN Chrome extension</div></p>
+        <p id="splash-p"><span>(1)</span> <span>study and create topical flash card decks</span></p>
+        <p id="splash-p"><span>(2)</span><span>transform everyday browsing into an educational experience with the iRETAIN Chrome extension</span></p>
         <button className="demo-button"
                 onClick={ this.openModal } >DEMO</button>
         <Modal

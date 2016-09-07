@@ -8,10 +8,13 @@ import { deckSelector,
 
 const mapStateToProps = (state, ownProps) => ({
   loggedIn: Boolean(state.session.currentUser),
+  user: state.session.currentUser,
   errors: state.errors.deck,
   showDeck: state.showDeck,
   activeDeck: state.activeDeck,
-  decks: subjectDeckSelector(deckSelector(state.decks), state.currentSubject),
+  decks: subjectDeckSelector(deckSelector(state.decks),
+                             state.currentSubject,
+                             state.session.currentUser),
   children: ownProps.children
 });
 

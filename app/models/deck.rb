@@ -8,9 +8,17 @@ class Deck < ActiveRecord::Base
   has_many :tags,
     through: :taggings
 
-  def self.create_default_deck(user_id)
+  def self.create_default_decks(user_id)
     default_deck = Deck.where(title: "Default").first
+    seed_deck = Deck.where(title: "Seed Data").first
+    equation_deck = Deck.where(title: "Famous Equations").first
+    modes_deck = Deck.where(title: "Major Scale Modes").first
+    intervals_deck = Deck.where(title: "Intervals").first
     self.clone_deck(default_deck.id, user_id)
+    self.clone_deck(seed_deck.id, user_id)
+    self.clone_deck(modes_deck.id, user_id)
+    self.clone_deck(intervals_deck.id, user_id)
+    self.clone_deck(equation_deck.id, user_id)
   end
 
   def self.clone_deck(deck_id, user_id)

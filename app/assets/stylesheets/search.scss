@@ -19,6 +19,17 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+span.search-result-title {
+  color: $primary-blue;
+  font-weight: normal;
+  font-size: 1em;
+}
+span.search-result-author {
+  color: $primary-grey;
+  font-weight: normal;
+  font-size: .8em;
+}
+
 div.search-result-item {
   padding: 10px;
   padding-right: 25px;
@@ -110,6 +121,7 @@ input[type=text].search-component-field {
   background-color: $tirtiary-grey;
   height: auto;
   padding-bottom: 40px;
+  border-top: 4px solid $secondary-grey;
 }
 
 .search-header-item {

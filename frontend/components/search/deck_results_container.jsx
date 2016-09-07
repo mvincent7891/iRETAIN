@@ -8,7 +8,7 @@ import { viewSingleDeck,
 const mapStateToProps = (state, ownProps) => ({
     loggedIn: Boolean(state.session.currentUser),
     user: state.session.currentUser,
-    decks: deckSelector(state.decks)
+    decks: deckSelector(state.search.decks)
   });
 
 const mapDispatchToProps = (dispatch) => ({

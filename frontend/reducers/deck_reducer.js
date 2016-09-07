@@ -9,8 +9,10 @@ const defaultState = {
 export const DeckReducer = (state = defaultState, action) => {
 
   switch(action.type) {
-    case DeckConstants.RECEIVE_DECKS:
+    case DeckConstants.REMOVED_DECK:
       return action.decks;
+    case DeckConstants.RECEIVE_DECKS:
+      return merge({}, state, action.decks);
     case DeckConstants.RECEIVE_SINGLE_DECK:
       const id = action.deck.id;
       return merge({}, state, {[id]: action.deck});

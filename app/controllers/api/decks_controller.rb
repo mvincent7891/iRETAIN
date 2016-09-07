@@ -69,6 +69,6 @@ class Api::DecksController < ApplicationController
 
   private
   def deck_params
-    params.require(:deck).permit(:title, :id, :subject_id, :author_id, :type, :tags => [])
+    params.require(:deck).permit(:username, :title, :id, :subject_id, :author_id, :type, :tags => [])
   end
 end

@@ -41,7 +41,10 @@ class DeckResultItem extends React.Component {
   render () {
     return (
       <div className="search-result-item">
-        { this.props.deck.title }
+        <div>
+          <span className="search-result-title">{ this.props.deck.title }</span><br/>
+          <span className="search-result-author">by { this.props.deck.username }</span>
+        </div>
         { this.renderOptions() }
       </div>
     );
