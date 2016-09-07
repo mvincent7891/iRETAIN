@@ -7,7 +7,6 @@ const defaultState = {
 };
 
 export const DeckReducer = (state = defaultState, action) => {
-
   switch(action.type) {
     case DeckConstants.REMOVED_DECK:
       return action.decks;

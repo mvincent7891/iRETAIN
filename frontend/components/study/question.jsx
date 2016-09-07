@@ -10,6 +10,8 @@ export class Question extends React.Component {
                    solving: false,
                    userAnswer: "",
                    feedback: "" };
+    this.timer = undefined;
+
     this.startTimer = this.startTimer.bind(this);
     this.stopTimer = this.stopTimer.bind(this);
     this.addLetter = this.addLetter.bind(this);
@@ -22,6 +24,7 @@ export class Question extends React.Component {
 
   componentWillReceiveProps (newProps) {
     if (newProps.card.id !== this.props.card.id) {
+      // this.stopTimer();
       this.setState({
         question: newProps.card.body,
         answer: this.replaceAnswer(newProps.card.title),
@@ -36,7 +39,9 @@ export class Question extends React.Component {
   }
 
   componentDidMount () {
-    this.startTimer();
+    if (!this.timer) {
+      this.startTimer();
+    }
   }
 
   componentWillUnmount () {
@@ -55,10 +60,11 @@ export class Question extends React.Component {
     const correctAnswer = this.props.card.title.toLowerCase();
     if ( userAnswer === correctAnswer ) {
       this.setState({ feedback: "That's right!"});
-      setTimeout(() => this.props.nextQuestion(true), 1000);
+      setTimeout(() => this.props.nextQuestion(true), 1500);
     } else {
       this.setState({ feedback: "Sorry, that's incorrect."});
-      setTimeout(() => this.props.nextQuestion(false), 1000);
+      setTimeout(() => this.setState({ answer: correctAnswer }), 1500);
+      setTimeout(() => this.props.nextQuestion(false), 3500);
     }
   }
 
@@ -91,12 +97,16 @@ export class Question extends React.Component {
   }
 
   startTimer () {
-    var timer = setInterval(() => this.addLetter(), 900);
-    this.setState({ timer });
+    var interval = Math.floor(8000 / this.state.indices.length );
+    // var timers = {};
+    // timers[0] = setInterval(() => this.addLetter(), interval);
+    // this.setState({ timers });
+    this.timer = setInterval(() => this.addLetter(), interval);
   }
 
   stopTimer () {
-    clearInterval(this.state.timer);
+    clearInterval(this.timer);
+    this.timer = undefined;
   }
 
   addLetter () {
@@ -108,7 +118,7 @@ export class Question extends React.Component {
     if (this.state.current >= this.state.indices.length - 1) {
       this.stopTimer();
       this.setState({ feedback: "Time's up!"});
-      setTimeout(() => this.props.nextQuestion(false), 1000);
+      setTimeout(() => this.props.nextQuestion(false), 1500);
     }
     this.setState({ current: this.state.current + 1, answer });
   }
@@ -125,7 +135,7 @@ export class Question extends React.Component {
           </form>
         <button className="continue-button"
           onClick={ this.continueAddingLetters }>
-          Continue
+          More hints...
         </button>
         </div>
       );
@@ -144,11 +154,12 @@ export class Question extends React.Component {
   render () {
     return (
       <div className="question-container">
-        <br/>
-        <span>{ this.state.question }</span> <br/><br/>
+        <span className="question-body">{ this.state.question }</span><br/><br/>
         <span className="question-answer">{ this.state.answer }</span><br/><br/>
         { this.renderDisplay() }<br/><br/>
-        { this.state.feedback }
+        <span className="feedback">
+          { this.state.feedback }
+        </span>
       </div>
     );
   }

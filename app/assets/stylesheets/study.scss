@@ -18,16 +18,154 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+input.answer {
+  background-color: $tirtiary-grey;
+  font-size: 1.3em;
+  padding: 3px;
+  margin: 5px;
+  width: 300px;
+}
+
+span.feedback {
+  font-size: 1.3em;
+}
+
+span.question-body {
+  font-size: 1.6em;
+}
+
+span.question-answer {
+  font-size: 1.3em;
+  letter-spacing: 2px;
+  height: 50px;
+}
+
+section.study-section {
+  margin: 20px;
+}
+
+section.study-section.left {
+  margin-top: 60px;
+  margin-left: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+section.study-section.right {
+  width: 500px;
+}
+
+div.question-container {
+  height: 400px;
+  border-left: 1px solid $tirtiary-grey;
+  padding-left: 40px;
+  padding-top: 60px;
+}
+
+.study-deck-title {
+  font-size: 1.6em;
+  font-weight: normal;
+  color: $primary-blue;
+}
+
+ul.progress {
+  font-size: 1.2em;
+  width: 100px;
+}
+
+ul.progress li {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+span.progress-correct {
+  color: $primary-color;
+}
+
+span.progress-incorrect {
+  color: $remove-color;
+}
+
 .study-view-container {
+  display: flex;
   position: absolute;
   top: 55px;
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: rgba(0,0,0,.95);
+  background-color: rgba(0,0,0,.85);
   color: white;
 }
 
-span.question-answer {
-  letter-spacing: 2px;
+
+
+button.end-study {
+  transition: all $button-transition ease-in-out;
+  background-color: $primary-blue;
+  border: 2px solid $primary-blue;
+  color: white;
+  padding: $button-padding;
+  margin: 15px 0px;
+  border-radius: 5px;
+  font-size: 1em;
+  height: 60px;
+  width: 140px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ul.exit-study li {
+  color: white;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  z-index: 100;
+}
+
+button.end-study:hover {
+  background-color: $flash-blue;
+  border: 2px solid $flash-blue;
+}
+button.solve-button {
+  transition: all $button-transition ease-in-out;
+  background-color: $primary-blue;
+  border: 2px solid $primary-blue;
+  color: white;
+  padding: $button-padding;
+  margin: 15px 0px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  height: 60px;
+  width: 120px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button.solve-button:hover {
+  background-color: $flash-blue;
+  border: 2px solid $flash-blue;
+}
+button.continue-button {
+  transition: all $button-transition ease-in-out;
+  background-color: $primary-blue;
+  border: 2px solid $primary-blue;
+  color: white;
+  padding: $button-padding;
+  margin: 15px 0px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  height: 60px;
+  width: 160px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button.continue-button:hover {
+  background-color: $flash-blue;
+  border: 2px solid $flash-blue;
 }

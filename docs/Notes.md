@@ -1,8 +1,13 @@
 # Notes
 
 # TODO (Sep 8):
-- Adding decks from search results (broken after subject integration)
-- Search results currently produce duplicates
+- Style "Study Session"
+- Subjects: Auto-populate new subject with empty deck form
+- Subjects: Find subjects that already exist, populate search results with all decks in that subjects
+- How it Works
+- Production README
+- More... Chrome Extension
+- Account Settings
 
 ## Issues - August 29
 - Still haven't figured out the right nav ul not taking up its entire container (css issue)
