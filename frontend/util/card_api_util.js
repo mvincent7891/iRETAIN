@@ -30,7 +30,7 @@ export const createCard = (success, error, card, deckId) => {
 
 export const updateCard = (success, error, card) => {
   $.ajax({
-    url: `api/decks/${card.deck_id}/cards/${card.id}`,
+    url: `api/decks/${card.card.deck_id}/cards/${card.card.id}`,
     method: 'PATCH',
     dataType: 'json',
     data: card,

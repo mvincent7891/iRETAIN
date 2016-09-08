@@ -100,10 +100,8 @@ export class Question extends React.Component {
   }
 
   startTimer () {
-    // difficulty will be set to 0, 1 or 2
     var difficultyAdjuster = 2000 * this.props.difficulty;
     var interval = Math.floor((10000 - difficultyAdjuster) / this.state.indices.length );
-    console.log(interval);
     this.timer = setInterval(() => this.addLetter(), interval);
   }
 
