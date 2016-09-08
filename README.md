@@ -100,9 +100,21 @@ The deck tagging features uses the `react-tag-iput` component, which can be foun
 The subject search features uses the `react-autosuggest` component, which can be found [here][suggest].
 [suggest]: https://www.npmjs.com/package/react-autosuggest
 
-## Future Directions for the Project
+## Future Directions
 
 ### Chrome Extension and Syntax Highlighting
+The next feature will be what separates iRetain from other flashcard apps - the Chrome Extension. The extension will have several features which add to the user experience and strengthen retention of new concepts.
+
+#### Syntax Highlighting
+The Chrome extension will be used while browsing or studying on other websites. If syntax highlighting is turned on, words the user has looked up in the past will be highlighted on the page. Hovering over a previously looked up word will display it's definition.
+
+In addition, synonyms of previously looked up words will be highlighted. Hovering over a synonym will reveal the originally looked up word. This feature will help strengthen retention by creating new associations with old concepts and words.
+
+#### Lookup
+While browsing, highlighting a word, right clicking, and selecting `Define It` from the context menu will display the definition of unknown words.
+
+#### Dynamic Flashcard Creation
+Clicking `Retain It` instead will not only display the definition, but it will also create a flashcard in the background, saved to the user's default deck. If the user is not logged in, she or he will be redirected to the login page.
 
 ### Addition Search functionality
 
