@@ -5,6 +5,7 @@ import ErrorReducer from './error_reducer';
 import { DeckReducer, ShowDeckReducer } from './deck_reducer';
 import ActiveDeckReducer from './active_deck_reducer';
 import SearchReducer from './search_reducer';
+import AllSubjectReducer from './all_subject_reducer';
 import {SubjectReducer, CurrentSubjectReducer } from './subject_reducer';
 import TagReducer from './tag_reducer';
 import LookupReducer from './lookup_reducer';
@@ -19,6 +20,7 @@ const RootReducer = combineReducers({
   search: SearchReducer,
   tags: TagReducer,
   subjects: SubjectReducer,
+  allSubjects: AllSubjectReducer,
   currentSubject: CurrentSubjectReducer,
   lookup: LookupReducer
 });

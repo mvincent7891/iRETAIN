@@ -111,6 +111,7 @@ h2.subject-title {
   border-right: 4px solid $secondary-grey;
   border-bottom: 2px solid $secondary-grey;
   display: flex;
+  flex-direction: column;
   width: 180px;
   height: 60px;
   padding: 10px;

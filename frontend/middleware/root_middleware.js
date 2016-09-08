@@ -5,6 +5,7 @@ import DeckMiddleware from './deck_middleware';
 import SearchMiddleware from './search_middleware';
 import TagMiddleware from './tag_middleware';
 import SubjectMiddleware from './subject_middleware';
+import AllSubjectMiddleware from './all_subject_middleware';
 
 const RootMiddleware = applyMiddleware(
   SessionMiddleware,
@@ -12,7 +13,8 @@ const RootMiddleware = applyMiddleware(
   DeckMiddleware,
   SearchMiddleware,
   TagMiddleware,
-  SubjectMiddleware
+  SubjectMiddleware,
+  AllSubjectMiddleware
 );
 
 export default RootMiddleware;

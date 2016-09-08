@@ -1,5 +1,6 @@
 import React from 'react';
 import SubjectIndexItem from './index_item';
+import SubjectIndexHeaderContainer from './index_header_container';
 import { selectSubjectFromArray } from '../../util/subject_selector';
 import { hashHistory } from 'react-router';
 
@@ -81,9 +82,7 @@ export class SubjectIndex extends React.Component {
         <div className="content-container">
           <div className="subject-index-container">
             <div>
-              <div className="subject-index-header">
-                <h3 className="subjects">Subjects</h3>
-              </div>
+              <SubjectIndexHeaderContainer />
               <div className="divider"></div>
               <ul className="subject-index">
                 { this.renderSubjects() }
