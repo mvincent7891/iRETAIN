@@ -21,4 +21,20 @@ class Api::SubjectsController < ApplicationController
     render :index
   end
 
+  def create
+    @user_id = current_user.id
+    @subject = Subject.find_by(title: params[:title])
+    if @subject
+      @deck = Deck.create(title: "New #{params[:title]} Deck",
+                          author_id: @user_id,
+                          subject_id: @subject.id)
+    else
+      @subject = Subject.create(title: params[:title])
+      @deck = Deck.create(title: "New #{params[:title]} Deck",
+                         author_id: @user_id,
+                         subject_id: @subject.id)
+    end
+    render :new
+  end
+
 end

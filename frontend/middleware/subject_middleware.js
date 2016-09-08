@@ -1,6 +1,7 @@
 import { SubjectConstants,
          receiveSubjects,
          chooseSubjectId,
+         receiveNewSubject,
          requestSubjects,
        } from '../actions/subject_actions.js';
 import { DeckConstants,
@@ -12,10 +13,14 @@ import isEmpty from 'lodash/isEmpty';
 const SubjectMiddleware = ({getState, dispatch}) => next => action => {
 
   switch(action.type) {
+
+    case SubjectConstants.CREATE_SUBJECT:
+      const createSuccess = subjectAndDeck => dispatch(receiveNewSubject(subjectAndDeck));
+      UTILS.createSubject(createSuccess, action.title);
+      return next(action);
+
     case SubjectConstants.REQUEST_SUBJECTS:
-      const success = subjects => {
-        dispatch(receiveSubjects(subjects));
-      };
+      const success = subjects => dispatch(receiveSubjects(subjects));
       UTILS.fetchSubjects(success);
       return next(action);
     case DeckConstants.VIEW_SINGLE_DECK:

@@ -10,10 +10,12 @@ export const SubjectReducer = (state = defaultState, action) => {
   switch(action.type) {
     case SubjectConstants.RECEIVE_SUBJECTS:
       return action.subjects;
+    case SubjectConstants.RECEIVE_NEW_SUBJECT:
+      debugger
+      return state;
     default:
       return state;
   }
-
 };
 
 export const CurrentSubjectReducer = (state = {}, action) => {

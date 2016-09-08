@@ -15,3 +15,13 @@ export const fetchAllSubjects = success => {
     success
   });
 };
+
+export const createSubject = (success, title) => {
+  $.ajax({
+    url: 'api/subjects',
+    method: 'POST',
+    dataType: 'json',
+    data: { title },
+    success
+  });
+};

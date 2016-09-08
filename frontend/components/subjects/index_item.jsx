@@ -1,5 +1,6 @@
 import React from 'react';
 import { deckSelector, subjectDeckSelector } from '../../util/deck_selector';
+import { hashHistory } from 'react-router';
 
 class SubjectIndexItem extends React.Component {
 
@@ -18,7 +19,7 @@ class SubjectIndexItem extends React.Component {
 
   render () {
     var count = this.state.decks.length;
-    if (count === 0) {
+    if (!count || count === 0) {
       return <li></li>;
     } else {
       return (

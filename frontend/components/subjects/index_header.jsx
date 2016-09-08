@@ -29,8 +29,9 @@ export class SubjectIndexHeader extends React.Component {
   }
 
   createSubject () {
-    console.log(this.state.value);
-    this.props.createSubject(this.state.value);
+    if (this.state.value.length > 3) {
+      this.props.createSubject(this.state.value);
+    }
   }
 
   // Teach Autosuggest how to calculate suggestions for any given input value.
