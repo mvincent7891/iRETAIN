@@ -45,8 +45,8 @@ export class DeckIndex extends React.Component {
     if (active && active.id) {
       this.setState({ selectedTab: active.id });
       this.setBoundaries(tabIndexSelector(active.id, this.props.decks));
-    } else if (this.props.params.deckId) {
-      const deck = selectDeckFromArray(this.props.params.deckId,
+    } else if (newProps.params.deckId) {
+      const deck = selectDeckFromArray(newProps.params.deckId,
                                         this.props.decks);
       if (deck) {
         this.props.chooseDeck(deck);

@@ -8,7 +8,6 @@ const defaultState = {
 };
 
 const ActiveDeckReducer = (state = defaultState, action) => {
-
   switch(action.type) {
     case DeckConstants.VIEW_SINGLE_DECK:
       return action.deck;

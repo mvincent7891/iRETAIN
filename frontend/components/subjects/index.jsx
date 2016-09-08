@@ -14,6 +14,9 @@ export class SubjectIndex extends React.Component {
     if (!newProps.params.subjectId) {
       this.props.clearActiveSubject();
       this.setState({ selectedTab: null });
+    } else if (newProps.subjects.length > 0) {
+      const currentSubject = selectSubjectFromArray(newProps.subjects, parseInt(newProps.params.subjectId));
+      this.props.chooseSubject(currentSubject);
     }
     const activeDeck = newProps.activeDeck;
     if (activeDeck && activeDeck.id && !this.state.selectedTab) {
@@ -25,6 +28,9 @@ export class SubjectIndex extends React.Component {
     const currentSubject = newProps.currentSubject;
     if (currentSubject && currentSubject.id) {
       this.setState({ selectedTab: newProps.currentSubject.id });
+    }
+    if (activeDeck && !newProps.params.deckId) {
+      this.props.clearActiveDeck();
     }
   }
 
