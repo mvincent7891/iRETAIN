@@ -23,6 +23,50 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+div.subject-dashboard-body-container div {
+  display: flex;
+}
+
+ul#home.nav {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+ul#home.nav li {
+    margin: 15px;
+    width: 30px;
+    height: 30px;
+}
+
+div.subject-dashboard-container {
+  margin: 30px;
+}
+
+div.subject-dashboard-body-container {
+  margin-top: 20px;
+  border-top: 4px solid $secondary-grey;
+  background-color: $tirtiary-grey;
+  width: 500px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+p.subject-dashboard-body {
+  border-top: 2px solid $secondary-grey;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+p.subject-dashboard-body.first {
+  border-top: 0px;
+}
+
+h2.subject-dashboard-header {
+  color: $primary-blue;
+  font-size: 1.8em;
+  font-weight: normal;
+}
+
 h2.subject-title {
   color: $primary-grey;
   font-size: 1.4em;
@@ -99,6 +143,7 @@ h2.subject-title {
 .subject-index-item:hover {
   cursor: pointer;
   background-color: #ebebeb;
+  border-right: 4px solid $primary-blue;
 }
 
 .subject-index-item {

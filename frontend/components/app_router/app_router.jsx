@@ -10,10 +10,9 @@ import DashboardContainer from '../dashboard/dashboard_container';
 import SearchContainer from '../search/container';
 import SubjectContainer from '../subjects/container';
 import StudyViewContainer from '../study/study_view_container';
+import SubjectDashboardContainer from '../subjects/subject_dashboard_container';
 import {Greeting} from '../extras/greeting';
 import isEmpty from 'lodash/isEmpty';
-
-const SplashPage = () => ( <li></li>);
 
 class AppRouter extends React.Component {
   constructor(props) {
@@ -29,6 +28,7 @@ class AppRouter extends React.Component {
                       onEnter={this._redirectIfLoggedIn}/>
           <Route path="/study(/:deckId)" component={ StudyViewContainer } onEnter={ this._ensureLoggedIn } />
           <Route path="/subjects" component={ SubjectIndexContainer } onEnter={ this._ensureLoggedIn } >
+            <IndexRoute component={ SubjectDashboardContainer } />
             <Route path="/subjects/:subjectId"
                    component={ SubjectContainer } >
               <Route path="/subjects/:subjectId/new" component={ DeckFormContainer } />

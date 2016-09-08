@@ -53,27 +53,31 @@ hr {
   align-items: center;
   color: white;
   min-height: 740px;
-  text-shadow: 0px 2px 4px rgba(0,0,0,0.6);
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
   background-color: rgba(0,0,0,.6);
 }
 
 h1#splash-header {
+  color: white;
   font-size: 3em;
   margin-bottom: 8px;
 }
 
 h3#splash-sub-header {
+  color: white;
   font-size: 1.4em;
 }
 
 p#splash-p {
+  color: white;
   font-size: 1em;
-  font-weight: normal;
+  font-weight: lighter;
   width: 260px;
   display: flex;
   margin-bottom: 36px;
 }
 
-p#splash-p div {
+p#splash-p span {
+  color: white;
   margin-right: 10px;
 }

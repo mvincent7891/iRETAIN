@@ -22,7 +22,7 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
    list-style: none;
    font-family: 'Proxima Nova Thin', sans-serif;
    font-weight: lighter;
-   color: 272727;
+   color: #272727;
  }
 
  body {
