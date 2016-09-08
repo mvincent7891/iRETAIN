@@ -13,7 +13,7 @@ The primary purpose of iRetain is to help students strengthen retention of new c
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
 
 ![Demo][demo_login]
-[demo_login]: ./docs/images/gif_home.gif
+[demo_login]: ./docs/images/home.gif
 
 ## Overview: Subjects, Decks and Cards
 As soon as you login, you will see an index of subjects to the left, as well as links to the primary flashcard deck features: view (eye icon), search (magnifying glass icon), and study (graduation cap icon).
@@ -38,7 +38,8 @@ The question displayed corresponds to a flashcard's body. As the time expires, m
 
 In order to answer a study question, click on `Solve`. Input your response and hit return (enter). After providing some feedback, the app will continue with the next question. If, instead of answering, you need more of the answer revealed, click the `More hints...` button. The time will continue to expire and the word will be revealed, letter by letter.
 
-INSERT: GIF => Study session
+![StudyGif][study_gif]
+[study_gif]: ./docs/images/study.gif
 
 Note that you are currently being quizzed on <i>all</i> of your flash cards. To study a specific deck, you'll have to navigate to it and click on it's title. We'll see how to do that in a bit. For now, click `End Session` in the study session dashboard to the left to quit studying and continue exploring.
 
