@@ -8,7 +8,7 @@ export class StudyView extends React.Component {
     super(props);
     this.state = { cardIndex: 0, finished: false,
                    correctResponses: 0, incorrectResponses: 0,
-                   started: false };
+                   started: false, difficulty: 0 };
     this.renderQuestion = this.renderQuestion.bind(this);
     this.nextQuestion = this.nextQuestion.bind(this);
     this.endSession = this.endSession.bind(this);
@@ -18,6 +18,10 @@ export class StudyView extends React.Component {
 
   startSession () {
     this.setState({ started: true });
+  }
+
+  setDifficulty (level) {
+    this.setState({ difficulty: level });
   }
 
   nextQuestion (correctResponseBoolean) {
@@ -37,7 +41,8 @@ export class StudyView extends React.Component {
     this.props.requestCards();
     this.setState({
       cardIndex: 0, finished: false,
-      correctResponses: 0, incorrectResponses: 0
+      correctResponses: 0, incorrectResponses: 0,
+      difficulty: 0
     });
   }
 
@@ -53,15 +58,29 @@ export class StudyView extends React.Component {
     if (this.props.ready && this.state.started) {
       return (
         <Question card={ this.props.cards[this.state.cardIndex ]}
-                  nextQuestion={ this.nextQuestion } />
+                  nextQuestion={ this.nextQuestion }
+                  difficulty={ this.state.difficulty } />
       );
     } else {
       return (
         <div className="question-container">
-        <button className="solve-button start"
-                    onClick={ this.startSession }>
-                    Start
-                  </button></div>
+          <ul className="select-difficulty">
+            <li onClick={ this.setDifficulty.bind(this, 0)}
+                className={ this.state.difficulty === 0 ? "selected-difficulty one" : "one" }>
+              Easy</li>
+            <li onClick={ this.setDifficulty.bind(this, 1)}
+                className={ this.state.difficulty === 1 ? "selected-difficulty" : "" }>
+              Medium</li>
+            <li onClick={ this.setDifficulty.bind(this, 2)}
+                className={ this.state.difficulty === 2 ? "selected-difficulty three" : "three" }>
+              Hard</li>
+          </ul>
+          <button className="solve-button start"
+                      onClick={ this.startSession }>
+                      Start
+                    </button>
+
+        </div>
       );
     }
   }

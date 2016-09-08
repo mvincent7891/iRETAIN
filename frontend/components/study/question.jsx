@@ -24,7 +24,6 @@ export class Question extends React.Component {
 
   componentWillReceiveProps (newProps) {
     if (newProps.card.id !== this.props.card.id) {
-      // this.stopTimer();
       this.setState({
         question: newProps.card.body,
         answer: this.replaceAnswer(newProps.card.title),
@@ -69,8 +68,12 @@ export class Question extends React.Component {
   }
 
   solve () {
-    this.stopTimer();
-    this.setState({ solving: true });
+    if (this.state.current >= this.state.indices.length - 1) {
+      return;
+    } else {
+      this.stopTimer();
+      this.setState({ solving: true });
+    }
   }
 
   continueAddingLetters () {
@@ -97,10 +100,10 @@ export class Question extends React.Component {
   }
 
   startTimer () {
-    var interval = Math.floor(8000 / this.state.indices.length );
-    // var timers = {};
-    // timers[0] = setInterval(() => this.addLetter(), interval);
-    // this.setState({ timers });
+    // difficulty will be set to 0, 1 or 2
+    var difficultyAdjuster = 2000 * this.props.difficulty;
+    var interval = Math.floor((10000 - difficultyAdjuster) / this.state.indices.length );
+    console.log(interval);
     this.timer = setInterval(() => this.addLetter(), interval);
   }
 

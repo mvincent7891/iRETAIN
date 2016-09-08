@@ -18,6 +18,62 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
+ul.select-difficulty li.one {
+  border-left: 4px;
+  border-top-left-radius: 25%;
+  border-bottom-left-radius: 25%;
+}
+ul.select-difficulty li.three {
+  border-left: 4px;
+  border-top-right-radius: 25%;
+  border-bottom-right-radius: 25%;
+}
+
+ul.select-difficulty {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+
+ul.select-difficulty li {
+  padding: 5px;
+  background-color: $flash-orange;
+  color: white;
+  font-weight: normal;
+  cursor: pointer;
+  border-bottom: 0px solid $edit-color;
+  border-top: 0px solid $edit-color;
+  height: 20px;
+}
+
+ul.select-difficulty li.selected-difficulty {
+  background-color: $edit-color;
+  border-bottom: 2px solid $edit-color;
+  border-top: 2px solid $edit-color;
+}
+ul.select-difficulty li.one {
+  background-color: $flash-green;
+  border-bottom: 0px solid $primary-color;
+  border-top: 0px solid $primary-color;
+}
+
+ul.select-difficulty li.selected-difficulty.one {
+  background-color: $primary-color;
+  border-bottom: 2px solid $primary-color;
+  border-top: 2px solid $primary-color;
+}
+ul.select-difficulty li.three {
+  background-color: $flash-red;
+  border-bottom: 0px solid $remove-color;
+  border-top: 0px solid $remove-color;
+}
+
+ul.select-difficulty li.selected-difficulty.three {
+  background-color: $remove-color;
+  border-bottom: 2px solid $remove-color;
+  border-top: 2px solid $remove-color;
+}
+
 input.answer {
   background-color: $tirtiary-grey;
   font-size: 1.3em;
