@@ -45,11 +45,10 @@ hr {
   top: 55px;
   left: 120px;
   bottom: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 100px 15px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: white;
   min-height: 740px;

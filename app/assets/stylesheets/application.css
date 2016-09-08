@@ -46,6 +46,7 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
   margin-right: 20px;
   min-width: 840px;
   max-width: 1200px;
+  border-left: 20px solid white;  
   background-color: white;
   opacity: .9;
 }

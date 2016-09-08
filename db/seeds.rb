@@ -66,14 +66,36 @@ Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'gut-shy', body: '
 Card.create!(author_id: user_2.id, deck_id: deck_2.id, title: 'seed data', body: 'Coffee beans aren’t beans; they are seeds of coffee berries.')
 
 deck_3 = Deck.create!(title: "Seed Data", author_id: guest.id, subject_id: subject_1.id)
-deck_4 = Deck.create!(title: "Big Words", author_id: guest.id, subject_id: subject_1.id)
-deck_5 = Deck.create!(title: "Computer Science", author_id: user_2.id, subject_id: subject_1.id)
-deck_7 = Deck.create!(title: "Science", author_id: guest.id, subject_id: subject_1.id)
 
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Production', body: 'Seeds are produced when pollen is released from the male (stamen) part of a plant')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Seed plants', body: 'There are two types of plants that produce seeds: gymnosperms (like the conifer family), whose seeds are exposed, and angiosperms, or flowering plants, whose seeds are protected by fruits')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'The Holy See(d)', body: 'The oldest viable seed to have grown into a plant was a date palm seed estimated to be 2,000 years old (making it the only surviving contemporary of Jesus)')
 Card.create!(author_id: guest.id, deck_id: deck_3.id, title: 'Big ol\' seed', body: 'The biggest seed belongs to the coco de mer palm (Lodoicea maldivica). Their fruit usually contain just one seed, which can weigh almost three stone, but no one knows what a stone is.')
+
+deck_4 = Deck.create!(title: "Big Words", author_id: guest.id, subject_id: subject_1.id)
+
+Card.create!(author_id: user_2.id, deck_id: deck_4.id, title: 'equanimity',
+  body: 'steadiness of mind under stress')
+Card.create!(author_id: user_2.id, deck_id: deck_4.id, title: 'fait accompli',
+  body: 'an irreversible accomplishment')
+Card.create!(author_id: user_2.id, deck_id: deck_4.id, title: 'insidious',
+  body: 'working or spreading in a hidden and usually injurious way')
+Card.create!(author_id: user_2.id, deck_id: deck_4.id, title: 'Svengali',
+  body: 'someone (usually maleficent) who tries to persuade or force another person to do his bidding')
+Card.create!(author_id: user_2.id, deck_id: deck_4.id, title: 'philistine',
+  body: 'a person who is uninterested in intellectual pursuits')
+
+deck_5 = Deck.create!(title: "Computer Science", author_id: user_2.id, subject_id: subject_1.id)
+Card.create!(author_id: user_2.id, deck_id: deck_5.id, title: 'defragmentation',
+  body: 'grouping of related disk areas to improve the speed at which data can be accessed')
+Card.create!(author_id: user_2.id, deck_id: deck_5.id, title: 'handshaking',
+  body: 'exchange of signals between devices, by which each tells the other that data is ready to be transferred/received ')
+Card.create!(author_id: user_2.id, deck_id: deck_5.id, title: 'parity bit',
+  body: 'a bit that acts as a check on a set of binary values, calculated in such a way that the number of 1s in the set plus the parity bit should always be even (or occasionally, should always be odd).')
+Card.create!(author_id: user_2.id, deck_id: deck_5.id, title: 'semantics',
+  body: 'the meaning of a programming language or procedure, undetected by the compiler')
+
+deck_7 = Deck.create!(title: "Science", author_id: guest.id, subject_id: subject_1.id)
 
 t1 = Tag.create!(name: "music")
 t2 = Tag.create!(name: "plants")
