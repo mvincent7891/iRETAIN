@@ -5,6 +5,7 @@ import SessionFormContainer from '../session/session_form_container';
 import AccountMenuContainer from '../session/account_menu_container';
 import { hashHistory } from 'react-router';
 
+
 class NavBar extends React.Component {
   constructor (props) {
     super(props);
@@ -15,6 +16,7 @@ class NavBar extends React.Component {
     this.goHome = this.goHome.bind(this);
     this.searchCards = this.searchCards.bind(this);
     this.studyCards = this.studyCards.bind(this);
+    this.readme = this.readme.bind(this);
   }
 
   componentWillMount() {
@@ -36,6 +38,10 @@ class NavBar extends React.Component {
     } else {
       hashHistory.push('/study');
     }
+  }
+
+  readme () {
+    window.location = 'https://github.com/mvincent7891/iRETAIN#top_of_page';
   }
 
   goHome () {
@@ -94,7 +100,7 @@ class NavBar extends React.Component {
                 onClick={ this.goHome } >
               <strong className="logo">iRETAIN</strong><span id="logo-io">.IO</span>
             </li>
-            <li className="link">How It Works</li>
+            <li className="link" onClick={ this.readme }>How It Works</li>
             <li className="link" onClick={ this.searchCards }>Flashcards</li>
             <li className="link" onClick={ this.studyCards }>Study</li>
             <li className="link">more...</li>
