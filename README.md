@@ -1,22 +1,25 @@
-# iRETAIN
+# iRetain
 
-[Proposal README][readme]
-[readme]: docs/README.md
+[iRetain live][live_app]
 
+[live_app]: http://www.iretain.io
 
-[iRETAIN live][heroku] **NB:** This will be a link to the iRETAIN production site
-
-[heroku]: http://www.herokuapp.com
-
-iRETAIN is a full-stack web application inspired by Brainscape.  It utilizes Ruby on Rails on the backend, a PostgreSQL database, and React.js with a Redux architectural framework on the frontend.  
+iRetain is a full-stack web application inspired by Brainscape. It utilizes Ruby on Rails and a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the frontend.  
 
 ### Motivation
+The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: in future releases, the iRetain Chrome extension will enable dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up while browsing or studying. The [auto lookup](#lookup) feature showcases some of this eventual functionality.
 
 ### Structure and Usage
 
 ### Under the Hood
 
-### Subjects, Decks and Cards
+### Card
+
+### Auto Lookup<a name="lookup"></a>
+
+### Decks
+
+### Subjects
 
 ### Tagging Decks
 

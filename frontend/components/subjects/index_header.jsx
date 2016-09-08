@@ -30,6 +30,7 @@ export class SubjectIndexHeader extends React.Component {
 
   createSubject () {
     if (this.state.value.length > 3) {
+      this.setState({ value: '' });
       this.props.createSubject(this.state.value);
     }
   }
