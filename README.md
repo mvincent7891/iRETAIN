@@ -12,7 +12,8 @@ The primary purpose of iRetain is to help students strengthen retention of new c
 ## Demo
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
 
-INSERT: GIF => Demo Login
+![Demo][demo_login]
+[demo_login]: ./docs/images/gif_home.gif
 
 ## Overview: Subjects, Decks and Cards
 As soon as you login, you will see an index of subjects to the left, as well as links to the primary flashcard deck features: view (eye icon), search (magnifying glass icon), and study (graduation cap icon).
@@ -79,13 +80,25 @@ You've noticed by now that cards are organized into decks, each of which belongs
 
 ## Technical Features and Highlights
 
+### Styling
+Other than [Google's Material Design Icons][design], all styling is pure SCSS. Neither Bootsrap nor any other styling libraries were used.
+[design]: https://design.google.com/icons/
+
 ### Deck Search Auto-populate Component
+The deck search and auto-populate were built from scratch. Each time the input changes, an API request is made for decks with tags that match the query.
 
 ### Card, Deck and Subject Indexing and Tabulation
+The tab and index components for cards, decks and subjects were built from scratch with React.js and use pure SCSS for styling. While similar pre-made React.js components exist, none allow the versatility I desired. So I built my own!
+
+Some components were not home-rolled, and credit is due to the following:
 
 ### Tagging Component
+The deck tagging features uses the `react-tag-iput` component, which can be found [here][tagger].
+[tagger]: https://www.npmjs.com/package/react-tag-input
 
 ### Subject Search Autosuggest Search Component
+The subject search features uses the `react-autosuggest` component, which can be found [here][suggest].
+[suggest]: https://www.npmjs.com/package/react-autosuggest
 
 ## Future Directions for the Project
 
