@@ -28,20 +28,24 @@ input.answer {
 
 span.feedback {
   font-size: 1.3em;
+  color: white;
 }
 
 span.question-body {
   font-size: 1.6em;
+  color: white;
 }
 
 span.question-answer {
   font-size: 1.3em;
   letter-spacing: 2px;
   height: 50px;
+  color: white;
 }
 
 section.study-section {
   margin: 20px;
+  color: white;
 }
 
 section.study-section.left {
@@ -51,30 +55,35 @@ section.study-section.left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  color: white;
 }
 section.study-section.right {
   width: 500px;
+  color: white;
 }
 
 div.question-container {
+  color: white;
   height: 400px;
   border-left: 1px solid $tirtiary-grey;
   padding-left: 40px;
   padding-top: 60px;
 }
 
-.study-deck-title {
+.study-deck-title div {
   font-size: 1.6em;
   font-weight: normal;
   color: $primary-blue;
 }
 
 ul.progress {
+  color: white;
   font-size: 1.2em;
   width: 100px;
 }
 
 ul.progress li {
+  color: white;
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
