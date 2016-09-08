@@ -4,10 +4,10 @@
 
 [live_app]: http://www.iretain.io
 
-iRetain is a full-stack web application inspired by Brainscape. It utilizes Ruby on Rails and a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the front end.  
+iRetain is a full-stack web app inspired by Brainscape. It utilizes Ruby on Rails and a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the frontend.  
 
 ## Motivation
-The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: in future releases, the iRetain Chrome extension will enable dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up while browsing or studying. The [auto lookup](#lookup) feature showcases some of this eventual functionality.
+The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: in future releases, the iRetain Chrome extension will enable dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up previously while browsing or studying. The [auto lookup](#lookup) feature showcases some of this eventual functionality.
 
 ## Demo
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
@@ -26,17 +26,17 @@ Users may be familiar with the overall structure of iRetain: Subjects contain de
 Users can create and 'own' decks and cards, but decks will belong to <i>public</i> subjects.
 
 ### Study
-Let's start by checking out the core feature: studying. Click on the graduation cap icon in the home display. This will redirect you to a new study session. To maximize focus, emphasis is placed on the question at hand. Select a difficulty, which corresponds to speed, and click `Start`.
+Let's start by checking out the core feature: studying. Click on the graduation cap icon in the home display. This will redirect you to a new study session. Select a difficulty, which corresponds to speed, and click `Start`.
 
 ![Study][study_image]
 [study_image]: ./docs/images/study.png
 
-The question displayed corresponds to a flashcard's body. As the time expires, more and more of the answer is revealed. In future versions, scoring of a study session will account for the percent revelation of the answer. As of now, the app simply tracks correct and incorrect responses.
+The question displayed corresponds to a flashcard's body. To maximize focus, emphasis is placed on the question at hand. As the time expires, more of the answer is revealed. In future versions, scoring of a study session will account for the percent revelation of the answer. As of now, the app simply tracks correct and incorrect responses.
 
 ![StudyQ][study_question]
 [study_question]: ./docs/images/study_question.png
 
-In order to answer a study question, click on `Solve`. Input your response and hit return (enter). After providing some feedback, the app will continue with the next question. If, instead of answering, you need more of the answer revealed, click the `More hints...` button. The time will continue to expire and the word will be revealed, letter by letter.
+To answer a study question, click on `Solve`. Input your response and hit return (enter). After providing some feedback, the app will continue with the next question. If, instead of answering, you need more of the answer revealed, click the `More hints...` button. The time will continue to expire and the word will be continue to be revealed, letter by letter.
 
 ![StudyGif][study_gif]
 [study_gif]: ./docs/images/study.gif
@@ -50,13 +50,13 @@ Click on the `General Knowledge` tab in the subject index to the left of the pag
 [devk_view]: ./docs/images/deck_view.png
 
 #### Edit Decks
-Click on the pencil icon to edit the deck. Let's add a tag to make the deck searchable. Input the tag name `scientific` and hit return. Now save the deck. Now users can search for this deck using the query, `scientific`.
+Click on the pencil icon to edit the deck. Let's add a tag to make the deck searchable. Input the tag name `scientific` and hit return. Save the deck - now users can search for this deck using the query, `scientific`.
 
 ![EditDeck][edit_deck]
 [edit_deck]: ./docs/images/edit_deck.png
 
 #### Search for Decks
- To prove it, click the magnifying glass in the top right corner of the screen. Enter the search query `scientific` and hit return. You should see the newly tagged Famous Equations deck in the results display. if you click `view`, you'll be redirected back to the deck.
+ To prove it, click the magnifying glass in the top right corner of the screen. Enter the search query `scientific` and hit return. You should see the newly tagged Famous Equations deck in the results display. if you click `View`, you'll be redirected back to the deck.
 
  ![SearchDecks][search_decks]
  [search_decks]: ./docs/images/search_results.png
@@ -76,8 +76,8 @@ Click the green `+ Add` in the upper right-hand corner of the the deck display. 
 ### Subjects
 You've noticed by now that cards are organized into decks, each of which belongs to a subject. Subjects are public categories. Using the subject index header in the upper left-hand corner, you can find (or create, if it doesn't already exist) a subject here. Simply start typing, and a list of suggestions will pop up. Selecting a subject and clicking `GO` will automatically create a new deck within the designated subject.
 
-![Suggest][suggest]
-[suggest]: ./docs/images/search_suggestions.png
+![Suggest][suggestion]
+[suggestion]: ./docs/images/search_suggestions.png
 
 ## Technical Features and Highlights
 
@@ -91,7 +91,7 @@ The deck search and auto-populate were built from scratch. Each time the input c
 ### Card, Deck and Subject Indexing and Tabulation
 The tab and index components for cards, decks and subjects were built from scratch with React.js and use pure SCSS for styling. While similar pre-made React.js components exist, none allow the versatility I desired. So I built my own!
 
-Some components were not home-rolled, and credit is due to the following:
+Some components were not home-rolled, and credit is due:
 
 ### Tagging Component
 The deck tagging features uses the `react-tag-iput` component, which can be found [here][tagger].
@@ -116,7 +116,3 @@ While browsing, highlighting a word, right clicking, and selecting `Define It` f
 
 #### Dynamic Flashcard Creation
 Clicking `Retain It` instead will not only display the definition, but it will also create a flashcard in the background, saved to the user's default deck. If the user is not logged in, she or he will be redirected to the login page.
-
-### Addition Search functionality
-
-### OmniAuth
