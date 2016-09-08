@@ -51,7 +51,6 @@ export const removeSingleCard = (success, error, card) => {
 };
 
 export const lookupCard = (success, error, cardObject) => {
-
   $.ajax({
     url: `http://api.pearson.com/v2/dictionaries/entries?headword=${cardObject.card.title}`,
     method: 'GET',

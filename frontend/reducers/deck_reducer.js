@@ -8,6 +8,7 @@ const defaultState = {
 };
 
 export const DeckReducer = (state = defaultState, action) => {
+
   switch(action.type) {
     case SubjectConstants.RECEIVE_NEW_SUBJECT:
       const newDeck = action.subjectAndDeck.deck;

@@ -16,7 +16,7 @@ class DeckResultItem extends React.Component {
 
   viewOwnDeck () {
     this.props.viewOwnDeck(this.props.deck);
-    const subjectId = this.props.deck.subjectId;
+    const subjectId = this.props.deck.subject_id;
     const deckId = this.props.deck.id;
     hashHistory.push(`/subjects/${subjectId}/decks/${deckId}`);
   }
