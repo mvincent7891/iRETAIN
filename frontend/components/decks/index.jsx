@@ -5,6 +5,7 @@ import CardsIndexContainer from '../cards/index_container';
 import DashboardContainer from '../dashboard/dashboard_container';
 import { hashHistory } from 'react-router';
 import { tabIndexSelector } from '../../util/deck_selector';
+import { selectDeckFromArray } from '../../util/deck_selector';
 
 export class DeckIndex extends React.Component {
 
@@ -39,21 +40,20 @@ export class DeckIndex extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
-    // const id = newProps.showDeck.id;
-    // if (newProps.decks.length > 0) {
-    //   this.setState({ selectedTab: newProps.decks[0].id });
-    // }
+
     const active = newProps.activeDeck;
     if (active && active.id) {
       this.setState({ selectedTab: active.id });
       this.setBoundaries(tabIndexSelector(active.id, this.props.decks));
+    } else if (this.props.params.deckId) {
+      const deck = selectDeckFromArray(this.props.params.deckId,
+                                        this.props.decks);
+      if (deck) {
+        this.props.chooseDeck(deck);
+      }
     } else {
       this.setState({ selectedTab: null, firstDeck: 0, lastDeck: 3 });
     }
-    // if (id) {
-    //   this.setState({ selectedTab: parseInt(id) });
-    //   this.setBoundaries(newProps.showDeck.tabPos);
-    // }
   }
 
   selectDashboard () {

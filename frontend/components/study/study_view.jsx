@@ -8,11 +8,16 @@ export class StudyView extends React.Component {
     super(props);
     this.state = { cardIndex: 0, finished: false,
                    correctResponses: 0, incorrectResponses: 0,
-                  };
+                   started: false };
     this.renderQuestion = this.renderQuestion.bind(this);
     this.nextQuestion = this.nextQuestion.bind(this);
     this.endSession = this.endSession.bind(this);
     this.renderDeckTitle = this.renderDeckTitle.bind(this);
+    this.startSession = this.startSession.bind(this);
+  }
+
+  startSession () {
+    this.setState({ started: true });
   }
 
   nextQuestion (correctResponseBoolean) {
@@ -44,13 +49,19 @@ export class StudyView extends React.Component {
   }
 
   renderQuestion () {
-    if (this.props.ready) {
+    if (this.props.ready && this.state.started) {
       return (
         <Question card={ this.props.cards[this.state.cardIndex ]}
                   nextQuestion={ this.nextQuestion } />
       );
     } else {
-      return "";
+      return (
+        <div className="question-container">
+        <button className="solve-button start"
+                    onClick={ this.startSession }>
+                    Start
+                  </button></div>
+      );
     }
   }
 

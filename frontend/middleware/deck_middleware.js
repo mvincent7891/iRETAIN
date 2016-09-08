@@ -2,6 +2,7 @@ import { DeckConstants,
          receiveDecks,
          requestSingleDeck,
          receiveSingleDeck,
+         clearActiveDeck,
          removedDeck,
          createdDeck
         } from '../actions/deck_actions.js';
@@ -15,7 +16,6 @@ import { hashHistory } from 'react-router';
 import { selectLastDeck } from '../util/deck_selector';
 
 const DeckMiddleware = ({getState, dispatch}) => next => action => {
-
   const success = decks => dispatch(receiveDecks(decks));
   const createDeckSuccess = decks => {
     const id = Object.keys(decks)[Object.keys(decks).length - 1];
@@ -25,7 +25,7 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
     hashHistory.push(`/subjects/${newDeck.subject_id}/decks/${newDeck.id}`);
   };
   const createDeckError = errors =>   dispatch(createDeckErrors(errors.responseJSON));
-  
+
   switch(action.type) {
     case DeckConstants.UPDATE_DECK:
       const updateError = errors => dispatch(receiveUpdateDeckErrors(errors.responseJSON));
@@ -56,6 +56,8 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       const removeSuccess = decks => {
         dispatch(receiveDecks(decks));
         dispatch(removedDeck(decks));
+        dispatch(clearActiveDeck());
+        hashHistory.push(`/subjects/${getState().activeDeck.subject_id}/decks`);
       };
       UTILS.removeDeck(removeSuccess, removeDeckError, action.deckId);
       return next(action);

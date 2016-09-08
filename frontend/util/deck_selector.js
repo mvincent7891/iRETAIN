@@ -1,5 +1,18 @@
 import isEmpty from 'lodash/isEmpty';
 
+export const selectDeckFromArray = (deckId, decks) => {
+  if (isEmpty(decks)) {
+    return null;
+  }
+  let newDeck;
+  decks.forEach(deck => {
+    if (parseInt(deckId) === deck.id) {
+      newDeck = deck;
+    }
+  });
+  return newDeck;
+};
+
 export const userDeckSelector = (decks, user) => {
   const returnDecks = {};
   Object.keys(decks).forEach(deckId => {

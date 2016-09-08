@@ -3,7 +3,8 @@ import { SubjectIndex } from './index';
 import { requestSubjects,
          receiveCurrentSubject,
          clearActiveSubject } from '../../actions/subject_actions';
-import { subjectSelector } from '../../util/subject_selector';
+import { subjectSelector,
+         selectSubjectFromArray } from '../../util/subject_selector';
 import { userDeckSelector } from '../../util/deck_selector';
 import { clearActiveDeck } from '../../actions/deck_actions';
 
@@ -21,7 +22,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   chooseSubject: subject => dispatch(receiveCurrentSubject(subject)),
   clearActiveDeck: () => dispatch(clearActiveDeck()),
-  clearActiveSubject: () => dispatch(clearActiveSubject())
+  clearActiveSubject: () => dispatch(clearActiveSubject()),
+  selectSubjectFromArray: (subjectsArray, subjectId) => dispatch(selectSubjectFromArray(subjectsArray, subjectId))
 });
 
 export default connect(

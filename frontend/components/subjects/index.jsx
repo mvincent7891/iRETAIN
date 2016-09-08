@@ -40,8 +40,15 @@ export class SubjectIndex extends React.Component {
   }
 
   componentDidMount () {
-    this.props.clearActiveSubject();
-    this.setState({ selectedTab: null });
+    if (!this.props.params.subjectId) {
+      this.props.clearActiveSubject();
+      this.setState({ selectedTab: null });
+    } else {
+      const id = parseInt(this.props.params.subjectId);
+      this.setState({ selectedTab: id });
+      const subject = selectSubjectFromArray(this.props.subjects, id);
+      this.props.chooseSubject(subject);
+    }
   }
 
   renderSubjects () {

@@ -91,7 +91,7 @@ span.progress-incorrect {
 .study-view-container {
   display: flex;
   position: absolute;
-  top: 55px;
+  top: 54px;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -109,9 +109,9 @@ button.end-study {
   padding: $button-padding;
   margin: 15px 0px;
   border-radius: 5px;
-  font-size: 1em;
-  height: 60px;
-  width: 140px;
+  font-size: .8em;
+  height: 30px;
+  width: 100px;
   background-size: 15px;
   background-position: center;
   background-repeat: no-repeat;
@@ -149,6 +149,16 @@ button.solve-button:hover {
   background-color: $flash-blue;
   border: 2px solid $flash-blue;
 }
+
+button.solve-button.start {
+  margin-top: 10px;
+  margin-left: 20px;
+  border-radius: 3px;
+  font-size: 1.4em;
+  height: 110px;
+  width: 160px;
+}
+
 button.continue-button {
   transition: all $button-transition ease-in-out;
   background-color: $primary-blue;

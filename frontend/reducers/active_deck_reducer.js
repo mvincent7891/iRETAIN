@@ -13,6 +13,7 @@ const ActiveDeckReducer = (state = defaultState, action) => {
     case DeckConstants.VIEW_SINGLE_DECK:
       return action.deck;
     case DeckConstants.REMOVED_DECK:
+
       return defaultState;
     case DeckConstants.CREATED_DECK:
       const createdDeck = selectLastDeck(action.decks);
