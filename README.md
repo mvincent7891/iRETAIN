@@ -1,9 +1,9 @@
-![Logo][logo_image]
+[![Logo][logo_image]][live_app]
 [logo_image]: ./app/assets/images/small_logo.png
+
 # iRetain: Create and Study Topical Flash Card Decks
 
 [iRetain live][live_app]
-
 [live_app]: http://www.iretain.io
 
 iRetain is a full-stack web app inspired by Brainscape. It utilizes Ruby on Rails and a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the frontend.  
