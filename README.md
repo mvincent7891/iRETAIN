@@ -1,7 +1,7 @@
 <a name="top_of_page"></a>
 
 [![Logo][logo_image]][live_app]
-[logo_image]: ./app/assets/images/small_logo.png
+[logo_image]: ./app/assets/images/logo.png
 
 # iRetain: Create and Study Topical Flash Card Decks
 
