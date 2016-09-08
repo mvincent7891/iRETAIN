@@ -1,3 +1,5 @@
+<center>![Logo][logo_image]</center>
+[logo_image]: ./app/assets/images/small_logo.png
 # iRetain: Create and Study Topical Flash Card Decks
 
 [iRetain live][live_app]
