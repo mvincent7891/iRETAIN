@@ -1,5 +1,6 @@
 import { StudyView } from './study_view.jsx';
 import { connect } from 'react-redux';
+import { requestCards } from '../../actions/card_actions';
 import { deckCardSelector,
          cardSelector } from '../../util/card_selector';
 import isEmpty from 'lodash/isEmpty';
@@ -41,11 +42,11 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-
+  requestCards: () => dispatch(requestCards())
 });
 
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(StudyView);

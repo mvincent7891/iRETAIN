@@ -34,6 +34,7 @@ export class StudyView extends React.Component {
   }
 
   componentDidMount () {
+    this.props.requestCards();
     this.setState({
       cardIndex: 0, finished: false,
       correctResponses: 0, incorrectResponses: 0
