@@ -22,9 +22,11 @@ ul.select-difficulty li.one {
   border-left: 4px;
   border-top-left-radius: 25%;
   border-bottom-left-radius: 25%;
+  padding-left: 10px;
 }
 ul.select-difficulty li.three {
   border-left: 4px;
+  padding-right: 10px;
   border-top-right-radius: 25%;
   border-bottom-right-radius: 25%;
 }
@@ -33,34 +35,52 @@ ul.select-difficulty {
   display: flex;
   margin-left: 20px;
   align-items: center;
+  margin-bottom: 10px;
 }
 
+ul.select-difficulty li:hover {
+  border-bottom: 1px solid $flash-orange;
+  border-top: 1px solid $flash-orange;
+}
 ul.select-difficulty li {
   padding: 5px;
   background-color: $flash-orange;
   color: white;
-  font-weight: normal;
+  font-weight: lighter;
   cursor: pointer;
   border-bottom: 0px solid $edit-color;
   border-top: 0px solid $edit-color;
   height: 20px;
 }
-
 ul.select-difficulty li.selected-difficulty {
+  font-weight: normal;
   background-color: $edit-color;
-  border-bottom: 2px solid $edit-color;
-  border-top: 2px solid $edit-color;
+  border-bottom: 1px solid $edit-color;
+  border-top: 1px solid $edit-color;
+}
+
+ul.select-difficulty li.one:hover {
+  border-bottom: 1px solid $flash-green;
+  border-top: 1px solid $flash-green;
 }
 ul.select-difficulty li.one {
   background-color: $flash-green;
   border-bottom: 0px solid $primary-color;
   border-top: 0px solid $primary-color;
 }
-
+ul.select-difficulty li.three:hover {
+  border-bottom: 1px solid $flash-green;
+  border-top: 1px solid $flash-green;
+}
 ul.select-difficulty li.selected-difficulty.one {
   background-color: $primary-color;
-  border-bottom: 2px solid $primary-color;
-  border-top: 2px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  border-top: 1px solid $primary-color;
+}
+
+ul.select-difficulty li.three:hover {
+  border-bottom: 1px solid $flash-red;
+  border-top: 1px solid $flash-red;
 }
 ul.select-difficulty li.three {
   background-color: $flash-red;
@@ -70,8 +90,8 @@ ul.select-difficulty li.three {
 
 ul.select-difficulty li.selected-difficulty.three {
   background-color: $remove-color;
-  border-bottom: 2px solid $remove-color;
-  border-top: 2px solid $remove-color;
+  border-bottom: 1px solid $remove-color;
+  border-top: 1px solid $remove-color;
 }
 
 input.answer {
