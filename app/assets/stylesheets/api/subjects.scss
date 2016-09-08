@@ -137,14 +137,19 @@ h2.subject-title {
 
 .react-autosuggest__suggestions-list {
   z-index: 1000;
+  position: relative;
 }
 
 .react-autosuggest__container {
   z-index: 1000;
+  position: relative;
 }
 
 .react-autosuggest__container--open {
   z-index: 1000;
+  position: relative;
+  position: 0px;
+  height: 0px;
 }
 
 .react-autosuggest__input {
@@ -161,7 +166,7 @@ h2.subject-title {
 .react-autosuggest__suggestion {
   background-color: white;
   padding: 5px;
-  margin-top: 3px;
+  border-bottom: 3px solid $tirtiary-grey;
 }
 .react-autosuggest__suggestion--focused {
   background-color: #eeeeee;
@@ -169,7 +174,7 @@ h2.subject-title {
 
 .subject-search-bar {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
 }
 
 .subject-search-button div {
@@ -181,6 +186,7 @@ h2.subject-title {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 9px;
   width: 35px;
   height: 30px;
   border-top-right-radius: 8px;

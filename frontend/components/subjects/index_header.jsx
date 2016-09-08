@@ -17,6 +17,7 @@ export class SubjectIndexHeader extends React.Component {
     this.renderSuggestion = this.renderSuggestion.bind(this);
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
     this.onSuggestionsClearRequested = this.onSuggestionsClearRequested.bind(this);
+    this.createSubject = this.createSubject.bind(this);
   }
 
   componentDidMount() {
@@ -25,6 +26,11 @@ export class SubjectIndexHeader extends React.Component {
 
   componentWillReceiveProps (newProps) {
     this.setState({ subjects: newProps.subjectArray });
+  }
+
+  createSubject () {
+    console.log(this.state.value);
+    this.props.createSubject(this.state.value);
   }
 
   // Teach Autosuggest how to calculate suggestions for any given input value.
@@ -96,7 +102,10 @@ export class SubjectIndexHeader extends React.Component {
             getSuggestionValue={this.getSuggestionValue}
             renderSuggestion={this.renderSuggestion}
             inputProps={inputProps} />
-          <div className="subject-search-button"><div>GO</div></div>
+          <div className="subject-search-button"
+                onClick={ this.createSubject }>
+            <div>GO</div>
+          </div>
         </div>
     </div>
     );

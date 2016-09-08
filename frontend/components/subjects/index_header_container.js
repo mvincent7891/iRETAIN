@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { SubjectIndexHeader } from './index_header';
-import { requestAllSubjects } from '../../actions/subject_actions';
+import { requestAllSubjects,
+         createSubject } from '../../actions/subject_actions';
 import { subjectSelector,
          selectSubjectFromArray } from '../../util/subject_selector';
 
@@ -14,7 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  requestAllSubjects: () => dispatch(requestAllSubjects())
+  requestAllSubjects: () => dispatch(requestAllSubjects()),
+  createSubject: title => dispatch(createSubject(title))
 });
 
 export default connect(
