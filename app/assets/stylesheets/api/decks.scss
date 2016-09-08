@@ -155,7 +155,8 @@ div.deck-index-container {
   width: 540px;
   background-color: $tirtiary-grey;
   height: auto;
-  max-height: 80%;
+  max-height: 85%;
+  min-height: 300px;
   border-top: 4px solid $secondary-grey;
 }
 
