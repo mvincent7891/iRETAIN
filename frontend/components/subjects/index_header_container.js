@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => {
   return ({
     loggedIn: Boolean(state.session.currentUser),
     user: state.session.currentUser,
-    subjects: subjectSelector(state.subjects)
+    subjectHash: state.allSubjects,
+    subjectArray: subjectSelector(state.allSubjects)
   });
 };
 

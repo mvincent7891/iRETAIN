@@ -97,11 +97,11 @@ h2.subject-title {
 
 .subject-index {
   height: 100%;
-  width: 180px;
+  width: 210px;
 }
 
 .divider {
-  width: 180px;
+  width: 210px;
   height: 18px;
   background-color: white;
   box-sizing: border-box;
@@ -112,8 +112,8 @@ h2.subject-title {
   border-bottom: 2px solid $secondary-grey;
   display: flex;
   flex-direction: column;
-  width: 180px;
-  height: 60px;
+  width: 210px;
+  height: 80px;
   padding: 10px;
   background-color: $tirtiary-grey;
   box-sizing: border-box;
@@ -124,7 +124,7 @@ h2.subject-title {
   box-sizing: border-box;
   display: flex;
   padding: 10px;
-  width: 180px;
+  width: 210px;
   height: 100%  ;
   background-color: $tirtiary-grey;
 }
@@ -133,6 +133,64 @@ h2.subject-title {
   color: $primary-blue;
   font-weight: normal;
   font-size: 1em;
+}
+
+.react-autosuggest__suggestions-list {
+  z-index: 1000;
+}
+
+.react-autosuggest__container {
+  z-index: 1000;
+}
+
+.react-autosuggest__container--open {
+  z-index: 1000;
+}
+
+.react-autosuggest__input {
+  background-color: $tirtiary-grey;
+  border-bottom: 3px solid $secondary-grey;
+  border-left: 3px solid $secondary-grey;
+}
+
+.react-autosuggest__input:focus {
+  outline: none;
+  background-color: white;
+}
+
+.react-autosuggest__suggestion {
+  background-color: white;
+  padding: 5px;
+  margin-top: 3px;
+}
+.react-autosuggest__suggestion--focused {
+  background-color: #eeeeee;
+}
+
+.subject-search-bar {
+  display: flex;
+  align-items: flex-end;
+}
+
+.subject-search-button div {
+  color: white;
+  font-size: .75em;
+}
+
+.subject-search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 30px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background-color: $flash-blue;
+}
+
+.subject-search-button:hover {
+  cursor: pointer;
+  background-color: $primary-blue;
 }
 
 .subject-detail-index {
@@ -156,7 +214,7 @@ h2.subject-title {
   border-top: 0px solid $secondary-grey;
   padding: 10px;
   padding-left: 15px;
-  width: 180px;
+  width: 210px;
   height: 80px;
   background-color: $tirtiary-grey;
 }

@@ -51,7 +51,7 @@ class Search extends React.Component {
     return (
       <div className="search-container">
         <div className="search-header-item">
-          Search
+          Search Decks
         </div>
           { this.renderSearchItem() }
         <div>
