@@ -13,18 +13,23 @@ The primary purpose of iRetain is to help students strengthen retention of new c
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
 
 ## Structure and Usage: Subjects, Decks and Cards
-As soon as you login, you will see an index of subjects to the left, as well as links to the primary flashcard deck features: view (eye icon), search (magnifying glass icon), and study (graduation cap).
- 
-Users may be familiar with the overall structure of iRetain: Subjects contain decks, and decks contain cards. Each card has a title and body. When studying, the title is used as the answer, the body as the question.
+As soon as you login, you will see an index of subjects to the left, as well as links to the primary flashcard deck features: view (eye icon), search (magnifying glass icon), and study (graduation cap icon).
 
-Users can create their own decks and cards, but decks will belong to public subjects.
+Users may be familiar with the overall structure of iRetain: Subjects contain decks, and decks contain flashcards. Each card has a title and a body. When studying, the title is used as the answer, the body as the question.
+
+Users can create and 'own' decks and cards, but decks will belong to <i>public</i> subjects.
+
+### Study
+
 
 
 ### Under the Hood
 
 ### Card
 
-### Auto Lookup<a name="lookup"></a>
+<a name="lookup"></a>
+### Auto Lookup
+Here is some content.
 
 ### Decks
 
