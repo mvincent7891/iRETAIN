@@ -1,4 +1,5 @@
 import { DeckConstants } from '../actions/deck_actions.js';
+import { SubjectConstants } from '../actions/subject_actions.js';
 import { SessionConstants } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 
@@ -8,6 +9,9 @@ const defaultState = {
 
 export const DeckReducer = (state = defaultState, action) => {
   switch(action.type) {
+    case SubjectConstants.RECEIVE_NEW_SUBJECT:
+      const newDeck = action.subjectAndDeck.deck;
+      return merge({}, state, newDeck);
     case DeckConstants.REMOVED_DECK:
       return action.decks;
     case DeckConstants.RECEIVE_DECKS:

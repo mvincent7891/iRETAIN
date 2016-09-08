@@ -1,4 +1,5 @@
 import { DeckConstants } from '../actions/deck_actions.js';
+import { SubjectConstants } from '../actions/subject_actions.js';
 import { SessionConstants } from '../actions/session_actions.js';
 import merge from 'lodash/merge';
 import { selectLastDeck } from '../util/deck_selector';
@@ -11,6 +12,10 @@ const ActiveDeckReducer = (state = defaultState, action) => {
   switch(action.type) {
     case DeckConstants.VIEW_SINGLE_DECK:
       return action.deck;
+    case SubjectConstants.RECEIVE_NEW_SUBJECT:
+      const deckObject = action.subjectAndDeck.deck;
+      const deckItem = deckObject[Object.keys(deckObject)[0]];
+      return deckItem;
     case DeckConstants.REMOVED_DECK:
 
       return defaultState;

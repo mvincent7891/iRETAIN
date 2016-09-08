@@ -8,11 +8,11 @@ const defaultState = {};
 export const SubjectReducer = (state = defaultState, action) => {
 
   switch(action.type) {
+    case SubjectConstants.RECEIVE_NEW_SUBJECT:
+      const newSubject = action.subjectAndDeck.subject;
+      return merge({}, state, newSubject);
     case SubjectConstants.RECEIVE_SUBJECTS:
       return action.subjects;
-    case SubjectConstants.RECEIVE_NEW_SUBJECT:
-      debugger
-      return state;
     default:
       return state;
   }
@@ -20,6 +20,10 @@ export const SubjectReducer = (state = defaultState, action) => {
 
 export const CurrentSubjectReducer = (state = {}, action) => {
   switch(action.type) {
+    case SubjectConstants.RECEIVE_NEW_SUBJECT:
+      const subjectObject = action.subjectAndDeck.subject;
+      const subjectItem = subjectObject[Object.keys(subjectObject)[0]];
+    return subjectItem;
     case SubjectConstants.RECEIVE_CURRENT_SUBJECT:
       return action.subject;
     case SubjectConstants.CHOOSE_SUBJECT_ID:

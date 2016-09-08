@@ -15,7 +15,12 @@ const SubjectMiddleware = ({getState, dispatch}) => next => action => {
   switch(action.type) {
 
     case SubjectConstants.CREATE_SUBJECT:
-      const createSuccess = subjectAndDeck => dispatch(receiveNewSubject(subjectAndDeck));
+      const createSuccess = subjectAndDeck => {
+        dispatch(receiveNewSubject(subjectAndDeck));
+        const newSubjectId = Object.keys(subjectAndDeck.subject)[0];
+        const newDeckId = Object.keys(subjectAndDeck.deck)[0];
+        hashHistory.push(`/subjects/${newSubjectId}/decks/${newDeckId}`);
+      };
       UTILS.createSubject(createSuccess, action.title);
       return next(action);
 
