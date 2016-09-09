@@ -26,7 +26,7 @@ class HintSidebar extends React.Component {
     this.timer = setInterval(() => this.updateIndex(), 5000);
   }
 
-  componentWilUnmount () {
+  componentWillUnmount () {
     clearInterval(this.timer);
   }
 
@@ -35,12 +35,8 @@ class HintSidebar extends React.Component {
   }
 
   updateIndex() {
-    if (window.location.hash.indexOf('study') !== -1) {
-      clearInterval(this.timer);
-    } else {
-      this.setState({ hint: hints[(this.state.index + 1) % hints.length],
-                      index: this.state.index + 1 });
-    }
+    this.setState({ hint: hints[(this.state.index + 1) % hints.length],
+                    index: this.state.index + 1 });
   }
 
   render () {
