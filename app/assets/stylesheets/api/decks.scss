@@ -22,6 +22,11 @@ $error-color: #ff1818;
 $button-transition: .2s;
 $card-index-width: 500px;
 
+.deck-view-container {
+  position: absolute;
+  top: 140px;
+}
+
 ul.deck-header-options {
   display: flex;
 }
@@ -154,10 +159,17 @@ div.deck-index-container {
   padding: 10px;
   width: 540px;
   background-color: $tirtiary-grey;
-  height: auto;
-  max-height: 85%;
-  min-height: 300px;
+  padding-bottom: 20px;
+  max-height: 90%;
+  min-height: 560px;
+  margin-bottom: 0px;
   border-top: 4px solid $secondary-grey;
+}
+
+div.deck-index-container:after {
+  display:block;
+  content: "";
+  clear:both;
 }
 
 div.deck-form-container {

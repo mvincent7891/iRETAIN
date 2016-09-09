@@ -12,7 +12,7 @@ class FileUploader extends React.Component {
   }
 
   onDrop (files) {
-    console.log(this.csvJSON(files));
+
     // this.props.sendUploaded(files);
   }
 

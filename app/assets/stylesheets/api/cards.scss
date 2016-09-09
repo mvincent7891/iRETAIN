@@ -177,8 +177,10 @@ button.lookup-card:hover {
  ul.card-index {
    margin-left: 20px;
    overflow: scroll;
-   max-height: 400px;
-   overflow: scroll;
+   min-height: 400px;
+   margin-bottom: 40px;
+   position: relative;
+   bottom: 20px;
  }
 
  li.card-index-item {

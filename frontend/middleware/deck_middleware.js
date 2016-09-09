@@ -56,7 +56,6 @@ const DeckMiddleware = ({getState, dispatch}) => next => action => {
       const removeSuccess = decks => {
         dispatch(receiveDecks(decks));
         dispatch(removedDeck(decks));
-        console.log('here');
         const sId = getState().activeDeck.subject_id;
         if (sId) {
           hashHistory.push(`/subjects/${sId}/decks/dashboard`);

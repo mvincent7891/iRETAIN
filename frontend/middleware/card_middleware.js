@@ -23,10 +23,6 @@ const CardMiddleware = ({getState, dispatch}) => next => action => {
   const lookupError = errors => dispatch(receiveLookupErrors(errors));
 
   switch(action.type) {
-    case CardConstants.SEND_UPLOADED:
-      const successUploading = () => console.log('success');
-      UTILS.fetchCards(successUploading, action.files);
-      return next(action);
     case CardConstants.REQUEST_CARDS:
       UTILS.fetchCards(success, error, action.deckId);
       return next(action);

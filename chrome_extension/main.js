@@ -2,7 +2,6 @@
 const retainIt = word => {
   var query = word.selectionText;
   var xhr = new XMLHttpRequest();
-  // console.log(query);
   xhr.open("POST", "http://localhost:3000/api/cards/extension?word=" + query, false);
   xhr.send();
 };
@@ -20,11 +19,3 @@ chrome.contextMenus.create({
   contexts:["selection"],
   onclick: retainIt
 });
-
-
-
-// Define get definitions
-
-// Define define and Retain
-
-// Define and do not retain

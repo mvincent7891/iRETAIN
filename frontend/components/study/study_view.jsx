@@ -46,10 +46,6 @@ export class StudyView extends React.Component {
     });
   }
 
-    // componentWillReceiveProps (newProps) {
-    //   console.log(newProps);
-    // }
-
   endSession () {
     hashHistory.push('/subjects');
   }
