@@ -35,8 +35,12 @@ class HintSidebar extends React.Component {
   }
 
   updateIndex() {
-    this.setState({ hint: hints[(this.state.index + 1) % hints.length],
-                    index: this.state.index + 1 });
+    if (window.location.hash.indexOf('study') !== -1) {
+      clearInterval(this.timer);
+    } else {
+      this.setState({ hint: hints[(this.state.index + 1) % hints.length],
+                      index: this.state.index + 1 });
+    }
   }
 
   render () {
