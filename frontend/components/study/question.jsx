@@ -8,6 +8,7 @@ export class Question extends React.Component {
                    indices: this.shuffle(Object.keys(props.card.title)),
                    current: 0,
                    solving: false,
+                   submitFlag: true,
                    userAnswer: "",
                    feedback: "" };
     this.timer = undefined;
@@ -29,6 +30,7 @@ export class Question extends React.Component {
         answer: this.replaceAnswer(newProps.card.title),
         indices: this.shuffle(Object.keys(newProps.card.title)),
         current: 0,
+        submitFlag: true,
         solving: false,
         userAnswer: "",
         feedback: ""
@@ -54,16 +56,19 @@ export class Question extends React.Component {
   }
 
   submitAnswer (event) {
-    event.preventDefault();
-    const userAnswer = this.state.userAnswer.toLowerCase();
-    const correctAnswer = this.props.card.title.toLowerCase();
-    if ( userAnswer === correctAnswer ) {
-      this.setState({ feedback: "That's right!"});
-      setTimeout(() => this.props.nextQuestion(true), 1500);
-    } else {
-      this.setState({ feedback: "Sorry, that's incorrect."});
-      setTimeout(() => this.setState({ answer: correctAnswer }), 1500);
-      setTimeout(() => this.props.nextQuestion(false), 3500);
+    if (this.state.submitFlag) {
+      this.setState({ submitFlag: false });
+      event.preventDefault();
+      const userAnswer = this.state.userAnswer.toLowerCase();
+      const correctAnswer = this.props.card.title.toLowerCase();
+      if ( userAnswer === correctAnswer ) {
+        this.setState({ feedback: "That's right!"});
+        setTimeout(() => this.props.nextQuestion(true), 1500);
+      } else {
+        this.setState({ feedback: "Sorry, that's incorrect."});
+        setTimeout(() => this.setState({ answer: correctAnswer }), 1500);
+        setTimeout(() => this.props.nextQuestion(false), 3500);
+      }
     }
   }
 
@@ -77,6 +82,7 @@ export class Question extends React.Component {
   }
 
   continueAddingLetters () {
+    this.setState({ submitFlag: true });
     this.startTimer();
     this.setState({ solving: false });
   }
@@ -100,6 +106,7 @@ export class Question extends React.Component {
   }
 
   startTimer () {
+    this.setState({ submitFlag: true });
     var difficultyAdjuster = 2000 * this.props.difficulty;
     var interval = Math.floor((10000 - difficultyAdjuster) / this.state.indices.length );
     this.timer = setInterval(() => this.addLetter(), interval);
