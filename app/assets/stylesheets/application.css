@@ -47,8 +47,12 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
   min-width: 840px;
   max-width: 1200px;
   border-left: 20px solid white;
+  border-top: 20px solid white;
   background-color: white;
   opacity: .9;
+  padding-right: 25px;
+  max-height: 800px;
+  overflow-y: scroll;
 }
 
 .extension {

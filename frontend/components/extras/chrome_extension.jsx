@@ -15,6 +15,11 @@ class ChromeExtension extends React.Component {
 
           <img src="/assets/ex_demo.gif"/>
         </div>
+        <h2 className="extension">Coming soon...</h2>
+
+        <div className="extension">
+          Download the Chrome extension and enhance your browsing experience!
+        </div>
       </div>
     );
   }
