@@ -19,3 +19,17 @@ export const selectSubjectFromArray = (subjectsArray, subject_id) => {
   });
   return chooseSubject;
 };
+
+export const subjectPresent = (decks, location) => {
+  const path = location.hash;
+  const start = path.indexOf('subjects') + 9;
+  const end = path.indexOf('/decks') ;
+  const subjectId = parseInt(path.slice(start, end));
+  let flag = true;
+  Object.keys(decks).forEach(deckId => {
+    if (decks[deckId].subject_id === subjectId) {
+      flag = false;
+    }
+  });
+  return flag;
+};

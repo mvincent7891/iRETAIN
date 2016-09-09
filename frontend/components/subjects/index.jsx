@@ -16,13 +16,13 @@ export class SubjectIndex extends React.Component {
     if (!newProps.params.subjectId) {
       this.props.clearActiveSubject();
       this.setState({ selectedTab: null });
-    } else if (newProps.subjects.length > 0) {
+    } else if (newProps.subjects.length > 0 && newProps.params.subjectId !== 'undefined') {
       const currentSubject = selectSubjectFromArray(newProps.subjects, parseInt(newProps.params.subjectId));
       this.props.chooseSubject(currentSubject);
     }
     const activeDeck = newProps.activeDeck;
     if (activeDeck && activeDeck.id && !this.state.selectedTab) {
-      if (newProps.subjects.length > 0) {
+      if (newProps.subjects.length > 0 && newProps.params.subjectId !== 'undefined') {
         const subject = selectSubjectFromArray(newProps.subjects, activeDeck.subject_id);
         this.props.chooseSubject(subject);
       }
@@ -51,7 +51,7 @@ export class SubjectIndex extends React.Component {
     if (!this.props.params.subjectId) {
       this.props.clearActiveSubject();
       this.setState({ selectedTab: null });
-    } else {
+    } else if (this.props.params.subjectId !== 'undefined') {
       const id = parseInt(this.props.params.subjectId);
       this.setState({ selectedTab: id });
       const subject = selectSubjectFromArray(this.props.subjects, id);

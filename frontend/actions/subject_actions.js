@@ -37,8 +37,9 @@ export const chooseSubjectId = (subjects, id) => ({
   id
 });
 
-export const clearActiveSubject = () => ({
-  type: SubjectConstants.CLEAR_ACTIVE_SUBJECT
+export const clearActiveSubject = redirect => ({
+  type: SubjectConstants.CLEAR_ACTIVE_SUBJECT,
+  redirect
 });
 
 export const requestSubjects = () => ({
