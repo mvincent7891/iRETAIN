@@ -8,8 +8,15 @@ export const CardConstants = {
   LOOKUP_CARD: "LOOKUP_CARD",
   RECEIVE_LOOKUP: "RECEIVE_LOOKUP",
   DELETE_LOOKUP: "DELETE_LOOKUP",
+  SEND_UPLOADED: "SEND_UPLOADED",
   SET_CARD_SAVED_FALSE: "SET_CARD_SAVED_FALSE"
 };
+
+export const sendUploaded = files => ({
+  type: CardConstants.SEND_UPLOADED,
+  files
+});
+
 export const setCardSavedFalse = () => ({
   type: CardConstants.SET_CARD_SAVED_FALSE
 });

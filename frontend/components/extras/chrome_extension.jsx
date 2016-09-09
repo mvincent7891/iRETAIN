@@ -1,9 +1,15 @@
 import React from 'react';
+import FileUploaderContainer from './file_uploader_container';
 
 class ChromeExtension extends React.Component {
   render () {
     return (
       <div>
+        {/* <h2 className="extension">Upload Flashcards</h2>
+        <div className="extension">
+          Upload decks of flashcards in .csv format. Each row should have two columns - title and body. Additional columns will be ignored.
+        <br/><br/><FileUploaderContainer />
+        </div> */}
         <h2 className="extension">Chrome Extension</h2>
         <div className="extension">
           The Chrome Extension sets iRetain apart from any other flashcard app. Create flashcards from anywhere on the web and revisit them when you have the time!<br/><br/>

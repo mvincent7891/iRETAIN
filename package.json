@@ -32,6 +32,8 @@
     "react": "^15.3.1",
     "react-autosuggest": "^6.0.3",
     "react-dom": "^15.3.1",
+    "react-dropzone": "^3.6.0",
+    "react-file-uploader": "^0.3.2",
     "react-modal": "^1.4.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.7.0",
