@@ -17,6 +17,7 @@ class NavBar extends React.Component {
     this.searchCards = this.searchCards.bind(this);
     this.studyCards = this.studyCards.bind(this);
     this.readme = this.readme.bind(this);
+    this.extension = this.extension.bind(this);
   }
 
   componentWillMount() {
@@ -50,6 +51,10 @@ class NavBar extends React.Component {
     } else {
       hashHistory.push('/subjects');
     }
+  }
+
+  extension () {
+    hashHistory.push('/chrome_extension');
   }
 
   componentWillReceiveProps(newProps) {
@@ -102,8 +107,8 @@ class NavBar extends React.Component {
             </li>
             <li className="link" onClick={ this.readme }>How It Works</li>
             <li className="link" onClick={ this.searchCards }>Flashcards</li>
-            <li className="link" onClick={ this.studyCards }>Study</li>
-            <li className="link">more...</li>
+            <li className="link" onClick={ this.studyCards } >Study</li>
+            <li className="link" onClick={ this.extension } >more...</li>
           </ul>
           { sessionNav }
         </header>

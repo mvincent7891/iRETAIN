@@ -46,9 +46,20 @@ body, p, h1, h2, h3, h4, section, div, input, ul, li, header, textarea, button {
   margin-right: 20px;
   min-width: 840px;
   max-width: 1200px;
-  border-left: 20px solid white;  
+  border-left: 20px solid white;
   background-color: white;
   opacity: .9;
+}
+
+.extension {
+  margin-left: 20px;
+}
+
+h2.extension {
+  margin: 20px;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: #676767;
 }
 
 input[type=text] {

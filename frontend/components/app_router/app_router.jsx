@@ -12,6 +12,7 @@ import SubjectContainer from '../subjects/container';
 import StudyViewContainer from '../study/study_view_container';
 import SubjectDashboardContainer from '../subjects/subject_dashboard_container';
 import {Greeting} from '../extras/greeting';
+import ChromeExtension from '../extras/chrome_extension';
 import isEmpty from 'lodash/isEmpty';
 
 class AppRouter extends React.Component {
@@ -26,6 +27,7 @@ class AppRouter extends React.Component {
         <Route path="/" component={ App } >
           <IndexRoute component = { Greeting }
                       onEnter={this._redirectIfLoggedIn}/>
+
           <Route path="/study(/:deckId)" component={ StudyViewContainer } onEnter={ this._ensureLoggedIn } />
           <Route path="/subjects" component={ SubjectIndexContainer } onEnter={ this._ensureLoggedIn } >
             <IndexRoute component={ SubjectDashboardContainer } />
@@ -40,6 +42,7 @@ class AppRouter extends React.Component {
                 </Route>
               </Route>
             </Route>
+            <Route path="/chrome_extension" component={ ChromeExtension } />
             <Route path ="/search(/:query_parms)" component={ SearchContainer } />
           </Route>
 
