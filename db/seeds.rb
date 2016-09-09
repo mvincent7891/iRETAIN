@@ -150,6 +150,18 @@ Card.create!(author_id: guest.id, deck_id: equations.id, title: 'Maxwell\'s Four
   body: 'Describes how magnetic fields circulate around electric current and time-varying electric fields')
 
 engineering = Subject.create!(title: "Engineering")
-electric = Deck.create!(title: "Laws of Electricity", author_id: guest.id, subject_id: engineering.id)
+electric = Deck.create!(title: "Electricity", author_id: guest.id, subject_id: engineering.id)
+Card.create!(author_id: guest.id, deck_id: electric.id, title: 'Ohms Law',
+  body: 'V = IR')
+Card.create!(author_id: guest.id, deck_id: electric.id, title: 'KVL',
+  body: 'the algebraic sum of the voltages in a closed loop is always equal to zero')
+Card.create!(author_id: guest.id, deck_id: electric.id, title: 'KCL',
+  body: 'current into a node will equal the current out of the node')
+Card.create!(author_id: guest.id, deck_id: electric.id, title: 'Wheatstone Bridge',
+  body: 'electrical circuit used to measure an unknown electrical resistance by balancing two legs of a bridge circuit, one leg of which includes the unknown component')
+
 fluid = Deck.create!(title: "Fluid Dynamics", author_id: guest.id, subject_id: engineering.id)
-algo = Deck.create!(title: "Algorithms", author_id: guest.id, subject_id: engineering.id)
+Card.create!(author_id: guest.id, deck_id: fluid.id, title: 'Bernoulli\'s Principle',
+body: 'an increase in the speed of a fluid occurs simultaneously with a decrease in pressure or a decrease in the fluid\'s potential energy')
+Card.create!(author_id: guest.id, deck_id: fluid.id, title: 'Bernoulli\'s Theorem',
+body: 'relation among the pressure, velocity, and elevation in a moving fluid')

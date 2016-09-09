@@ -23,7 +23,7 @@ class HintSidebar extends React.Component {
   }
 
   componentDidMount () {
-    this.timer = setInterval(() => this.updateIndex(), 3000);
+    this.timer = setInterval(() => this.updateIndex(), 5000);
   }
 
   componentWilUnmount () {
