@@ -18,80 +18,69 @@ $button-transition: .2s;
 $card-index-width: 500px;
 $radius: 12px;
 
-ul.select-difficulty li.one {
-  border-left: 4px;
-  border-top-left-radius: 25%;
-  border-bottom-left-radius: 25%;
-  padding-left: 10px;
-}
-ul.select-difficulty li.three {
-  border-left: 4px;
-  padding-right: 10px;
-  border-top-right-radius: 25%;
-  border-bottom-right-radius: 25%;
+.study-p {
+  margin-bottom: 15px;
+  margin-left: 20px;
+  color: $secondary-grey;
+  font-size: 1.1em;
 }
 
 ul.select-difficulty {
   display: flex;
-  margin-left: 20px;
+  margin-left: 33px;
   align-items: center;
   margin-bottom: 10px;
 }
 
+
 ul.select-difficulty li:hover {
-  border-bottom: 1px solid $flash-orange;
-  border-top: 1px solid $flash-orange;
+  background-color: $edit-color;
 }
+
 ul.select-difficulty li {
-  padding: 5px;
   background-color: $flash-orange;
   color: white;
   font-weight: lighter;
+  display: flex;
+  width: 35px;
+  height: 35px;
+  margin: 5px;
   cursor: pointer;
-  border-bottom: 0px solid $edit-color;
-  border-top: 0px solid $edit-color;
-  height: 20px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0);
+  box-sizing: border-box;
+  opacity: .3
+}
+ul.select-difficulty li {
+  font-size: .75em;
 }
 ul.select-difficulty li.selected-difficulty {
-  font-weight: normal;
-  background-color: $edit-color;
-  border-bottom: 1px solid $edit-color;
-  border-top: 1px solid $edit-color;
+  opacity: 1;
 }
 
-ul.select-difficulty li.one:hover {
-  border-bottom: 1px solid $flash-green;
-  border-top: 1px solid $flash-green;
+ul.select-difficulty li:hover {
+  opacity: .6;
 }
+
 ul.select-difficulty li.one {
   background-color: $flash-green;
-  border-bottom: 0px solid $primary-color;
-  border-top: 0px solid $primary-color;
 }
 ul.select-difficulty li.three:hover {
-  border-bottom: 1px solid $flash-green;
-  border-top: 1px solid $flash-green;
+  background-color: $primary-color;
 }
 ul.select-difficulty li.selected-difficulty.one {
   background-color: $primary-color;
-  border-bottom: 1px solid $primary-color;
-  border-top: 1px solid $primary-color;
 }
 
 ul.select-difficulty li.three:hover {
-  border-bottom: 1px solid $flash-red;
-  border-top: 1px solid $flash-red;
+  background-color: $remove-color;
 }
 ul.select-difficulty li.three {
   background-color: $flash-red;
-  border-bottom: 0px solid $remove-color;
-  border-top: 0px solid $remove-color;
 }
 
 ul.select-difficulty li.selected-difficulty.three {
   background-color: $remove-color;
-  border-bottom: 1px solid $remove-color;
-  border-top: 1px solid $remove-color;
 }
 
 input.answer {
@@ -149,7 +138,7 @@ div.question-container {
 .study-deck-title div {
   font-size: 1.6em;
   font-weight: normal;
-  color: $primary-blue;
+  color: white;
 }
 
 ul.progress {
@@ -188,8 +177,8 @@ span.progress-incorrect {
 
 button.end-study {
   transition: all $button-transition ease-in-out;
-  background-color: $primary-blue;
-  border: 2px solid $primary-blue;
+  background-color: $remove-color;
+  border: 2px solid $remove-color;
   color: white;
   padding: $button-padding;
   margin: 15px 0px;
@@ -211,8 +200,8 @@ ul.exit-study li {
 }
 
 button.end-study:hover {
-  background-color: $flash-blue;
-  border: 2px solid $flash-blue;
+  background-color: $flash-red;
+  border: 2px solid $flash-red;
 }
 button.solve-button {
   transition: all $button-transition ease-in-out;
@@ -244,16 +233,37 @@ button.solve-button.start {
   width: 160px;
 }
 
-button.continue-button {
+button.submit-study-button {
   transition: all $button-transition ease-in-out;
   background-color: $primary-blue;
   border: 2px solid $primary-blue;
   color: white;
   padding: $button-padding;
+  margin: 15px 10px;
+  margin-right: 15px;
+  border-radius: 5px;
+  font-size: 1.2em;
+  height: 40px;
+  width: 120px;
+  background-size: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+button.submit-study-button:hover {
+  background-color: $flash-blue;
+  border: 2px solid $flash-blue;
+}
+button.continue-button {
+  transition: all $button-transition ease-in-out;
+  background-color: $edit-color;
+  border: 2px solid $edit-color;
+  color: white;
+  padding: $button-padding;
   margin: 15px 0px;
   border-radius: 5px;
   font-size: 1.2em;
-  height: 60px;
+  height: 40px;
   width: 160px;
   background-size: 15px;
   background-position: center;
@@ -261,6 +271,6 @@ button.continue-button {
 }
 
 button.continue-button:hover {
-  background-color: $flash-blue;
-  border: 2px solid $flash-blue;
+  background-color: $flash-orange;
+  border: 2px solid $flash-orange;
 }

@@ -134,10 +134,17 @@ export class Question extends React.Component {
                    value={ this.state.userAnswer }
                    onChange={ this.handleInput } />
           </form>
-        <button className="continue-button"
-          onClick={ this.continueAddingLetters }>
-          More hints...
-        </button>
+          <div>
+            <button className="submit-study-button"
+              onClick={ this.submitAnswer }>
+              Submit
+            </button>
+            <button className="continue-button"
+              onClick={ this.continueAddingLetters }>
+              More hints...
+            </button>
+
+          </div>
         </div>
       );
     } else {

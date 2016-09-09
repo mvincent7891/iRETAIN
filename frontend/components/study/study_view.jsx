@@ -64,16 +64,17 @@ export class StudyView extends React.Component {
     } else {
       return (
         <div className="question-container">
+          <p className="study-p">Select difficulty:</p>
           <ul className="select-difficulty">
             <li onClick={ this.setDifficulty.bind(this, 0)}
                 className={ this.state.difficulty === 0 ? "selected-difficulty one" : "one" }>
-              Easy</li>
+              </li>
             <li onClick={ this.setDifficulty.bind(this, 1)}
                 className={ this.state.difficulty === 1 ? "selected-difficulty" : "" }>
-              Medium</li>
+              </li>
             <li onClick={ this.setDifficulty.bind(this, 2)}
                 className={ this.state.difficulty === 2 ? "selected-difficulty three" : "three" }>
-              Hard</li>
+              </li>
           </ul>
           <button className="solve-button start"
                       onClick={ this.startSession }>
