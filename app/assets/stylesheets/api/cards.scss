@@ -176,11 +176,11 @@ button.lookup-card:hover {
 
  ul.card-index {
    margin-left: 20px;
-   overflow: scroll;
+   overflow-y: scroll;
+   max-height: 500px;
    min-height: 400px;
    margin-bottom: 40px;
-   position: relative;
-   bottom: 20px;
+
  }
 
  li.card-index-item {
