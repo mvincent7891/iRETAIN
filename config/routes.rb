@@ -12,7 +12,8 @@ Rails.application.routes.draw do
     resources :clones, only: [:show]
     resources :subjects, only: [:create, :destroy, :index, :show]
   end
-  # The priority is based upon order of creation: first created -> highest priority.
+  post 'api/cards/extension' => 'api/cards#extension', defaults: {format: :json}
+   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"

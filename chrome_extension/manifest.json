@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "iRetain",
+  "options_ui": {
+    "page": "options.html",
+    "chrome_style": true
+  },
+  "short_name": "Search",
+  "description": "Sends selected word to iRetain",
+  "version": "0.0.1",
+  "minimum_chrome_version": "38",
+  "permissions": [
+    "http://localhost:3000/*",
+    "contextMenus",
+    "tabs",
+    "webRequest"],
+  "icons": {
+    "16": "assets/search.png"
+  },
+  "background": {"page": "background.html"}
+}
