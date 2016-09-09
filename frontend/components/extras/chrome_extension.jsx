@@ -21,10 +21,10 @@ class ChromeExtension extends React.Component {
 
           <img src="/assets/ex_demo.gif" width="560px"/>
         </div>
-        <h2 className="extension">Coming soon...</h2>
+        <h2 className="extension">Download</h2>
 
         <div className="extension">
-          Download the Chrome extension and enhance your browsing experience!
+          Search <i>iRetain</i> on the Chrome web store to download the extension.
         </div>
       </div>
     );
