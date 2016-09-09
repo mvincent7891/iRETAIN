@@ -11,6 +11,7 @@
   "minimum_chrome_version": "38",
   "permissions": [
     "http://localhost:3000/*",
+    "http://www.iretain.io/*",
     "contextMenus",
     "tabs",
     "webRequest"],
