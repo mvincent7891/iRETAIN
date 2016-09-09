@@ -7,7 +7,7 @@ class Footer extends React.Component {
       <div className="footer-container">
         <div>
           <ul>
-            <li>Copyright &copy; 2016, Michael Parlato</li>
+            <li>Copyright &copy; 2016, All Rights Reserved</li>
           </ul>
           <ul>
             <li>iRetain:</li>

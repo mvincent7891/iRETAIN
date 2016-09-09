@@ -36,7 +36,7 @@ class NavBar extends React.Component {
   studyCards () {
     if (!this.props.loggedIn) {
       this.openModal("Login");
-    } else {
+    } else if (window.location.hash.indexOf('study') === -1) {
       hashHistory.push('/study');
     }
   }
