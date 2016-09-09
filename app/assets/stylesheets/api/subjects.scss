@@ -39,16 +39,17 @@ ul#home.nav li {
 }
 
 div.subject-dashboard-container {
-  margin: 30px;
+  margin: 40px;
 }
 
 div.subject-dashboard-body-container {
   margin-top: 20px;
   border-top: 4px solid $secondary-grey;
   background-color: $tirtiary-grey;
-  width: 500px;
+  width: 560px;
   box-sizing: border-box;
   padding: 20px;
+  margin-right: 0px;
 }
 
 p.subject-dashboard-body {
@@ -82,7 +83,7 @@ h2.subject-title {
   width: auto;
   margin-right: auto;
   margin-left: auto;
-  padding-right: 20px;
+  padding-right: 0px;
   max-height: 800px;
   position: relative;
   display: flex;
@@ -113,6 +114,7 @@ ul.subject-index {
 
 .subject-index-header  {
   border-right: 4px solid $secondary-grey;
+  border-top: 4px solid $secondary-grey;
   border-bottom: 2px solid $secondary-grey;
   display: flex;
   flex-direction: column;

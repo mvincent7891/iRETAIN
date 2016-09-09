@@ -1,7 +1,7 @@
 import React from 'react';
 import { hashHistory } from 'react-router';
 
-const interval = 100;
+const interval = 150;
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -11,6 +11,7 @@ class SessionForm extends React.Component {
       password: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.initiateGuestLogin = this.initiateGuestLogin.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
     this.enterGuestUsername = this.enterGuestUsername.bind(this);
     this.enterGuestPassword = this.enterGuestPassword.bind(this);
@@ -24,6 +25,13 @@ class SessionForm extends React.Component {
   }
 
   guestLogin () {
+    setTimeout(() => {
+      this.initiateGuestLogin();
+    }, 500);
+  }
+
+
+  initiateGuestLogin () {
     const uname = (i) => this.enterGuestUsername(i);
     const pword = (i) => this.enterGuestPassword(i);
     for (var i = 0; i < 5; i++) {
@@ -37,7 +45,7 @@ class SessionForm extends React.Component {
     setTimeout(() => {
       const user = this.state;
       this.props.processForm({user});
-    }, interval * 14);
+    }, interval * 16);
   }
 
   enterGuestUsername (i) {
@@ -51,7 +59,7 @@ class SessionForm extends React.Component {
     const password = "password".slice(0,(i+1));
     setTimeout(() => {
       this.setState({password});
-    }, i*(interval - 20));
+    }, i*(interval - 10));
   }
 
   update(field){

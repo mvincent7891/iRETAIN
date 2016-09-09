@@ -1,5 +1,128 @@
+$primary-color: #5cb85c;
+$flash-green: #A5D6A7;
+$secondary-color: #ff4e47;
+$flash-red: #EF9A9A;
+$primary-grey: #676767;
+$primary-blue: #29a5dc;
+$flash-blue: #90CAF9;
+$secondary-grey: #dddddd;
+$tirtiary-grey: #f3f3f3;
+$button-padding: 6px;
+$primary-margin: 10px;
+$edit-color: #f0ad4e;
+$flash-orange: #FFCC80;
+$remove-color: $secondary-color;
+$error-color: #ff1818;
+
+.chrome-ext-image {
+  width: 560px;
+}
+
 div.upload {
   padding: 15px;
   color: #676767;
   font-weight: lighter;
 }
+
+ul.sidebar-chrome {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+}
+
+ul.sidebar-chrome:hover {
+  cursor: pointer;
+}
+
+
+#ext-icon {
+  background-color: $primary-blue;
+  color: white;
+  padding: 5px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+#ext-text {
+  border-left: 1px solid white;
+  padding: 5px;
+  padding-right: 10px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  line-height: 26px;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: .85em;
+  background-color: $primary-blue;
+  color: white;
+}
+ul.sidebar-chrome:hover #ext-icon {
+  background-color: $flash-blue
+}
+ul.sidebar-chrome:hover #ext-text {
+  background-color: $flash-blue
+}
+
+div.hint-sidebar-container {
+  background-color: $tirtiary-grey;
+  position: relative;
+  width: 200px;
+  min-width: 200px;
+  height: 400px;
+  margin-top: 50px;
+  margin-right: 20px;
+  padding: 20px;
+  padding-top: 50px;
+  border-top: 4px solid $secondary-grey;
+  border-right: 4px solid $secondary-grey;
+  color: #bbbbbb;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 1em;
+  line-height: 20px;
+  box-sizing: border-box;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 600ms ease-in;
+}
+
+.example-leave {
+  opacity: .01;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 600ms ease-in;
+}
+
+span.hints {
+
+  quotes: "\201C""\201D""\2018""\2019";
+
+}
+
+span.hints:before {
+  color: $primary-blue;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+//
+// span.hints:after {
+//   color: $primary-blue;
+//   content: close-quote;
+//   font-size: 4em;
+//   line-height: 0.1em;
+//   margin-left: 0.25em;
+//   vertical-align: - 0.4em;
+// }

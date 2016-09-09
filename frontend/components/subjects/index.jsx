@@ -4,6 +4,7 @@ import SubjectIndexHeaderContainer from './index_header_container';
 import { selectSubjectFromArray } from '../../util/subject_selector';
 import { hashHistory } from 'react-router';
 import Footer from '../extras/footer';
+import HintSidebar from '../extras/hint_sidebar';
 
 export class SubjectIndex extends React.Component {
 
@@ -92,6 +93,7 @@ export class SubjectIndex extends React.Component {
             </div>
             { this.props.children }
           </div>
+          <HintSidebar />
         </div>
         <Footer />
       </div>
