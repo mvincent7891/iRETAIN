@@ -12,6 +12,8 @@ const defaultState = {
 
 const ErrorReducer = (state = defaultState, action) => {
   switch(action.type) {
+    case SessionConstants.LOGOUT:
+      return defaultState;
 
     // DECKS ERRORS
     case ErrorConstants.RECEIVE_DECKS_ERRORS:

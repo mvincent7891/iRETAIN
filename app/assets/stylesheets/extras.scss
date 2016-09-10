@@ -29,6 +29,11 @@ ul.sidebar-chrome {
   bottom: 20px;
   display: flex;
 }
+ul.sidebar-chrome.extra {
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+}
 
 ul.sidebar-chrome:hover {
   cursor: pointer;
@@ -51,7 +56,7 @@ ul.sidebar-chrome:hover {
   line-height: 26px;
   font-weight: lighter;
   font-style: normal;
-  font-size: .85em;
+  font-size: .7em;
   background-color: $primary-blue;
   color: white;
 }
@@ -78,7 +83,7 @@ div.hint-sidebar-container {
   font-style: italic;
   font-weight: lighter;
   font-size: 1em;
-  line-height: 20px;
+  line-height: 20 px;
   box-sizing: border-box;
   display:flex;
   flex-direction: column;

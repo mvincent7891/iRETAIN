@@ -8,6 +8,8 @@ const defaultState = {};
 export const SubjectReducer = (state = defaultState, action) => {
 
   switch(action.type) {
+    case SessionConstants.LOGOUT:
+      return defaultState;
     case SubjectConstants.RECEIVE_NEW_SUBJECT:
       const newSubject = action.subjectAndDeck.subject;
       return merge({}, state, newSubject);
@@ -20,6 +22,8 @@ export const SubjectReducer = (state = defaultState, action) => {
 
 export const CurrentSubjectReducer = (state = {}, action) => {
   switch(action.type) {
+    case SessionConstants.LOGOUT:
+      return defaultState;
     case SubjectConstants.RECEIVE_NEW_SUBJECT:
       const subjectObject = action.subjectAndDeck.subject;
       const subjectItem = subjectObject[Object.keys(subjectObject)[0]];

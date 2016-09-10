@@ -31,7 +31,7 @@ class HintSidebar extends React.Component {
   }
 
   goExtras () {
-    hashHistory.push('/chrome_extension');
+    window.location = 'https://chrome.google.com/webstore/detail/iretain/gbeamkiokdfmamlmmkhddfdpbmbgmkic?utm_source=gmail';
   }
 
   updateIndex() {
@@ -54,11 +54,11 @@ class HintSidebar extends React.Component {
         </ReactCSSTransitionGroup>
 
         <ul className="sidebar-chrome" onClick={ this.goExtras }>
-          <li id="ext-icon" className="material-icons" onClick={ this.search }>
-            web
+          <li id="ext-icon" className="material-icons">
+            get_app
           </li>
           <li id="ext-text">
-            Extension Demo
+            Download Extension
           </li>
         </ul>
       </div>

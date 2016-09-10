@@ -2,6 +2,11 @@ import React from 'react';
 import FileUploaderContainer from './file_uploader_container';
 
 class ChromeExtension extends React.Component {
+
+  goExtras () {
+    window.location = 'https://chrome.google.com/webstore/detail/iretain/gbeamkiokdfmamlmmkhddfdpbmbgmkic?utm_source=gmail';
+  }
+  
   render () {
     return (
       <div>
@@ -24,7 +29,14 @@ class ChromeExtension extends React.Component {
         <h2 className="extension">Download</h2>
 
         <div className="extension">
-          Coming soon... look for the <i>iRetain</i> extension on the Chrome web store!
+          <ul className="sidebar-chrome extra" onClick={ this.goExtras }>
+            <li id="ext-icon" className="material-icons">
+              get_app
+            </li>
+            <li id="ext-text">
+              Download Extension
+            </li>
+          </ul>
         </div>
       </div>
     );
