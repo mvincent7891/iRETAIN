@@ -27,6 +27,7 @@ gem 'bcrypt'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+gem 'pry-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -45,7 +46,6 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'better_errors'
   gem 'binding_of_caller'
-  gem 'pry-rails'
   gem 'annotate'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
