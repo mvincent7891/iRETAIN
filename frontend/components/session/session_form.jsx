@@ -69,7 +69,12 @@ class SessionForm extends React.Component {
   handleSubmit(event){
     event.preventDefault();
     const user = this.state;
-    this.props.processForm({user});
+    debugger
+    if (this.props.loggedIn) {
+      this.props.logout();
+    } else {
+      this.props.processForm({user});
+    }
   }
 
   renderErrors(){
