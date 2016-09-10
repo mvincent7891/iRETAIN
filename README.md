@@ -11,11 +11,14 @@
 iRetain is a full-stack web app inspired by Brainscape. It utilizes Ruby on Rails and a PostgreSQL database on the backend, and React.js with a Redux architectural framework on the frontend.  
 
 ## Motivation
-The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: in future releases, the iRetain Chrome extension will enable dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up previously while browsing or studying. A demo of the feature is shown below.
+The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: the iRetain Chrome extension will enables dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up previously while browsing or studying. A demo of the feature is shown below.
 
 ![ExDemo][ex_demo]
 [ex_demo]: ./docs/images/ex_demo.gif
 iRetain Chrome Extension Demo
+
+[Download Chrome Extension][ext_link]
+[ext_link]: https://chrome.google.com/webstore/detail/iretain/gbeamkiokdfmamlmmkhddfdpbmbgmkic?utm_source=gmail
 
 ## Demo
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
@@ -109,18 +112,18 @@ The deck tagging features uses the `react-tag-iput` component, which can be foun
 The subject search features uses the `react-autosuggest` component, which can be found [here][suggest].
 [suggest]: https://www.npmjs.com/package/react-autosuggest
 
-## Future Directions
+## Chrome Extension and Syntax Highlighting
+This feature separates iRetain from other flashcard apps. Currently the extension merely creates cards in the background, as long as you are signed in. Eventually, the extension will have several features which add to the user experience and strengthen retention of new concepts.
 
-### Chrome Extension and Syntax Highlighting
-The next feature will be what separates iRetain from other flashcard apps - the Chrome Extension. The extension will have several features which add to the user experience and strengthen retention of new concepts.
+### Dynamic Flashcard Creation
+Clicking `Retain It` instead will not only display the definition, but it will also create a flashcard in the background, saved to the user's default deck. If the user is not logged in, she or he will be redirected to the login page.
 
-#### Syntax Highlighting
+### Future Directions
+
+### Syntax Highlighting
 The Chrome extension will be used while browsing or studying on other websites. If syntax highlighting is turned on, words the user has looked up in the past will be highlighted on the page. Hovering over a previously looked up word will display it's definition.
 
 In addition, synonyms of previously looked up words will be highlighted. Hovering over a synonym will reveal the originally looked up word. This feature will help strengthen retention by creating new associations with old concepts and words.
 
 #### Lookup
 While browsing, highlighting a word, right clicking, and selecting `Define It` from the context menu will display the definition of unknown words.
-
-#### Dynamic Flashcard Creation
-Clicking `Retain It` instead will not only display the definition, but it will also create a flashcard in the background, saved to the user's default deck. If the user is not logged in, she or he will be redirected to the login page.

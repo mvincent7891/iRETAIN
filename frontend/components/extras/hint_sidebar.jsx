@@ -9,7 +9,7 @@ const hints = [
   'Click \'more...\' in the navigation bar to read about the iRetain Chrome extension',
   'To add a subject, use the search bar to the left of the page',
   'While viewing a deck, clicking the title will launch a study session on it',
-  'Come back soon and download the iRetain Chrome extension',
+  'Download the iRetain Chrome extension to create flash cards from anywhere',
   'While adding a card, clicking \'lookup\' will autofill the body'
 ];
 
