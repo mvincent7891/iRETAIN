@@ -18,7 +18,8 @@ class ChromeExtension extends React.Component {
         <h2 className="extension">Chrome Extension</h2>
         <div className="extension">
           The Chrome Extension sets iRetain apart from any other flashcard app. Create flashcards from anywhere on the web and revisit them when you have the time!<br/><br/>
-          While iRetain's features are similar to many other apps, the app was built with a novel feature in mind: the iRetain Chrome extension enables dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up previously while browsing or studying. A demo of the feature is shown below.
+        While iRetain's features are similar to many other apps, the app was built with a novel feature in mind: the iRetain Chrome extension enables dynamic creation of flashcards from anywhere on the web.
+        <br/><br/>After adding the extension to Chrome, navigate to your favorite news site. See a word you want to retain? Highlight it, right click, select 'Retain It', and in the background iRetain will build a flash card for you. Later, you can revisit words you've looked up previously while browsing or studying. A demo of the feature is shown below.
         </div>
         <h2 className="extension">Chrome Extension Demo</h2>
 
