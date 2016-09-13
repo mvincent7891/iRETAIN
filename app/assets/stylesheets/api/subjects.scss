@@ -160,6 +160,8 @@ ul.subject-index {
   background-color: $tirtiary-grey;
   border-bottom: 3px solid $secondary-grey;
   border-left: 3px solid $secondary-grey;
+  box-sizing: border-box;
+  width: 159px;
 }
 
 .react-autosuggest__input:focus {
