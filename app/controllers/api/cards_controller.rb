@@ -36,14 +36,12 @@ class Api::CardsController < ApplicationController
       response_hash = JSON.parse(response.body)
       meanings = response_hash['tuc'][0]['meanings'].map { |def_hash| def_hash['text']}
 
-      # max definition saved set to 3
       @card.body = meanings[1]
       @card.save
 
       render :show
     else
-      flash[:errors] = "You must be logged in to retain new words!"
-      redirect_to new_session_url(error: "MUST LOGIN") 
+      render :error
     end
   end
 
