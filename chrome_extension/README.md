@@ -5,7 +5,7 @@
 [logo_image]: ./assets/favicon128.png
 
 ## iRetain Chrome Extension
-### Create flashcards from anywhere on the web
+Create flashcards from anywhere on the web
 
 [Find iRetain in the Chrome Web Store][live_ext]
 [live_ext]: https://chrome.google.com/webstore/detail/iretain/gbeamkiokdfmamlmmkhddfdpbmbgmkic?utm_source=gmail
@@ -15,14 +15,11 @@
 The iRetain Chrome Extension interfaces with iRetain, a full-stack web app for creating and studying topical flashcards, inspired by Brainscape.
 
 ## Motivation
-The primary purpose of iRetain is to help students strengthen retention of new concepts using flashcards and interactive study sessions. While the core features are similar to many other flash card apps, the app was built with a novel feature in mind: the iRetain Chrome extension will enables dynamic creation of flashcards from anywhere on the web. Simply install the extension and click on a word to view it's definition. In the background, iRetain will build a flash card for you, enabling you to revisit words you've looked up previously while browsing or studying. A demo of the feature is shown below.
+iRetain was originally conceptualized as a tool for enhancing the browsing experience for students and strengthening retention of new ideas. This is accomplished primarily through the iRetain Chrome Extension. The extension allows the user to look up words or concepts from anywhere on the web. Simply highlight a word, right click, select "Retain It", and the definition will populate a notification in the corner of the screen. Meanwhile, the iRetain web app creates a flashcard in the background. This enables the user to come back to words or concepts he or she has looked up in the past, without the hassle of creating flashcards manually.
 
 ![ExDemo][ex_demo]
-[ex_demo]: ./docs/images/ex_demo.gif
+[ex_demo]: ./assets/ex_demo.gif
 iRetain Chrome Extension Demo
-
-[Download Chrome Extension][ext_link]
-[ext_link]: https://chrome.google.com/webstore/detail/iretain/gbeamkiokdfmamlmmkhddfdpbmbgmkic?utm_source=gmail
 
 ## Demo
 To get a feel for the app, login as a guest and take a tour. Simply navigate to the [splash page][live_app], and click on the large `DEMO` link. The remainder of this README will guide you through the app's features as if you were logged in as a guest.
